@@ -1,0 +1,56 @@
+Working On:
+*updating everything to work with React
+*event listener key press for keypad
+*haze on users screen
+*event listener for keypresses for keyboard and keypad for code
+*edit page for users, master and duress
+*keyboard starts on shift then leaves after typing in a letter.
+*update verify code page to accept any 4 digit code but only move forward if correct
+*Update values on arming spheres back to original upon countdown finishing
+
+To Do:
+*Arm Pages
+*alarm
+*Smart Home Controls Page
+*Smart Areas Page
+*System Info page
+*Make the text by the sliders gray out when not active
+*Implement a script to keep track of what state the panel is in (armed away, disarmed, armed stay, not ready to arm, etc)
+*Implement a script to keep track of correct led color for buttons(outside ones) and have them go gray when being pressed on
+*have each sensor and automation programed in
+*screen timeout function
+*Home screen weather/time
+*make a note on the language page about the system not being supported in Other languages at this time
+*simplify redundant code like header with php
+*organize style sheet into multiple dependant on what it is applying to or just organizing everything into sections so its easy to find.
+*keyfobs trying to arm when armed and disarm when disarmed screens
+*home and emergency buttons do not work while in installer toolbox
+*keyfobs don't arm/disarm when in installer toolbox
+*When press home button when armed returns to home armed screen
+
+Look into:
+*saving settings/users/sensors through login or browser cache
+*have options to remove/add gsm, power cycle, hard reset, etc.
+*switching so each page is seperate html page(if faster speed required)
+*having sounds or display of sounds
+*having php to replace which screen is showing
+*sidebar sensors, keyfobs, automation, etc when clicked shows a dropdown of all the options and when clicked again retracts
+*limit to max of sensors that can be programmed in to 10
+*limit max custom user codes to 10
+
+Bugs to look at:
+*fix haze on settings
+*when a code isn't active the text is grayed out is not working when switched to a tag
+*incorrect codes on arming screens
+
+Priorities:
+1. Getting codes working - 90%
+    a. finish editing codes screen
+2. Gettting panel states working (Armed Away, Stay, Disarmed, Panic, Duress, Emergency) - 0%
+3. Getting sensors working (1 of each kind) - 0%
+4. Getting Automation working (1 of each kind) - 0%
+5. Anything left on Home screen - 0%
+6. Anything left in System Settings - 0%
+7. Anything left in Installer Toolbox - 0%
+8. Other Features (screen-timeout) - 0%
+8. Lots of testing - 5%

@@ -1,0 +1,100 @@
+ArmingAway - Updated
+ArmingAwaySilent
+ArmingStay - Updated
+ArmingStaySilent
+Alarm
+BypassSensors - Updated
+CellRadioSwap - started basic
+CellRadioSwapNotDetected
+DateTime - started basic
+DemoMode 
+Emergency - Updated
+FirmwareUpdate -started basic
+HackPage - Updated
+Home - Updated
+InstallerCode - Updated
+InstallerMenu - Updated
+LanguageSettings - started basic
+NetworkSettings - started basic
+NetworkSettingsWireless
+NetworkSettingsWirelessKey
+NetworkSettingsWirelessSetup
+NetworkSettingsAccessPoint
+NetworkTest
+RadioStatus
+RestoreDefaults
+ScreenSaver - Updated
+ScreenSettings - started basic
+ScreenSettingsScreenSaver
+SensorChimes - started basic
+SmartAreasCode - started basic
+SmartAreasControls
+SmartAreasSettings - started basic
+SmartAreasSettingsEditName
+SmartHomeControls - started basic
+SmartHomeControlsLights
+SmartHomeControlsLocks
+SmartHomeControlsThermostats
+SmartHomeControlsGarageDoors
+SmartHomeControlsScenes
+SmartHomeControlsScenesNewName
+SmartHomeControlsScenesEditScene
+SmartHomeControlsScenesEditSceneName
+SmartHomeControlsRooms
+SmartHomeControlsRoomsNewName
+SmartHomeControlsRoomsEditRoom
+SmartHomeControlsRoomsEditRoomName
+SmartHomeSettings - started basic
+SmartHomeSettingsAddDevice
+SmartHomeSettingsRemoveDevice
+SmartHomeSettingsCheckNetwork
+SmartHomeSettingsRediscoverNetwork
+SmartHomeSettingsViewAll
+SmartHomeSettingsViewAllEditName
+SmartHomeSettingsDeviceAssociation
+SmartHomeSettingsDeviceAssociationManage
+SmartHomeSettingsAdvancedSettings
+SmartHomeSettingsAdvancedSettingsResetController
+SmartHomeSettingsAdvancedSettingsControllerLearn
+SoundsSettings -started basic
+SystemConfiguration
+SystemConfigurationWirelessZones
+SystemConfigurationWirelessZonesEditZone
+SystemConfigurationWiredZones
+SystemConfigurationWiredZonesEditZone
+SystemConfigurationKeyfobs
+SystemConfigurationKeyfobsEditZone
+SystemConfigurationKeypads
+SystemConfigurationKeypadsEditKeypad
+SystemConfigurationPanelProgramming
+SystemConfigurationImageSensors
+SystemInfo - started basic
+SystemInfoHistory
+SystemInfoSystemInfo
+SystemInfoLicenseInfo
+SystemInfoDealerInfo
+SystemPairing
+SystemSettingsCode - Updated
+SystemSettingsInstallerMenu - Working on
+SystemSettingsMenu - Started
+SystemTests - started
+SystemTestsSensorTest
+SystemTestsConsoleTest
+Users - Started
+UsersEditUser - Started
+UsersEditCode
+UsersEditCodeVerify 
+UsersEditName 
+UsersNewCode- Started
+UsersNewCodeVerify - Started
+UsersNewName - Started
+
+Easter Egg Pages
+418 - Hyper_Text_Coffe_Pot_Control_Protocol
+broadband_failure - dinosaur game https://codepen.io/MysticReborn/pen/rygqao?editors=1000#0
+go_e - change to gc3e cover plate until page reloaded
+
+Other Easter Eggs
+Konami code - type in the konami code on any page and 
+old## - change background to old wallpaper (replace ## with a 2 digit number and if it is correlated with the correct year the wallpaper will change)
+other background easter eggs etc
