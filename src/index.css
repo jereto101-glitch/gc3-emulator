@@ -39,7 +39,7 @@ body {
 .btn-home{
     width:75px;
     height:75px;
-    border: 4px solid #9ad682;
+    border: 4px solid #9eef64;
     border-radius:50%;
     background-color:white;
     position:absolute;
@@ -67,10 +67,10 @@ body {
     border-radius:50%;
     background-color:black;
     margin-top:517px;
-    margin-left:455px;
+    margin-left:440px;
 }
 .home-square{
-    border: 3px solid #9ad682;
+    border: 3px solid #9eef64;
     height:25px;
     width:25px;
     margin-top:22px;
@@ -886,4 +886,74 @@ header{
     overflow-y: scroll;
     padding-right: 17px;
     box-sizing: content-box;
+}
+.config-container{
+    height:241px;
+    width:343px;
+    overflow:hidden;
+}
+.config-container-scroll{
+    height:100%;
+    width:100%;
+    overflow-y: scroll;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+.programming-list{
+    list-style-type: none;
+    padding-left: 3px;
+    width: 303px;
+}
+.programming-list li{
+    border-top: 1px lightgrey solid;
+    width:100%;
+}
+.programming-list li p{
+    background-color:white;
+    border-radius: 5px;
+    color:gray;
+    background-image: linear-gradient(to right, white, transparent);
+    margin-top:3px;
+    margin-bottom:3px;
+    padding-left: 10px;
+    padding-top: 5px;
+    outline:none;
+}
+.screen-left-settings{
+    float:left;
+    height:240px;
+    width:310px;
+    background-color:white;
+    margin-left:17px;
+    border-radius:5px;
+    margin-top:15px;
+}
+.screen-right-settings{
+    float:right;
+    height:240px;
+    width:310px;
+    margin-top:-32px;
+    background-color:white;
+    margin-right:17px;
+    border-radius:5px;
+    margin-top:15px;
+}
+.programming-right-side-list-option{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    font-size: 14px;
+    font-weight: bold;
+}
+.css-grid-align-right{
+    align-self: end;
+    text-align:right;
+    margin-right:5px;
+}
+.configuration-buttons{
+    height: 35px;
+    margin-top: 10px;
+    width: 80px;
+    text-align: center;
+    color:white;
+    font-size: 15px;
 }

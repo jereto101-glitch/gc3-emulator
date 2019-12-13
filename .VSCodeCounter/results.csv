@@ -5,13 +5,13 @@ c:\Users\jajohnson\gc3_emulator\src\App.js, JavaScript, 189, 0, 0, 0, 0, 37, 226
 c:\Users\jajohnson\gc3_emulator\src\DinoApp.js, JavaScript, 341, 0, 0, 0, 4, 81, 426
 c:\Users\jajohnson\gc3_emulator\src\Footer.js, JavaScript, 13, 0, 0, 0, 0, 2, 15
 c:\Users\jajohnson\gc3_emulator\src\Header.js, JavaScript, 13, 0, 0, 0, 0, 3, 16
-c:\Users\jajohnson\gc3_emulator\src\Panel.js, JavaScript, 144, 0, 0, 0, 3, 7, 154
-c:\Users\jajohnson\gc3_emulator\src\Redux.js, JavaScript, 680, 0, 0, 0, 11, 37, 728
+c:\Users\jajohnson\gc3_emulator\src\Panel.js, JavaScript, 146, 0, 0, 0, 3, 7, 156
+c:\Users\jajohnson\gc3_emulator\src\Redux.js, JavaScript, 792, 0, 0, 0, 11, 37, 840
 c:\Users\jajohnson\gc3_emulator\src\Screen.css, CSS, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\SideBar.js, JavaScript, 666, 0, 0, 0, 2, 197, 865
 c:\Users\jajohnson\gc3_emulator\src\images\chat-icon.svg, XML, 0, 0, 0, 1, 0, 0, 1
 c:\Users\jajohnson\gc3_emulator\src\images\emergency-fire.svg, XML, 0, 0, 0, 3, 0, 1, 4
-c:\Users\jajohnson\gc3_emulator\src\index.css, CSS, 0, 876, 0, 0, 10, 3, 889
+c:\Users\jajohnson\gc3_emulator\src\index.css, CSS, 0, 946, 0, 0, 10, 3, 959
 c:\Users\jajohnson\gc3_emulator\src\index.js, JavaScript, 8, 0, 0, 0, 0, 3, 11
 c:\Users\jajohnson\gc3_emulator\src\info.js, JavaScript, 198, 0, 0, 0, 0, 48, 246
 c:\Users\jajohnson\gc3_emulator\src\screen\Alarm.js, JavaScript, 207, 0, 0, 0, 0, 38, 245
@@ -83,7 +83,7 @@ c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationKeypadsEditKeypad.
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationPanelProgramming.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZones.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZonesEditZone.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
-c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZones.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
+c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZones.js, JavaScript, 5948, 0, 0, 0, 0, 28, 5976
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfo.js, JavaScript, 79, 0, 0, 0, 0, 19, 98
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoDealerInfo.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
@@ -107,4 +107,4 @@ c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewCodeVerify.js, JavaScript, 67
 c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewName.js, JavaScript, 534, 0, 0, 0, 0, 78, 612
 c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgress.js, JavaScript, 23, 0, 0, 0, 0, 4, 27
 c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgressHack.js, JavaScript, 24, 0, 0, 0, 0, 4, 28
-Total, -, 6730, 876, 133, 4, 60, 1567, 9370
+Total, -, 12792, 946, 133, 4, 60, 1594, 15529

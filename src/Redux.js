@@ -104,7 +104,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -117,7 +124,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -130,7 +144,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -143,7 +164,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -156,7 +184,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -169,7 +204,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -182,7 +224,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -195,7 +244,14 @@ const initSensors = {
         equipmentAge: "New",
         sensorLoop: "1",
         transmissionDelay: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         sensorReports: "enabled",
         sensorSupervised: "enabled",
         sensorChime: "disabled"
@@ -211,7 +267,14 @@ const initKeyfobs = {
         equipmentAge: "new",
         emergencyKey: "disabled",
         fobCanDisarm: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         amrWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
@@ -223,7 +286,14 @@ const initKeyfobs = {
         equipmentAge: "new",
         emergencyKey: "disabled",
         fobCanDisarm: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         amrWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
@@ -235,7 +305,14 @@ const initKeyfobs = {
         equipmentAge: "new",
         emergencyKey: "disabled",
         fobCanDisarm: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         amrWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
@@ -247,7 +324,14 @@ const initKeyfobs = {
         equipmentAge: "new",
         emergencyKey: "disabled",
         fobCanDisarm: "enabled",
-        voiceDescriptor: "",
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        },
         amrWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     }
@@ -261,7 +345,14 @@ const initKeypads = {
         smartAreasAssignment: "s1",
         equipmentAge: "new",
         emergencyKeys: "enabled",
-        voiceDescriptor: ""
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        }
     },
     keypad2:{
         keypadUsed: "disabled",
@@ -270,7 +361,14 @@ const initKeypads = {
         smartAreasAssignment: "s1",
         equipmentAge: "new",
         emergencyKeys: "enabled",
-        voiceDescriptor: ""
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        }
     },
     keypad3:{
         keypadUsed: "disabled",
@@ -279,7 +377,14 @@ const initKeypads = {
         smartAreasAssignment: "s1",
         equipmentAge: "new",
         emergencyKeys: "enabled",
-        voiceDescriptor: ""
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        }
     },
     keypad4:{
         keypadUsed: "disabled",
@@ -288,7 +393,14 @@ const initKeypads = {
         smartAreasAssignment: "s1",
         equipmentAge: "new",
         emergencyKeys: "enabled",
-        voiceDescriptor: ""
+        voiceDescriptor: {
+            descriptor1:"",
+            descriptor2:"",
+            descriptor3:"",
+            descriptor4:"",
+            descriptor5:"",
+            descriptor6:"",
+        }
     }
 }
 

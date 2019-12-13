@@ -31,7 +31,7 @@ function SystemConfiguration() {
 
             <div className="options-right" style={{'marginTop':"0px"}}>
                 <div className="options-right-scroll" id="scroller-installer" >
-                    <Link to="/installer-toolbox/system-configuration/wireless-zones">
+                    <Link to="/installer-toolbox/system-configuration/wireless-zones/menu">
                         <div className="btn-option">
                             <img src={wifi_icon} className="option-img invert-color" alt="" />
 

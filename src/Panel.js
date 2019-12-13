@@ -21,6 +21,7 @@ import NetworkSettings from './screen/NetworkSettings';
 import SystemInfo from './screen/SystemInfo';
 import DinoGame from './screen/DinoGame';
 import SmartHomeControls from './screen/SmartHomeControls';
+import SystemConfigurationWirelessZones from './screen/SystemConfigurationWirelessZones'
 // import Users from "./screen/Users";
 // import UsersEditUser from "./screen/UsersEditUser";
 
@@ -62,7 +63,8 @@ function Panel() {
                     <Route path="/installer-toolbox/code" component={InstallerCode} />
                     <Route path="/installer-toolbox/menu" component={InstallerMenu} />
                     <Route path="/installer-toolbox/system-configuration/menu" component={SystemConfiguration} />
-                    <Route path="/installer-toolbox/system-configuration/wireless-zones" component={WorkInProgress} />
+                    <Route path="/installer-toolbox/system-configuration/wireless-zones/menu" component={SystemConfigurationWirelessZones} />
+                    <Route path="/installer-toolbox/system-configuration/wireless-zones/edit" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/wired-zones" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/keyfobs" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/keypads" component={WorkInProgress} />
