@@ -18,6 +18,7 @@ window.mobilecheck = function() {
 };
 
 function mobileDeny(tester){
+  window.mobilecheck()
   if (tester === "true"){
     return(
       <div style={{'backgroundColor':"white",'height':"100%",'width':"100%", 'zIndex':"9999", 'overFlow':"hidden"}}>
