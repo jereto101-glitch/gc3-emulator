@@ -217,6 +217,20 @@ function HackPage() {
                                 A couple of pages left to translate. Still working on so much. Long ways to go.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                12/12/2019 Jared J.
+                            </td>
+
+                            <td>
+                                I have been working a ton on sensor integration, the wireless sensor programming page is nearly done and ready to interpret and show the correct programming information.
+                            </td>
+
+                            <td>
+                                I have one section of the programming interpretation left to finish and update so JS can read it correctly. After that I will be finishing the functions of all the buttons on the screen of the page. Once finished, I will move on to actually editing the sensor programming.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -236,7 +250,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 10/26/2019 9:02:01PM
+                    Last Updated: 12/12/2019 9:01:25PM
                 </footer>
             </div>
         </div>
