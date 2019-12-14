@@ -109,7 +109,7 @@ function InstallerCode() {
             </div>
 
             <div className="code-feild">
-                <input type="password" name="installer-code" value="" maxlength="4" id="installer-code-store" disabled style={{'border':"0"}}/>
+                <input type="password" name="installer-code" value="" maxLength="4" id="installer-code-store" disabled style={{'border':"0"}}/>
             </div>
 
             <div className="right-side-code">

@@ -405,10 +405,16 @@ function EquipmentCode(props){
 function SerialNumber(props){
     console.log(props)
     if (props !== null){
-        var txid = props
-        return(
-            <p className="css-grid-align-right" style={{'color':"#404956"}}>0000000</p> // Not working when try to put {txid} talk to stephen about fixing this
-        )
+        if(typeof props !== "object"){
+            return(
+                <p className="css-grid-align-right" style={{'color':"#404956"}}>{props}</p> // Not working when try to put {txid} talk to stephen about fixing this
+            )
+        }
+        else{
+            return(
+                <p className="css-grid-align-right" style={{'color':"#404956"}}>0000000</p>
+            )
+        }
     }
     else{
         return(
@@ -5959,27 +5965,51 @@ function choseZone(id){
         document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
         if (selector === "zone-one"){
             el.scrollTop = 0;
+            document.getElementById("up-arrow").style.display = "none"
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = ""
         }
         else if (selector === "zone-two"){
             el.scrollTop = 29;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-three"){
             el.scrollTop = 58;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-four"){
             el.scrollTop = 87;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-five"){
             el.scrollTop = 116;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-six"){
             el.scrollTop = 145;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-seven"){
             el.scrollTop = 174;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
         }
         else if (selector === "zone-eight"){
             el.scrollTop = 232;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = "none"
+            document.getElementById("filler").style.display = "none"
         }
         updateProgramming(selector)
     }
@@ -6047,26 +6077,30 @@ function SystemConfigurationWireless(){
                 </Link>
             </div>
 
-            <div style={{'bottom':"0",'width':"645px", 'height':"55px", 'position':"absolute", 'marginBottom':"108px", 'display': "inline-grid", 'gridTemplateColumns':"336px auto auto auto", 'marginLeft':"-310px"}}>
+            <div style={{'bottom':"0",'width':"645px", 'height':"55px", 'position':"absolute", 'marginBottom':"108px", 'display': "inline-grid", 'gridTemplateColumns':"336px 103px 103px 103px", 'marginLeft':"-310px"}}>
                 <div className="blue-button configuration-buttons" style={{'width':"296px", 'marginLeft':"8px"}}>
                     <p style={{'marginTop':"10px"}}>
                         Go To Zone
                     </p>
                 </div>
 
-                <div className="blue-button configuration-buttons">
+                <div id="up-arrow" className="blue-button configuration-buttons" style={{'gridColumnStart':"2"}}>
                     <img src={up_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt="" />
                 </div>
 
+                <div id="filler" style={{'display':"none"}}>
+
+                </div>
+
                 <Link to="/installer-toolbox/system-configuration/wireless-zones/edit">
-                    <div className="blue-button configuration-buttons">
+                    <div className="blue-button configuration-buttons" style={{'gridArea':"1 / 3 / 1 / 3"}}>
                         <p style={{'marginTop':"10px"}}>
                             Edit Zone
                         </p>
                     </div>
                 </Link>
 
-                <div className="blue-button configuration-buttons" onLoad={() => choseZone("zone-one")}>
+                <div id="down-arrow" className="blue-button configuration-buttons" onLoad={() => choseZone("zone-one")} style={{'gridColumnStart':"4"}}>
                     <img src={down_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt="" />
                 </div>
             </div>

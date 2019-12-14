@@ -67,7 +67,7 @@ function SystemSettingsInstallerMenu() {
                 </p>
 
                 <div className="header-right">
-                    <Link to="/installer-toolbox/code">
+                    <Link to="/installer-toolboxmenu">
                         <img src={fluent_logo_icon} className="resize-3" style={{'marginTop':"-56px", 'outline':"none"}} alt="" />
                     </Link>
 
