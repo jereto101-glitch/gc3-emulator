@@ -231,6 +231,20 @@ function HackPage() {
                                 I have one section of the programming interpretation left to finish and update so JS can read it correctly. After that I will be finishing the functions of all the buttons on the screen of the page. Once finished, I will move on to actually editing the sensor programming.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                12/13/2019 Jared J.
+                            </td>
+
+                            <td>
+                                Worked over some bugs in the wireless sensor page, got the up and down arrows working.
+                            </td>
+
+                            <td>
+                                Realized updator show of programming not working due to how it's currently written, need to work on a rewrite that doesn't need any information passed into the function itself.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -250,7 +264,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 12/12/2019 9:01:25PM
+                    Last Updated: 12/13/2019 8:49:29PM
                 </footer>
             </div>
         </div>

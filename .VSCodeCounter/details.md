@@ -1,10 +1,10 @@
 # Details
 
-Date : 2019-12-12 20:10:12
+Date : 2019-12-14 20:45:29
 
 Directory c:\Users\jajohnson\gc3_emulator\src
 
-Total : 108 files,  13875 codes, 60 comments, 1594 blanks, all 15529 lines
+Total : 108 files,  14064 codes, 87 comments, 1606 blanks, all 15757 lines
 
 [summary](results.md)
 
@@ -13,7 +13,7 @@ Total : 108 files,  13875 codes, 60 comments, 1594 blanks, all 15529 lines
 | :--- | :--- | ---: | ---: | ---: | ---: |
 | [.VSCodeCounter\details.md](file:///c%3A/Users/jajohnson/gc3_emulator/src/.VSCodeCounter/details.md) | Markdown | 115 | 0 | 6 | 121 |
 | [.VSCodeCounter\results.md](file:///c%3A/Users/jajohnson/gc3_emulator/src/.VSCodeCounter/results.md) | Markdown | 18 | 0 | 7 | 25 |
-| [App.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/App.js) | JavaScript | 189 | 0 | 37 | 226 |
+| [App.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/App.js) | JavaScript | 190 | 27 | 40 | 257 |
 | [DinoApp.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/DinoApp.js) | JavaScript | 341 | 4 | 81 | 426 |
 | [Footer.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Footer.js) | JavaScript | 13 | 0 | 2 | 15 |
 | [Header.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Header.js) | JavaScript | 13 | 0 | 3 | 16 |
@@ -25,7 +25,7 @@ Total : 108 files,  13875 codes, 60 comments, 1594 blanks, all 15529 lines
 | [images\emergency-fire.svg](file:///c%3A/Users/jajohnson/gc3_emulator/src/images/emergency-fire.svg) | XML | 3 | 0 | 1 | 4 |
 | [index.css](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.css) | CSS | 946 | 10 | 3 | 959 |
 | [index.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.js) | JavaScript | 8 | 0 | 3 | 11 |
-| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 198 | 0 | 48 | 246 |
+| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 209 | 0 | 51 | 260 |
 | [screen\Alarm.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/Alarm.js) | JavaScript | 207 | 0 | 38 | 245 |
 | [screen\ArmingAway.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAway.js) | JavaScript | 278 | 0 | 50 | 328 |
 | [screen\ArmingAwaySilent.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAwaySilent.js) | JavaScript | 0 | 0 | 1 | 1 |
@@ -95,7 +95,7 @@ Total : 108 files,  13875 codes, 60 comments, 1594 blanks, all 15529 lines
 | [screen\SystemConfigurationPanelProgramming.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationPanelProgramming.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemConfigurationWiredZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZones.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemConfigurationWiredZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZonesEditZone.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemConfigurationWirelessZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZones.js) | JavaScript | 5,948 | 0 | 28 | 5,976 |
+| [screen\SystemConfigurationWirelessZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZones.js) | JavaScript | 6,125 | 0 | 34 | 6,159 |
 | [screen\SystemConfigurationWirelessZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZonesEditZone.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfo.js) | JavaScript | 79 | 0 | 19 | 98 |
 | [screen\SystemInfoDealerInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoDealerInfo.js) | JavaScript | 0 | 0 | 1 | 1 |
