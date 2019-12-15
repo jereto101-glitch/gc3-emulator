@@ -165,7 +165,7 @@ function HomeNote(){
         </p>
           
         <p style={{'marginLeft':"20px", 'marginRight':"20px"}}>
-          The panel when defualted doesn't have the duress code enabled, but techs upon install set it to 2580.
+          The panel when defaulted doesn't have the duress code enabled, but techs upon install set it to 2580.
         </p>
       </div>
     )

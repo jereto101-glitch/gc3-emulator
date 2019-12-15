@@ -6015,6 +6015,54 @@ function choseZone(id){
     }
 }
 
+function goUp(){
+    if (document.getElementById('zone-two').style.backgroundColor !== 'white'){
+        choseZone("zone-one")
+    }
+    else if (document.getElementById('zone-three').style.backgroundColor !== 'white'){
+        choseZone("zone-two")
+    }
+    else if (document.getElementById('zone-four').style.backgroundColor !== 'white'){
+        choseZone("zone-three")
+    }
+    else if (document.getElementById('zone-five').style.backgroundColor !== 'white'){
+        choseZone("zone-four")
+    }
+    else if (document.getElementById('zone-six').style.backgroundColor !== 'white'){
+        choseZone("zone-five")
+    }
+    else if (document.getElementById('zone-seven').style.backgroundColor !== 'white'){
+        choseZone("zone-six")
+    }
+    else if (document.getElementById('zone-eight').style.backgroundColor !== 'white'){
+        choseZone("zone-seven")
+    }
+}
+
+function goDown(){
+    if (document.getElementById('zone-one').style.backgroundColor !== 'white'){
+        choseZone("zone-two")
+    }
+    else if (document.getElementById('zone-two').style.backgroundColor !== 'white'){
+        choseZone("zone-three")
+    }
+    else if (document.getElementById('zone-three').style.backgroundColor !== 'white'){
+        choseZone("zone-four")
+    }
+    else if (document.getElementById('zone-four').style.backgroundColor !== 'white'){
+        choseZone("zone-five")
+    }
+    else if (document.getElementById('zone-five').style.backgroundColor !== 'white'){
+        choseZone("zone-six")
+    }
+    else if (document.getElementById('zone-six').style.backgroundColor !== 'white'){
+        choseZone("zone-seven")
+    }
+    else if (document.getElementById('zone-seven').style.backgroundColor !== 'white'){
+        choseZone("zone-eight")
+    }
+}
+
 function SystemConfigurationWireless(){
     return(
         <div className="screen-style">
@@ -6074,7 +6122,7 @@ function SystemConfigurationWireless(){
                             </ul>
                         </div>
                     </div>
-                </Link>
+                </Link> {/* This is broken fix later, need to figure out how to get information without passing props due to calling functions below*/}
             </div>
 
             <div style={{'bottom':"0",'width':"645px", 'height':"55px", 'position':"absolute", 'marginBottom':"108px", 'display': "inline-grid", 'gridTemplateColumns':"336px 103px 103px 103px", 'marginLeft':"-310px"}}>
@@ -6084,7 +6132,7 @@ function SystemConfigurationWireless(){
                     </p>
                 </div>
 
-                <div id="up-arrow" className="blue-button configuration-buttons" style={{'gridColumnStart':"2"}}>
+                <div id="up-arrow" className="blue-button configuration-buttons" style={{'gridColumnStart':"2"}} onClick={() => goUp()}>
                     <img src={up_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt="" />
                 </div>
 
@@ -6100,7 +6148,7 @@ function SystemConfigurationWireless(){
                     </div>
                 </Link>
 
-                <div id="down-arrow" className="blue-button configuration-buttons" onLoad={() => choseZone("zone-one")} style={{'gridColumnStart':"4"}}>
+                <div id="down-arrow" className="blue-button configuration-buttons"  onClick={() => goDown()} onLoad={() => choseZone("zone-one")} style={{'gridColumnStart':"4"}}>
                     <img src={down_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt="" />
                 </div>
             </div>
