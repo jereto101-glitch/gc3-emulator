@@ -54,14 +54,19 @@ function InstallerCode() {
             <div className="screen-header">
                 <img src={check_mark_icon} className="resize-1" alt=""/>
 
-                <p>
-                    System <strong> Ready </strong>To Arm 
+                <p style={{'paddingTop':"9px"}}>
+                    System
                 </p>
-                <p style={{'float':"right", 'position':"absolute", 'marginLeft':"478px", 'marginTop':"-41px"}}>
+
+                <p style={{'marginTop':"-16px"}}>
+                    Ready to Arm
+                </p>
+
+                <p style={{'float':"right", 'position':"absolute", 'marginLeft':"478px", 'marginTop':"-54px"}}>
                     Enter your code to access
                 </p>
 
-                <p style={{'float':"right", 'marginRight':"7px", 'marginTop':"-22px"}}>
+                <p style={{'float':"right", 'marginRight':"7px", 'marginTop':"-33px"}}>
                     Installer Toolbox
                 </p>
             </div>

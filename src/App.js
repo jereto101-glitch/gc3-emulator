@@ -99,11 +99,11 @@ function InstallerToolboxNote(){
       </h4>
 
       <p style={{'marginLeft':"20px", 'marginRight':"20px", 'marginTop':"-10px"}}>
-        So far just the menu has been finished for the installer toolbox only allowing to view what options are available.
+        As of now only this menu, the system configuration menu, and the start of the wireless sensors pages are finished.
       </p>
         
       <p style={{'marginLeft':"20px", 'marginRight':"20px"}}>
-        We are working hard to finish as many pages as possible so check back soon for more content.
+        We are working hard to complete as many pages as possible so check back soon for more content.
       </p>
     </div>
   )

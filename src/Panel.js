@@ -50,6 +50,57 @@ function colorCheck(){
     }, 1000)
 }
 
+function HomeButton(){
+    var retrievedState = localStorage.getItem('panelState');
+    retrievedState = JSON.parse(retrievedState)
+
+    if(window.location.pathname.split('/')[1] === "installer-toolbox"){
+        return(
+            <div id="home-circle" className="btn-home-gray">
+                <div id="home-box" className="home-square-gray">
+                </div>
+            </div>
+        )
+    }
+    else if(retrievedState.mode === "1" || retrievedState.mode === "2"){
+        return(
+            <div id="home-circle" className="btn-home-gray">
+                <div id="home-box" className="home-square-gray"> {/* Need to update to red color here */}
+                </div>
+            </div>
+        )
+    }
+    else{
+        return(
+            <div id="home-circle" className="btn-home-green">
+                <div id="home-box" className="home-square-green">
+                </div>
+            </div>
+        )
+    }   
+}
+
+function EmergencyButton(){
+    if(window.location.pathname.split('/')[1] === "installer-toolbox"){
+        return(
+            <div id="emergency-circle" className="btn-emergency-gray">
+                <p id="emergency-plus" className="emergency-plus-gray">
+                    +
+                </p>
+            </div>
+        )
+    } // Need to update to flashing white on alarm, need to check/graph colors displayed by buttons and set up statements to track this
+    else{
+        return(
+            <div id="emergency-circle" className="btn-emergency-white">
+                <p id="emergency-plus" className="emergency-plus-white">
+                    +
+                </p>
+            </div>
+        )
+    } 
+}
+
 function Panel() {
     return (
         <div className="casing-rim">
@@ -132,18 +183,11 @@ function Panel() {
                 </Switch>
         
                 <Link to="/emergency">
-                    <div id="emergency-circle" className="btn-emergency">
-                        <p id="emergency-plus" className="emergency-plus">
-                            +
-                        </p>
-                    </div>
+                    <EmergencyButton/>
                 </Link>
 
                 <Link to="/">
-                    <div id="home-circle" className="btn-home">
-                        <div id="home-box" className="home-square">
-                        </div>
-                    </div>
+                    <HomeButton/>
                 </Link>
             
                 <div className="microphone" onLoad={() => colorCheck()}>

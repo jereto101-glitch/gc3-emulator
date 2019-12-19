@@ -245,6 +245,20 @@ function HackPage() {
                                 Realized updator show of programming not working due to how it's currently written, need to work on a rewrite that doesn't need any information passed into the function itself.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                12/19/2019 Jared J.
+                            </td>
+
+                            <td>
+                                Setup of the update checks for the wireless sensor programming has been just about finished. Have made the functions isolated without needing any input. Have started working on setting up color changes on the home and emergency buttons.
+                            </td>
+
+                            <td>
+                                Working on getting the page to update what it shows when I update the returns. Not updating after first instance need to look into a way to make sure that the function re-returns itself. Once completed and working will move onto editing the programming and implimenting alarms into the panel.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -264,7 +278,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 12/13/2019 8:49:29PM
+                    Last Updated: 12/19/2019 12:07:38PM
                 </footer>
             </div>
         </div>
