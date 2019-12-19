@@ -123,7 +123,7 @@ function HomeNote(){
         </h4>
   
         <p style={{'marginLeft':"20px", 'marginRight':"20px", 'marginTop':"-10px"}}>
-          We are currently working on a list of fun or interesting facts about the GC3, Fluent, and alarm systems in general. 
+          We are currently working on a list of informative facts about the GC3, Fluent, and alarm systems in general. 
         </p>
           
         <p style={{'marginLeft':"20px", 'marginRight':"20px"}}>
