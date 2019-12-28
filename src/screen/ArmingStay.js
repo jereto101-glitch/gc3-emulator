@@ -14,23 +14,15 @@ function statusChange(status){
 
     if (status === "Disarm"){
         retrievedState.mode = "0";
-        document.getElementById("home-circle").style.backgroundColor = "#9ad682"
-        document.getElementById("home-box").style.backgroundColor = "#9ad682"
     }
     else if (status === "ArmStay"){
         retrievedState.mode = "1";
-        document.getElementById("home-circle").style.backgroundColor = "#d38181"
-        document.getElementById("home-box").style.backgroundColor = "#d38181"
     }
     else if (status === "ArmAway"){
         retrievedState.mode = "2";
-        document.getElementById("home-circle").style.backgroundColor = "#d38181"
-        document.getElementById("home-box").style.backgroundColor = "#d38181"
     }
     else if (status === "NotReady"){
         retrievedState.mode = "3";
-        document.getElementById("home-circle").style.backgroundColor = "gray"
-        document.getElementById("home-box").style.backgroundColor = "gray"
     }
 
     localStorage.setItem('panelState', JSON.stringify(retrievedState));

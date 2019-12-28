@@ -275,7 +275,7 @@ const initKeyfobs = {
             descriptor5:"",
             descriptor6:"",
         },
-        amrWithNoEntryDelay: "disabled",
+        armWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
     keyfob2:{
@@ -294,7 +294,7 @@ const initKeyfobs = {
             descriptor5:"",
             descriptor6:"",
         },
-        amrWithNoEntryDelay: "disabled",
+        armWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
     keyfob3:{
@@ -313,7 +313,7 @@ const initKeyfobs = {
             descriptor5:"",
             descriptor6:"",
         },
-        amrWithNoEntryDelay: "disabled",
+        armWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     },
     keyfob4:{
@@ -332,7 +332,7 @@ const initKeyfobs = {
             descriptor5:"",
             descriptor6:"",
         },
-        amrWithNoEntryDelay: "disabled",
+        armWithNoEntryDelay: "disabled",
         fobOutput: "disabled"
     }
 }

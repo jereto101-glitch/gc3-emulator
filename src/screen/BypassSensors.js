@@ -33,7 +33,7 @@ function BypassSensors() {
                         <img src={screen_turn_off_icon} className="invert-color resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"26px"}} alt=""/>
                     </Link>
 
-                    <img src={banner_icon} className="rotateimg90" style={{'height':"18px", 'width':"22px", 'marginRight':"61px"}} alt=""/>
+                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"61px"}} alt=""/>
 
                     <img src={chat_message_icon} className="resize-2" style={{'marginRight':"96px"}} alt=""/>
                 </div>

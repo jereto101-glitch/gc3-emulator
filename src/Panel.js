@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import ArmingAway from './screen/ArmingAway';
 import ArmingStay from "./screen/ArmingStay";
@@ -21,87 +21,60 @@ import NetworkSettings from './screen/NetworkSettings';
 import SystemInfo from './screen/SystemInfo';
 import DinoGame from './screen/DinoGame';
 import SmartHomeControls from './screen/SmartHomeControls';
-import SystemConfigurationWirelessZones from './screen/SystemConfigurationWirelessZones'
+import SystemConfigurationWirelessZones from './screen/SystemConfigurationWirelessZones';
+import SystemConfigurationWiredZones from './screen/SystemConfigurationWiredZones';
+import SystemConfigurationKeyfobs from './screen/SystemConfigurationKeyfobs';
+import SystemConfigurationKeypads from './screen/SystemConfigurationKeypads';
 // import Users from "./screen/Users";
 // import UsersEditUser from "./screen/UsersEditUser";
 
-function colorCheck(){
-    setInterval(function(){
-        var retrievedState = localStorage.getItem('panelState');
-        retrievedState = JSON.parse(retrievedState)
-        console.log(retrievedState.mode)
-    
-        if (retrievedState.mode === "0"){
-            document.getElementById("home-circle").style.backgroundColor = "#9ad682"
-            document.getElementById("home-box").style.backgroundColor = "#9ad682"
-        }
-        else if (retrievedState.mode === "1"){
-            document.getElementById("home-circle").style.backgroundColor = "#d38181"
-            document.getElementById("home-box").style.backgroundColor = "#d38181"
-        }
-        else if (retrievedState.mode === "2"){
-            document.getElementById("home-circle").style.backgroundColor = "#d38181"
-            document.getElementById("home-box").style.backgroundColor = "#d38181"
-        }
-        else if (retrievedState.mode === "3"){
-            document.getElementById("home-circle").style.backgroundColor = "gray"
-            document.getElementById("home-box").style.backgroundColor = "gray"
-        }
-    }, 1000)
-}
-
 function HomeButton(){
-    var retrievedState = localStorage.getItem('panelState');
-    retrievedState = JSON.parse(retrievedState)
+    setInterval(()=>{
+        console.log(document.getElementById("home-circle"))
+        if(document.getElementById("home-box") !== null){
+            var retrievedState = localStorage.getItem('panelState');
+            retrievedState = JSON.parse(retrievedState)
 
-    if(window.location.pathname.split('/')[1] === "installer-toolbox"){
-        return(
-            <div id="home-circle" className="btn-home-gray">
-                <div id="home-box" className="home-square-gray">
-                </div>
-            </div>
-        )
-    }
-    else if(retrievedState.mode === "1" || retrievedState.mode === "2"){
-        return(
-            <div id="home-circle" className="btn-home-gray">
-                <div id="home-box" className="home-square-gray"> {/* Need to update to red color here */}
-                </div>
-            </div>
-        )
-    }
-    else{
-        return(
-            <div id="home-circle" className="btn-home-green">
-                <div id="home-box" className="home-square-green">
-                </div>
-            </div>
-        )
-    }   
+            console.log(window.location.pathname.split('/')[1])
+            console.log(retrievedState.mode)
+            if(window.location.pathname.split('/')[1] === "installer-toolbox"){
+                document.getElementById("home-circle").className = "btn-home-gray"
+                document.getElementById("home-box").className = "home-square-gray"
+            }
+            else if(retrievedState.mode === "1" || retrievedState.mode === "2"){
+                document.getElementById("home-circle").className = "btn-home-red"
+                document.getElementById("home-box").className = "home-square-red"
+            }
+            else{
+                document.getElementById("home-circle").className = "btn-home-green"
+                document.getElementById("home-box").className = "home-square-green"
+            }   
+        }
+    },1000)
 }
 
 function EmergencyButton(){
-    if(window.location.pathname.split('/')[1] === "installer-toolbox"){
-        return(
-            <div id="emergency-circle" className="btn-emergency-gray">
-                <p id="emergency-plus" className="emergency-plus-gray">
-                    +
-                </p>
-            </div>
-        )
-    } // Need to update to flashing white on alarm, need to check/graph colors displayed by buttons and set up statements to track this
-    else{
-        return(
-            <div id="emergency-circle" className="btn-emergency-white">
-                <p id="emergency-plus" className="emergency-plus-white">
-                    +
-                </p>
-            </div>
-        )
-    } 
+    setInterval(()=>{
+        console.log(document.getElementById("emergency-circle"))
+        if(document.getElementById("emergency-circle") !== null){
+            if(window.location.pathname.split('/')[1] === "installer-toolbox"){
+                document.getElementById("emergency-circle").className = "btn-emergency-gray"
+                document.getElementById("emergency-plus").className = "emergency-plus-gray"
+            } // Need to update to flashing white on alarm, need to check/graph colors displayed by buttons and set up statements to track this
+            else{
+                document.getElementById("emergency-circle").className = "btn-emergency-white"
+                document.getElementById("emergency-plus").className = "emergency-plus-white"
+            } 
+        }    
+    },1000)
 }
 
 function Panel() {
+    useEffect(() => {
+        EmergencyButton()
+        HomeButton()
+    });
+
     return (
         <div className="casing-rim">
             <div className="casing-plate">
@@ -116,9 +89,12 @@ function Panel() {
                     <Route path="/installer-toolbox/system-configuration/menu" component={SystemConfiguration} />
                     <Route path="/installer-toolbox/system-configuration/wireless-zones/menu" component={SystemConfigurationWirelessZones} />
                     <Route path="/installer-toolbox/system-configuration/wireless-zones/edit" component={WorkInProgress} />
-                    <Route path="/installer-toolbox/system-configuration/wired-zones" component={WorkInProgress} />
-                    <Route path="/installer-toolbox/system-configuration/keyfobs" component={WorkInProgress} />
-                    <Route path="/installer-toolbox/system-configuration/keypads" component={WorkInProgress} />
+                    <Route path="/installer-toolbox/system-configuration/wired-zones/menu" component={SystemConfigurationWiredZones} />
+                    <Route path="/installer-toolbox/system-configuration/wired-zones/edit" component={WorkInProgress} />
+                    <Route path="/installer-toolbox/system-configuration/keyfobs/menu" component={SystemConfigurationKeyfobs} />
+                    <Route path="/installer-toolbox/system-configuration/keyfobs/edit" component={WorkInProgress} />
+                    <Route path="/installer-toolbox/system-configuration/keypads/menu" component={SystemConfigurationKeypads} />
+                    <Route path="/installer-toolbox/system-configuration/keypads/edit" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/panel-programming" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/image-sensors" component={WorkInProgress} />
                     <Route path="/installer-toolbox/smart-home/menu" component={SmartHomeSettings} />
@@ -183,14 +159,21 @@ function Panel() {
                 </Switch>
         
                 <Link to="/emergency">
-                    <EmergencyButton/>
+                    <div id="emergency-circle" className="btn-emergency-white">
+                        <p id="emergency-plus" className="emergency-plus-white">
+                            +
+                        </p>
+                    </div>
                 </Link>
 
                 <Link to="/">
-                    <HomeButton/>
+                    <div id="home-circle" className="btn-home-green">
+                        <div id="home-box" className="home-square-green">
+                        </div>
+                    </div>
                 </Link>
             
-                <div className="microphone" onLoad={() => colorCheck()}>
+                <div className="microphone">
                 </div>
             </div>
         </div>

@@ -112,7 +112,6 @@ function InstallerToolboxNote(){
 function HomeNote(){
   var funlength = 5
   var funnum = getRandomInt(1,funlength + 1)
-  console.log(funnum)
   if (funnum === 1){
     return (
       <div className="yellow-notes" id="yellow-info">

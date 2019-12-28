@@ -16,7 +16,7 @@ function SystemConfiguration() {
             <div className="screen-header">
                 <img src={installer_toolbox_icon} className="resize-1 invert-color" alt="" />
 
-                <p>
+                <p style={{'marginLeft':"30px"}}>
                     System Configuration
                 </p>
             </div>
@@ -45,7 +45,7 @@ function SystemConfiguration() {
                         </div>
                     </Link>
 
-                    <Link to="/installer-toolbox/system-configuration/wired-zones">
+                    <Link to="/installer-toolbox/system-configuration/wired-zones/menu">
                         <div className="btn-option">
                             <img src={hardwired_icon} className="option-img invert-color" alt="" />
 
@@ -59,7 +59,7 @@ function SystemConfiguration() {
                         </div>
                     </Link>
 
-                    <Link to="/installer-toolbox/system-configuration/keyfobs">
+                    <Link to="/installer-toolbox/system-configuration/keyfobs/menu">
                         <div className="btn-option">
                             <img src={keyfob_icon} className="option-img invert-color" alt="" />
 
@@ -69,7 +69,7 @@ function SystemConfiguration() {
                         </div>
                     </Link>
 
-                    <Link to="/installer-toolbox/system-configuration/keypads">
+                    <Link to="/installer-toolbox/system-configuration/keypads/menu">
                         <div className="btn-option">
                             <img src={keypad_icon} className="option-img" alt="" />
 

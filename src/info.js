@@ -259,6 +259,20 @@ function HackPage() {
                                 Working on getting the page to update what it shows when I update the returns. Not updating after first instance need to look into a way to make sure that the function re-returns itself. Once completed and working will move onto editing the programming and implimenting alarms into the panel.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                12/27/2019 Jared J.
+                            </td>
+
+                            <td>
+                                Finally finished getting the system configuration wireless zones, wired zones, keyfobs, and keypads menu screens to work and update with correct information with great help from Steven B.
+                            </td>
+
+                            <td>
+                                Next step is building the edit screens for those same system configuration zones after that I will begin on implimenting the sidebar into setting off alarms and alerts. I also need to finish updating users in system settings.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -278,7 +292,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 12/19/2019 12:07:38PM
+                    Last Updated: 12/27/2019 10:10:28PM
                 </footer>
             </div>
         </div>
