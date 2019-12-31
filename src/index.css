@@ -1016,3 +1016,54 @@ header{
     color:white;
     font-size: 15px;
 }
+.keypad-data-top{
+    height: 45px;
+    width: 310px;
+    background-color: white;
+    margin-top: 48px;
+    border-radius: 5px;
+    margin-left: 14px;
+}
+.keypad-data-bottom{
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    height: 185px;
+    width: 318px;
+    margin-left: 5px;
+}
+.expander-programming{
+    float: right;
+    color: lightslategray;
+    font-size: 23px;
+    margin-top: 6px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.display-programming{
+    position: absolute;
+    margin-left: 14px;
+    font-weight: bold;
+    color: #448cc0;
+    margin-top: 15px;
+}
+.options-sensor-type{
+    height: 187px;
+    width: 309px;
+    background-color: white;
+    margin-left: 14px;
+    margin-top: 8px;
+    border-radius: 5px;
+    overflow:hidden;
+}
+.reset-button{
+    width: 138px;
+    height: 24px;
+    background-color: #c92828;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 79px;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+    background-image:linear-gradient(to top left,#a81010,  transparent);
+}

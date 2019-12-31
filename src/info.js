@@ -273,6 +273,20 @@ function HackPage() {
                                 Next step is building the edit screens for those same system configuration zones after that I will begin on implimenting the sidebar into setting off alarms and alerts. I also need to finish updating users in system settings.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                12/28/2019 Jared J.
+                            </td>
+
+                            <td>
+                                Started on editing wireless zones, going to take some time go finish as need to modify previous page and expand upon it to get working for all zones in only one page.
+                            </td>
+
+                            <td>
+                                Still working on edit page.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -292,7 +306,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 12/27/2019 10:10:28PM
+                    Last Updated: 12/28/2019 6:15:53PM
                 </footer>
             </div>
         </div>

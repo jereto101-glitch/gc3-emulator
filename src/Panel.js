@@ -25,6 +25,7 @@ import SystemConfigurationWirelessZones from './screen/SystemConfigurationWirele
 import SystemConfigurationWiredZones from './screen/SystemConfigurationWiredZones';
 import SystemConfigurationKeyfobs from './screen/SystemConfigurationKeyfobs';
 import SystemConfigurationKeypads from './screen/SystemConfigurationKeypads';
+import SystemConfigurationWirelessEdit from './screen/SystemConfigurationWirelessZonesEditZone';
 // import Users from "./screen/Users";
 // import UsersEditUser from "./screen/UsersEditUser";
 
@@ -88,7 +89,7 @@ function Panel() {
                     <Route path="/installer-toolbox/menu" component={InstallerMenu} />
                     <Route path="/installer-toolbox/system-configuration/menu" component={SystemConfiguration} />
                     <Route path="/installer-toolbox/system-configuration/wireless-zones/menu" component={SystemConfigurationWirelessZones} />
-                    <Route path="/installer-toolbox/system-configuration/wireless-zones/edit" component={WorkInProgress} />
+                    <Route path="/installer-toolbox/system-configuration/wireless-zones/edit" component={SystemConfigurationWirelessEdit} />
                     <Route path="/installer-toolbox/system-configuration/wired-zones/menu" component={SystemConfigurationWiredZones} />
                     <Route path="/installer-toolbox/system-configuration/wired-zones/edit" component={WorkInProgress} />
                     <Route path="/installer-toolbox/system-configuration/keyfobs/menu" component={SystemConfigurationKeyfobs} />
