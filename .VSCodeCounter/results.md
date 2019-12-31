@@ -1,27 +1,27 @@
 # Summary
 
-Date : 2019-12-14 20:45:29
+Date : 2019-12-31 07:10:12
 
 Directory c:\Users\jajohnson\gc3_emulator\src
 
-Total : 108 files,  14064 codes, 87 comments, 1606 blanks, all 15757 lines
+Total : 108 files,  15897 codes, 1243 comments, 1836 blanks, all 18976 lines
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| JavaScript | 102 | 12,981 | 77 | 1,588 | 14,646 |
-| CSS | 2 | 946 | 10 | 4 | 960 |
+| JavaScript | 102 | 14,704 | 1,233 | 1,818 | 17,755 |
+| CSS | 2 | 1,056 | 10 | 4 | 1,070 |
 | Markdown | 2 | 133 | 0 | 13 | 146 |
 | XML | 2 | 4 | 0 | 1 | 5 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 108 | 14,064 | 87 | 1,606 | 15,757 |
+| . | 108 | 15,897 | 1,243 | 1,836 | 18,976 |
 | .VSCodeCounter | 2 | 133 | 0 | 13 | 146 |
 | images | 2 | 4 | 0 | 1 | 5 |
-| screen | 93 | 10,603 | 30 | 1,167 | 11,800 |
+| screen | 93 | 12,257 | 1,186 | 1,383 | 14,826 |
 
 [details](details.md)
