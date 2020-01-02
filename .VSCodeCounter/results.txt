@@ -1,13 +1,13 @@
-Date : 2019-12-31 07:10:12
+Date : 2020-01-01 21:12:45
 Directory : c:\Users\jajohnson\gc3_emulator\src
-Total : 108 files,  15897 codes, 1243 comments, 1836 blanks, all 18976 lines
+Total : 108 files,  17282 codes, 1107 comments, 1977 blanks, all 20366 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| JavaScript |        102 |     14,704 |      1,233 |      1,818 |     17,755 |
-| CSS        |          2 |      1,056 |         10 |          4 |      1,070 |
+| JavaScript |        102 |     15,979 |      1,091 |      1,958 |     19,028 |
+| CSS        |          2 |      1,166 |         16 |          5 |      1,187 |
 | Markdown   |          2 |        133 |          0 |         13 |        146 |
 | XML        |          2 |          4 |          0 |          1 |          5 |
 +------------+------------+------------+------------+------------+------------+
@@ -16,10 +16,10 @@ Directories
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                           | files      | code       | comment    | blank      | total      |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                              |        108 |     15,897 |      1,243 |      1,836 |     18,976 |
+| .                                                                                              |        108 |     17,282 |      1,107 |      1,977 |     20,366 |
 | .VSCodeCounter                                                                                 |          2 |        133 |          0 |         13 |        146 |
 | images                                                                                         |          2 |          4 |          0 |          1 |          5 |
-| screen                                                                                         |         93 |     12,257 |      1,186 |      1,383 |     14,826 |
+| screen                                                                                         |         93 |     13,532 |      1,044 |      1,523 |     16,099 |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 
 Files
@@ -38,7 +38,7 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\SideBar.js                                                 | JavaScript |        666 |          2 |        197 |        865 |
 | c:\Users\jajohnson\gc3_emulator\src\images\chat-icon.svg                                       | XML        |          1 |          0 |          0 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\images\emergency-fire.svg                                  | XML        |          3 |          0 |          1 |          4 |
-| c:\Users\jajohnson\gc3_emulator\src\index.css                                                  | CSS        |      1,056 |         10 |          3 |      1,069 |
+| c:\Users\jajohnson\gc3_emulator\src\index.css                                                  | CSS        |      1,166 |         16 |          4 |      1,186 |
 | c:\Users\jajohnson\gc3_emulator\src\index.js                                                   | JavaScript |          8 |          0 |          3 |         11 |
 | c:\Users\jajohnson\gc3_emulator\src\info.js                                                    | JavaScript |        253 |          0 |         63 |        316 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\Alarm.js                                            | JavaScript |        207 |          0 |         38 |        245 |
@@ -111,7 +111,7 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZones.js                    | JavaScript |      1,646 |          1 |         47 |      1,694 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZonesEditZone.js            | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZones.js                 | JavaScript |      2,138 |          1 |         47 |      2,186 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js         | JavaScript |      1,103 |      1,152 |         74 |      2,329 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js         | JavaScript |      2,378 |      1,010 |        214 |      3,602 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfo.js                                       | JavaScript |         79 |          0 |         19 |         98 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoDealerInfo.js                             | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoHistory.js                                | JavaScript |          0 |          0 |          1 |          1 |
@@ -134,5 +134,5 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewName.js                                     | JavaScript |        534 |          0 |         78 |        612 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgress.js                                   | JavaScript |         23 |          0 |          4 |         27 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgressHack.js                               | JavaScript |         24 |          0 |          4 |         28 |
-| Total                                                                                          |            |     15,897 |      1,243 |      1,836 |     18,976 |
+| Total                                                                                          |            |     17,282 |      1,107 |      1,977 |     20,366 |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
