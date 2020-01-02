@@ -4,6 +4,10 @@ import wifi_icon from '../images/wifi.png'
 import up_arrow_icon from '../images/up-arrow.png';
 import down_arrow_icon from '../images/down-arrow.png';
 import backspace_icon from "../images/backspace.png";
+import rewind_icon from "../images/rewind.png";
+import fast_forward_icon from "../images/fast-forward.png";
+import info_gray_icon from "../images/info-gray.png";
+import check_icon from '../images/check.png';
 
 // Update functions to change inner html and to be run on every click of a new zone and the onload of the last JSX element
 
@@ -902,6 +906,7 @@ function partDescription(source, indicator){
 
 function SystemConfigurationWirelessEdit(){
     const [Sensor_Type,setSensor_Type] = useState(`00 - Unused`)
+    const [Sensor_Equipment_Type,setSensor_Equipment_Type] = useState(`Motion`)
     const [Equipment_Code,setEquipment_Code] = useState(`0000 - Other`)
     const [Serial_Number,setSerial_Number] = useState(`0000000`)
     const [Smart_Areas_Assignment,setSmart_Areas_Assignment] = useState(`S1`)
@@ -912,6 +917,8 @@ function SystemConfigurationWirelessEdit(){
     const [Sensor_Reports,setSensor_Reports] = useState(`Enabled`)
     const [Sensor_Supervised,setSensor_Supervised] = useState(`Enabled`)
     const [Sensor_Chime,setSensor_Chime] = useState(`Disabled`)
+    const [Current_Zone,setCurrent_Zone] = useState(`Wireless Zone 001`)
+    const [ZoneProgramming, setZoneProgramming] = useState("idk what to do here yet")
     
     // function SensorType(){
     //     if(document.getElementById('sensor-type') !== undefined){
@@ -1172,7 +1179,7 @@ function SystemConfigurationWirelessEdit(){
     //         setEquipment_Code(`1064 - 2GIG Bypass Sensor`)
     //     }
     //     else if (datapass === "1065"){
-    //         setEquipment_Code(`0863 - 2GIG Flood Sensor`)
+    //         setEquipment_Code(`1065 - 2GIG Flood Sensor`)
     //     }
     //     else if (datapass === "1066"){
     //         setEquipment_Code(`1066 - 2GIG Shock Sensor`)
@@ -1933,161 +1940,738 @@ function SystemConfigurationWirelessEdit(){
     //     }
     // }
 
-    // function choseZone(id){
-    //     console.log("-------------")
-    //     console.log("NEW ZONE DATA")
-    //     console.log("-------------")
-    //     if (document.getElementById("zone-eight") !== null){
-    //         var selector = id
-    //         var el = document.querySelector('.config-container-scroll');
-    //         console.log("scroll: ", el.scrollTop);
-    //         document.getElementById("zone-one").style.backgroundColor = "white";
-    //         document.getElementById("zone-one").style.color = "gray";
-    //         document.getElementById("zone-one").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-two").style.backgroundColor = "white";
-    //         document.getElementById("zone-two").style.color = "gray";
-    //         document.getElementById("zone-two").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-three").style.backgroundColor = "white";
-    //         document.getElementById("zone-three").style.color = "gray";
-    //         document.getElementById("zone-three").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-four").style.backgroundColor = "white";
-    //         document.getElementById("zone-four").style.color = "gray";
-    //         document.getElementById("zone-four").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-five").style.backgroundColor = "white";
-    //         document.getElementById("zone-five").style.color = "gray";
-    //         document.getElementById("zone-five").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-six").style.backgroundColor = "white";
-    //         document.getElementById("zone-six").style.color = "gray";
-    //         document.getElementById("zone-six").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-seven").style.backgroundColor = "white";
-    //         document.getElementById("zone-seven").style.color = "gray";
-    //         document.getElementById("zone-seven").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById("zone-eight").style.backgroundColor = "white";
-    //         document.getElementById("zone-eight").style.color = "gray";
-    //         document.getElementById("zone-eight").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-    //         document.getElementById(selector).style.backgroundColor = "#448cc0";
-    //         document.getElementById(selector).style.color = "white";
-    //         document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
-    //         if (selector === "zone-one"){
-    //             el.scrollTop = 0;
-    //             document.getElementById("up-arrow").style.display = "none"
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = ""
-    //         }
-    //         else if (selector === "zone-two"){
-    //             el.scrollTop = 29;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-three"){
-    //             el.scrollTop = 58;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-four"){
-    //             el.scrollTop = 87;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-five"){
-    //             el.scrollTop = 116;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-six"){
-    //             el.scrollTop = 145;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-seven"){
-    //             el.scrollTop = 174;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = ""
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    //         else if (selector === "zone-eight"){
-    //             el.scrollTop = 232;
-    //             document.getElementById("up-arrow").style.display = ""
-    //             document.getElementById("down-arrow").style.display = "none"
-    //             document.getElementById("filler").style.display = "none"
-    //         }
-    
-    //         SensorType()
-    //         EquipmentCode()
-    //         SerialNumber()
-    //         SmartAreasAssignment()
-    //         EquipmentAge()
-    //         SensorLoop()
-    //         TransmissionDelay()
-    //         VoiceDescriptor()
-    //         SensorReports()
-    //         SensorSupervised()
-    //         SensorChime()
-    //     }
-    // }
+    function updateButtons(selector){
+        var el = document.querySelector('.config-container-scroll');
+        console.log("scroll: ", el.scrollTop);
 
-    // function goUp(){
-    //     if (document.getElementById('zone-two').style.backgroundColor !== 'white'){
-    //         choseZone("zone-one")
-    //     }
-    //     else if (document.getElementById('zone-three').style.backgroundColor !== 'white'){
-    //         choseZone("zone-two")
-    //     }
-    //     else if (document.getElementById('zone-four').style.backgroundColor !== 'white'){
-    //         choseZone("zone-three")
-    //     }
-    //     else if (document.getElementById('zone-five').style.backgroundColor !== 'white'){
-    //         choseZone("zone-four")
-    //     }
-    //     else if (document.getElementById('zone-six').style.backgroundColor !== 'white'){
-    //         choseZone("zone-five")
-    //     }
-    //     else if (document.getElementById('zone-seven').style.backgroundColor !== 'white'){
-    //         choseZone("zone-six")
-    //     }
-    //     else if (document.getElementById('zone-eight').style.backgroundColor !== 'white'){
-    //         choseZone("zone-seven")
-    //     }
-    // }
+        if (selector === "sensor-type"){
+            el.scrollTop = 0;
+            document.getElementById("up-arrow").style.display = "none"
+            document.getElementById("down-arrow").style.display = ""
+            console.log(Current_Zone)
+            if(Current_Zone === "Wireless Zone 001"){
+                document.getElementById("left-arrow").style.display = "none"
+                document.getElementById("filler").style.display = ""
+            }
+            else{
+                document.getElementById("left-arrow").style.display = ""
+                document.getElementById("filler").style.display = "none"
+            }
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "equipment-code"){
+            el.scrollTop = 30;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "serial-number"){
+            el.scrollTop = 64;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "smart-areas-assignment"){
+            el.scrollTop = 96;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "equipment-age"){
+            el.scrollTop = 128;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "sensor-loop"){
+            el.scrollTop = 160;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "transmission-delay"){
+            el.scrollTop = 192;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "voice-descriptor"){
+            el.scrollTop = 224;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "sensor-reports"){
+            el.scrollTop = 256;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "sensor-supervised"){
+            el.scrollTop = 288;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+        }
+        else if (selector === "sensor-chime"){
+            el.scrollTop = 320;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = "none"
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            if(Current_Zone !== "Wireless Zone 008"){
+                document.getElementById("right-arrow").style.display = ""
+            }
+            else{
+                document.getElementById("right-arrow").style.display = ""
+            }
+        }
+    }
+
+    function choseAttribute(id){
+        if (document.getElementById("sensor-chime") !== null){
+            if(document.getElementById("serial-number").style.backgroundColor !== "white"){
+                var fillSerial = true
+                var valCheck = document.getElementById("serial-number-store").value
+                if(valCheck.length === 7){
+                    if(valCheck.slice(0) !== "0"){
+                        invalidSerialNumberOn()
+                        return
+                    }
+                }
+            }
+            var selector = id
+            console.log("id: ", selector)
+            document.getElementById("sensor-type").style.backgroundColor = "white";
+            document.getElementById("sensor-type").style.color = "#404956";
+            document.getElementById("sensor-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-type-span").style.color = "gray";
+            document.getElementById("sensor-equipment-type").style.backgroundColor = "white";
+            document.getElementById("sensor-equipment-type").style.color = "#404956";
+            document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-equipment-type-span").style.color = "gray";
+            document.getElementById("equipment-code").style.backgroundColor = "white";
+            document.getElementById("equipment-code").style.color = "#404956";
+            document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("equipment-code-span").style.color = "gray";
+            document.getElementById("serial-number").style.backgroundColor = "white";
+            document.getElementById("serial-number").style.color = "#404956";
+            document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("serial-number-span").style.color = "gray";
+            document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
+            document.getElementById("smart-areas-assignment").style.color = "#404956";
+            document.getElementById("smart-areas-assignment").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("smart-areas-assignment-span").style.color = "gray";
+            document.getElementById("equipment-age").style.backgroundColor = "white";
+            document.getElementById("equipment-age").style.color = "#404956";
+            document.getElementById("equipment-age").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("equipment-age-span").style.color = "gray";
+            document.getElementById("sensor-loop").style.backgroundColor = "white";
+            document.getElementById("sensor-loop").style.color = "#404956";
+            document.getElementById("sensor-loop").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-loop-span").style.color = "gray";
+            document.getElementById("transmission-delay").style.backgroundColor = "white";
+            document.getElementById("transmission-delay").style.color = "#404956";
+            document.getElementById("transmission-delay").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("transmission-delay-span").style.color = "gray";
+            document.getElementById("voice-descriptor").style.backgroundColor = "white";
+            document.getElementById("voice-descriptor").style.color = "#404956";
+            document.getElementById("voice-descriptor").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("voice-descriptor-span").style.color = "gray";
+            document.getElementById("sensor-reports").style.backgroundColor = "white";
+            document.getElementById("sensor-reports").style.color = "#404956";
+            document.getElementById("sensor-reports").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-reports-span").style.color = "gray";
+            document.getElementById("sensor-supervised").style.backgroundColor = "white";
+            document.getElementById("sensor-supervised").style.color = "#404956";
+            document.getElementById("sensor-supervised").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-supervised-span").style.color = "gray";
+            document.getElementById("sensor-chime").style.backgroundColor = "white";
+            document.getElementById("sensor-chime").style.color = "#404956";
+            document.getElementById("sensor-chime").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-chime-span").style.color = "gray";
+            document.getElementById("sensor-type-display").style.display = "none";
+            document.getElementById("equipment-code-display").style.display = "none";
+            document.getElementById("serial-number-display").style.display = "none";
+            document.getElementById("equipment-age-display").style.display = "none";
+            document.getElementById("transmission-delay-display").style.display = "none";
+            document.getElementById("sensor-reports-display").style.display = "none";
+            document.getElementById("smart-areas-assignment-display").style.display = "none";
+            document.getElementById("sensor-loop-display").style.display = "none";
+            document.getElementById("voice-descriptor-display").style.display = "none";
+            document.getElementById("sensor-supervised-display").style.display = "none";
+            document.getElementById("sensor-chime-display").style.display = "none";
+            document.getElementById(selector).style.backgroundColor = "#448cc0";
+            document.getElementById(selector).style.color = "white";
+            document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
+            var selectorDisplay = selector + "-display"
+            var selectorSpan = selector + "-span"
+            document.getElementById(selectorDisplay).style.display = "";
+            document.getElementById(selectorSpan).style.color = "white";
+
+            updateButtons(selector)
+
+            if(selector === "serial-number"){
+                document.getElementById("serial-number-store").value = Serial_Number
+                document.getElementById("serial-number-store").style.backgroundColor = "#E2E2E2"
+            }
+
+            if(fillSerial === true){
+                var val = document.getElementById("serial-number-store").value;
+                var check = false
+
+                while(check !== true){
+                    if(val.length < 7){
+                        val = "0" + val
+                    }
+
+                    if(val.length === 7){
+                        check = true
+                    }
+                }
+
+                document.getElementById("serial-number-store").value = val
+                setSerial_Number(val)
+            }
+        }
+    }
+
+    function goUp(){
+        if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-type")
+        }
+        else if (document.getElementById('serial-number').style.backgroundColor !== 'white'){
+            choseAttribute("equipment-code")
+        }
+        else if (document.getElementById('smart-areas-assignment').style.backgroundColor !== 'white'){
+            choseAttribute("serial-number")
+        }
+        else if (document.getElementById('equipment-age').style.backgroundColor !== 'white'){
+            choseAttribute("smart-areas-assignment")
+        }
+        else if (document.getElementById('sensor-loop').style.backgroundColor !== 'white'){
+            choseAttribute("equipment-age")
+        }
+        else if (document.getElementById('transmission-delay').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-loop")
+        }
+        else if (document.getElementById('voice-descriptor').style.backgroundColor !== 'white'){
+            choseAttribute("transmission-delay")
+        }
+        else if (document.getElementById('sensor-reports').style.backgroundColor !== 'white'){
+            choseAttribute("voice-descriptor")
+        }
+        else if (document.getElementById('sensor-supervised').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-reports")
+        }
+        else if (document.getElementById('sensor-chime').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-supervised")
+        }
+    }
     
-    // function goDown(){
-    //     if (document.getElementById('zone-one').style.backgroundColor !== 'white'){
-    //         choseZone("zone-two")
-    //     }
-    //     else if (document.getElementById('zone-two').style.backgroundColor !== 'white'){
-    //         choseZone("zone-three")
-    //     }
-    //     else if (document.getElementById('zone-three').style.backgroundColor !== 'white'){
-    //         choseZone("zone-four")
-    //     }
-    //     else if (document.getElementById('zone-four').style.backgroundColor !== 'white'){
-    //         choseZone("zone-five")
-    //     }
-    //     else if (document.getElementById('zone-five').style.backgroundColor !== 'white'){
-    //         choseZone("zone-six")
-    //     }
-    //     else if (document.getElementById('zone-six').style.backgroundColor !== 'white'){
-    //         choseZone("zone-seven")
-    //     }
-    //     else if (document.getElementById('zone-seven').style.backgroundColor !== 'white'){
-    //         choseZone("zone-eight")
-    //     }
-    // }
+    function goDown(){
+        if (document.getElementById('sensor-type').style.backgroundColor !== 'white'){
+            choseAttribute("equipment-code")
+        }
+        else if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
+            choseAttribute("serial-number")
+        }
+        else if (document.getElementById('serial-number').style.backgroundColor !== 'white'){
+            choseAttribute("smart-areas-assignment")
+        }
+        else if (document.getElementById('smart-areas-assignment').style.backgroundColor !== 'white'){
+            choseAttribute("equipment-age")
+        }
+        else if (document.getElementById('equipment-age').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-loop")
+        }
+        else if (document.getElementById('sensor-loop').style.backgroundColor !== 'white'){
+            choseAttribute("transmission-delay")
+        }
+        else if (document.getElementById('transmission-delay').style.backgroundColor !== 'white'){
+            choseAttribute("voice-descriptor")
+        }
+        else if (document.getElementById('voice-descriptor').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-reports")
+        }
+        else if (document.getElementById('sensor-reports').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-supervised")
+        }
+        else if (document.getElementById('sensor-supervised').style.backgroundColor !== 'white'){
+            choseAttribute("sensor-chime")
+        }
+    }
 
     function showOptions(selector){
-        if(document.getElementById("sensor-type-keypad").style.display === ""){
-            document.getElementById("sensor-type-keypad").style.display = "none"
-            document.getElementById("sensor-type-options").style.display = ""
+        if(selector === "sensor-type"){
+            if(document.getElementById("sensor-type-keypad").style.display === ""){
+                document.getElementById("sensor-type-keypad").style.display = "none"
+                document.getElementById("sensor-type-options").style.display = ""
+            }
+            else{
+                document.getElementById("sensor-type-keypad").style.display = ""
+                document.getElementById("sensor-type-options").style.display = "none"
+            }
         }
-        else{
-            document.getElementById("sensor-type-keypad").style.display = ""
-            document.getElementById("sensor-type-options").style.display = "none"
+        else if(selector === "equipment-code"){
+            if(document.getElementById("equipment-code-keypad").style.display === ""){
+                document.getElementById("equipment-code-keypad").style.display = "none"
+                document.getElementById("equipment-code-options").style.display = ""
+            }
+            else{
+                document.getElementById("equipment-code-keypad").style.display = ""
+                document.getElementById("equipment-code-options").style.display = "none"
+            }
         }
+    }
+
+    function nextZone(){
+        if(Current_Zone === "Wireless Zone 001"){
+            setCurrent_Zone('Wireless Zone 002')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 002"){
+            setCurrent_Zone('Wireless Zone 003')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 003"){
+            setCurrent_Zone('Wireless Zone 004')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 004"){
+            setCurrent_Zone('Wireless Zone 005')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 005"){
+            setCurrent_Zone('Wireless Zone 006')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 006"){
+            setCurrent_Zone('Wireless Zone 007')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 007"){
+            setCurrent_Zone('Wireless Zone 008')
+            choseAttribute("sensor-type")
+            updateButtons("sensor-type")
+        }
+    }
+
+    function previousZone(){
+        if(Current_Zone === "Wireless Zone 002"){
+            setCurrent_Zone('Wireless Zone 001')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 003"){
+            setCurrent_Zone('Wireless Zone 002')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 004"){
+            setCurrent_Zone('Wireless Zone 003')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 005"){
+            setCurrent_Zone('Wireless Zone 004')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 006"){
+            setCurrent_Zone('Wireless Zone 005')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 007"){
+            setCurrent_Zone('Wireless Zone 006')
+            choseAttribute("sensor-type")
+        }
+        else if(Current_Zone === "Wireless Zone 008"){
+            setCurrent_Zone('Wireless Zone 007')
+            choseAttribute("sensor-type")
+        }
+    }
+
+    function addCodeSensorType(key){
+        var val = document.getElementById("sensor-type-store").value;
+
+        if(document.getElementById("sensor-type-store").style.backgroundColor !== "white"){
+            document.getElementById("sensor-type-store").style.backgroundColor = "white"
+            document.getElementById("sensor-type-store").value = key
+        }
+    
+        if(val.length < 2){
+            val = val + "" + key;
+            document.getElementById("sensor-type-store").value = val
+        }
+        if(val.length === 2){
+            if(val === "00"){
+                updateSensorType("00 - Unused")
+            }
+            else if(val === "01"){
+                updateSensorType("01 - Exit/Entry 1")
+            }
+            else if(val === "02"){
+                updateSensorType("02 - Exit/Entry 2")
+            }
+            else if(val === "03"){
+                updateSensorType("03 - Perimeter")
+            }
+            else if(val === "04"){
+                updateSensorType("04 - Interior Follower")
+            }
+            else if(val === "05"){
+                updateSensorType("05 - Day Zone")
+            }
+            else if(val === "06"){
+                updateSensorType("06 - 24-Hour Silent Alarm")
+            }
+            else if(val === "07"){
+                updateSensorType("07 - 24-Hour Audible Alarm")
+            }
+            else if(val === "08"){
+                updateSensorType("08 - 24-Hour Auxiliary Alarm")
+            }
+            else if(val === "09"){
+                updateSensorType("09 - 24-Hour Fire")
+            }
+            else if(val === "10"){
+                updateSensorType("10 - Interior with Delay")
+            }
+            else if(val === "14"){
+                updateSensorType("14 - 24-Hour Carbon Monoxide")
+            }
+            else if(val === "16"){
+                updateSensorType("16 - 24-Hour Fire Verification")
+            }
+            else if(val === "23"){
+                updateSensorType("23 - No Response Type")
+            }
+            else if(val === "24"){
+                updateSensorType("24 - Silent Burglary")
+            }
+            else if(val === "32"){
+                updateSensorType("32 - Remote Device")
+            }
+            else{
+                invalidSensorTypeOn()
+            }
+        }
+    }
+    
+    function backspaceCodeSensorType(){
+        var val = document.getElementById("sensor-type-store").value;
+        val = val.slice(0, -1);
+        document.getElementById("sensor-type-store").value = val;
+    }
+
+
+    function invalidSensorTypeOn(){
+        document.getElementById("invalid-sensor-type").style.display = ""
+    }
+
+    function invalidSensorTypeOff(){
+        document.getElementById("invalid-sensor-type").style.display = "none"
+    }
+
+    function updateSensorType(value){
+        var retrievedSensors = localStorage.getItem("panelSensors");
+        retrievedSensors = JSON.parse(retrievedSensors)
+
+        if(value === "00 - Unused"){
+            setSensor_Type("00 - Unused")  //Hide Sensor Equipment Type
+        }
+        else if(value === "01 - Exit/Entry 1"){
+            setSensor_Type("01 - Exit/Entry 1") //Hide Sensor Equipment Type
+        }
+        else if(value === "02 - Exit/Entry 2"){
+            setSensor_Type("02 - Exit/Entry 2") //Hide Sensor Equipment Type
+        }
+        else if(value === "03 - Perimeter"){
+            setSensor_Type("03 - Perimeter") //Hide Sensor Equipment Type
+        }
+        else if(value === "04 - Interior Follower"){
+            setSensor_Type("04 - Interior Follower") //Show Sensor Equipment Type Motion and Contact
+        }
+        else if(value === "05 - Day Zone"){
+            setSensor_Type("05 - Day Zone") //Hide Sensor Equipment Type
+        }
+        else if(value === "06 - 24-Hour Silent Alarm"){
+            setSensor_Type("06 - 24-Hour Silent Alarm") //Show Sensor Equipment Type Contact and Emergency
+        }
+        else if(value === "07 - 24-Hour Audible Alarm"){
+            setSensor_Type("07 - 24-Hour Audible Alarm") //Show Sensor Equipment Type Contact and Emergency
+        }
+        else if(value === "08 - 24-Hour Auxiliary Alarm"){
+            setSensor_Type("08 - 24-Hour Auxiliary Alarm") //Show Sensor Equipment Type Contact and Emergency
+        }
+        else if(value === "09 - 24-Hour Fire"){
+            setSensor_Type("09 - 24-Hour Fire") //Hide Sensor Equipment Type
+        }
+        else if(value === "10 - Interior with Delay"){
+            setSensor_Type("10 - Interior with Delay") //Show Sensor Equipment Type Motion and Contact
+        }
+        else if(value === "14 - 24-Hour Carbon Monoxide"){
+            setSensor_Type("14 - 24-Hour Carbon Monoxide") //Hide Sensor Equipment Type
+        }
+        else if(value === "16 - 24-Hour Fire Verification"){
+            setSensor_Type("16 - 24-Hour Fire Verification") //Hide Sensor Equipment Type
+        }
+        else if(value === "23 - No Response Type"){
+            setSensor_Type("23 - No Response Type") //Show Sensor Equipment Type Motion and Contact
+        }
+        else if(value === "24 - Silent Burglary"){
+            setSensor_Type("24 - Silent Burglary") //Hide Sensor Equipment Type
+        }
+        else if(value === "32 - Remote Device"){
+            setSensor_Type("32 - Remote Device") //Hide Sensor Equipment Type
+        }
+    }
+
+    function invalidEquipmentCodeOn(){
+        document.getElementById("invalid-equipment-code").style.display = ""
+    }
+
+    function invalidEquipmentCodeOff(){
+        document.getElementById("invalid-equipment-code").style.display = "none"
+    }
+
+    function updateEquipmentCode(value){
+        var retrievedSensors = localStorage.getItem("panelSensors");
+        retrievedSensors = JSON.parse(retrievedSensors)
+
+        if (value === "0000 - Other"){
+            setEquipment_Code('0000 - Other')
+        }
+        else if (value === "0862 - 2GIG Thin Door/Window Contact"){
+            setEquipment_Code('0862 - 2GIG Thin Door/Window Contact')
+        }
+        else if (value === "0863 - 2GIG Recessed Door Contact"){
+            setEquipment_Code(`0863 - 2GIG Recessed Door Contact`)
+        }
+        else if (value === "0865 - 2GIG Outdoor Door/Window Sensor"){
+            setEquipment_Code(`0865 - 2GIG Outdoor Door/Window Sensor`)
+        }
+        else if (value === "0869 - 2GIG POR with Pet Immunity"){
+            setEquipment_Code(`0869 - 2GIG POR with Pet Immunity`)
+        }
+        else if (value === "0864 - 2GIG Glass Break Detector"){
+            setEquipment_Code(`0864 - 2GIG Glass Break Detector`)
+        }
+        else if (value === "0895 - SMKT2-345 GE Smoke/Heat Detector"){
+            setEquipment_Code(`0895 - SMKT2-345 GE Smoke/Heat Detector`)
+        }
+        else if (value === "1058 - 2GIG Smoke Detector"){
+            setEquipment_Code(`1085 - 2GIG Smoke Detector`)
+        }
+        else if (value === "0872 - SMKE1-345 Smoke Detector(USA)"){
+            setEquipment_Code(`0872 - SMKE1-345 Smoke Detector(USA)`)
+        }
+        else if (value === "0871 - SMKE1-345 Smoke Detector(Canada)"){
+            setEquipment_Code(`0871 - SMKE1-345 Smoke Detector(Canada)`)
+        }
+        else if (value === "0868 - 2GIG Panic Button Remote"){
+            setEquipment_Code(`0868 - 2GIG Panic Button Remote`)
+        }
+        else if (value === "0860 - CO1-345 CO Detector(USA)"){
+            setEquipment_Code(`0860 - CO1-345 CO Detector(USA)`)
+        }
+        else if (value === "0859 - CO1-345 CO Detector(Canada)"){
+            setEquipment_Code(`0859 - CO1-345 CO Detector(Canada)`)
+        }
+        else if (value === "1026 - 2GIG CO Detector"){
+            setEquipment_Code(`1026 - 2GIG CO Detector`)
+        }
+        else if (value === "1069 - 2GIG FireFighter SMKT/CO Listener"){
+            setEquipment_Code(`1069 - 2GIG FireFighter SMKT/CO Listener`)
+        }
+        else if (value === "0873 - 2GIG Takeover Module"){
+            setEquipment_Code(`0873 - 2GIG Takeover Module`)
+        }
+        else if (value === `0637 - HW D/W "5816"`){
+            setEquipment_Code(`0637 - HW D/W "5816"`)
+        }
+        else if (value === `0470 - HW R-D/W "5818MNL"`){
+            setEquipment_Code(`0470 - HW R-D/W "5818MNL"`)
+        }
+        else if (value === `0533 - HW PIR "5890"`){
+            setEquipment_Code(`0533 - HW PIR "5890"`)
+        }
+        else if (value === `0530 - HW PIR "5894PI"`){
+            setEquipment_Code(`0530 - HW PIR "5894PI"`)
+        }
+        else if (value === `0519 - HW Glass Break "5853"`){
+            setEquipment_Code(`0519 - HW Glass Break "5853"`)
+        }
+        else if (value === `0589 - HW Smoke "5808W3"`){
+            setEquipment_Code(`0589 - HW Smoke "5808W3"`)
+        }
+        else if (value === `0557 - HW Heat Sensor "5809"`){
+            setEquipment_Code(`0557 - HW Heat Sensor "5809"`)
+        }
+        else if (value === `0624 - HW Flood Sensor "5821"`){
+            setEquipment_Code(`0624 - HW Flood Sensor "5821"`)
+        }
+        else if (value === `0491 - HW Panic Pendant "5802MN2"`){
+            setEquipment_Code(`0491 - HW Panic Pendant "5802MN2"`)
+        }
+        else if (value === "1063 - 2GIG 2GIG Doorbell"){
+            setEquipment_Code(`1063 - 2GIG 2GIG Doorbell`)
+        }
+        else if (value === "1061 - Tilt Sensor"){
+            setEquipment_Code(`1061 - Tilt Sensor`)
+        }
+        else if (value === "1062 - 2GIG Tilt Sensor"){
+            setEquipment_Code(`1062 - 2GIG Tilt Sensor`)
+        }
+        else if (value === "1064 - 2GIG Bypass Sensor"){
+            setEquipment_Code(`1064 - 2GIG Bypass Sensor`)
+        }
+        else if (value === "1065 - 2GIG Flood Sensor"){
+            setEquipment_Code(`1065 - 2GIG Flood Sensor`)
+        }
+        else if (value === "1066 - 2GIG Shock Sensor"){
+            setEquipment_Code(`1066 - 2GIG Shock Sensor`)
+        }
+        else if (value === "1067 - 2GIG Repeater"){
+            setEquipment_Code(`1067 - 2GIG Repeater`)
+        }
+        else if (value === "1068 - 2GIG Translator"){
+            setEquipment_Code(`1068 - 2GIG Translator`)
+        }
+        else if (value === "1070 - 2GIG F1-345"){
+            setEquipment_Code(`1070 - 2GIG F1-345`)
+        }
+        else if (value === "1071 - 2GIG PHB-345"){
+            setEquipment_Code(`1071 - 2GIG PHB-345`)
+        }
+        else if (value === "1072 - 2GIG Smoke Ring"){
+            setEquipment_Code(`1072 - 2GIG Smoke Ring`)
+        }
+        else if (value === "0655 - Existing Door/Window Contact"){
+            setEquipment_Code(`0655 - Existing Door/Window Contact`)
+        }
+        else if (value === "0609 - Existing Motion Detector"){
+            setEquipment_Code(`0609 - Existing Motion Detector`)
+        }
+        else if (value === "0475 - Existing Glass Break Detector"){
+            setEquipment_Code(`0475 - Existing Glass Break Detector`)
+        }
+        else if (value === "0616 - Existing Smoke Detector"){
+            setEquipment_Code(`0616 - Existing Smoke Detector`)
+        }
+        else if (value === "0692 - Existing CO Detector"){
+            setEquipment_Code(`0692 - Existing CO Detector`)
+        }
+        else if (value === "0708 - Existing Heat Sensor"){
+            setEquipment_Code(`0708 - Existing Heat Sensor`)
+        }
+        else if (value === "0556 - Existing Flood/Temp Sensor"){
+            setEquipment_Code(`0556 - Existing Flood/Temp Sensor`)
+        }
+        else if (value === "9999 - Alarm.com Image Sensor"){
+            setEquipment_Code(`9999 - Alarm.com Image Sensor`)
+        }
+        else if (value === "2058 - eSeries Smoke Detector (USA)"){
+            setEquipment_Code(`2058 - eSeries Smoke Detector (USA)`)
+        }
+        else if (value === "2061 - eSeries Tilt Sensor"){
+            setEquipment_Code(`2061 - eSeries Tilt Sensor`)
+        }
+        else if (value === "2065 - eSeries Flood Sensor"){
+            setEquipment_Code(`2065 - eSeries Flood Sensor`)
+        }
+        else if (value === "2066 - eSeries Shock Sensor"){
+            setEquipment_Code(`2066 - eSeries Shock Sensor`)
+        }
+        else if (value === "2067 - eSeries Repeater"){
+            setEquipment_Code(`2067 - eSeries Repeater`)
+        }
+        else if (value === "2069 - eSeries FireFighter SMKT/CO Listener"){
+            setEquipment_Code(`2069 - eSeries FireFighter SMKT/CO Listener`)
+        }
+        else if (value === "2068 - eSeries Translator"){
+            setEquipment_Code(`2068 - eSeries Translator`)
+        }
+        else if (value === "2070 - eSeries Water Sensor"){
+            setEquipment_Code(`2070 - eSeries Water Sensor`)
+        }
+        else if (value === "2860 - eSeries CO Detector (USA)"){
+            setEquipment_Code(`2860 - eSeries CO Detector (USA)`)
+        }
+        else if (value === "2862 - eSeries Thin Door/Window Contact"){
+            setEquipment_Code(`2862 - eSeries Thin Door/Window Contact`)
+        }
+        else if (value === "2863 - eSeries Recessed Door Contact"){
+            setEquipment_Code(`2863 - eSeries Recessed Door Contact`)
+        }
+        else if (value === "2865 - eSeries Outdoor Door/Window Sensor"){
+            setEquipment_Code(`2865 - eSeries Outdoor Door/Window Sensor`)
+        }
+        else if (value === "2864 - eSeries Glass Break Detector"){
+            setEquipment_Code(`2864 - eSeries Glass Break Detector`)
+        }
+        else if (value === "2868 - eSeries Panic"){
+            setEquipment_Code(`2868 - eSeries Panic`)
+        }
+        else if (value === "2869 - eSeries PIR with Pet Immunity"){
+            setEquipment_Code(`2869 - eSeries PIR with Pet Immunity`)
+        }
+        else if (value === "2873 - eSeries Takeover Module"){
+            setEquipment_Code(`2873 - eSeries Takeover Module`)
+        }
+    }
+
+    function invalidSerialNumberOn(){
+        document.getElementById("invalid-serial-number").style.display = ""
+    }
+
+    function invalidSerialNumberOff(){
+        document.getElementById("invalid-serial-number").style.display = "none"
+    }
+
+    function addCodeSerialNumber(key){
+        var val = document.getElementById("serial-number-store").value;
+
+        if(document.getElementById("serial-number-store").style.backgroundColor !== "white"){
+            document.getElementById("serial-number-store").style.backgroundColor = "white"
+            document.getElementById("serial-number-store").value = key
+        }
+    
+        if(val.length < 7){
+            val = val + "" + key;
+            document.getElementById("serial-number-store").value = val
+        }
+        
+        if(val.length === 7){
+            
+        }
+    }
+    
+    function backspaceCodeSerialNumber(){
+        var val = document.getElementById("serial-number-store").value;
+        val = val.slice(0, -1);
+        document.getElementById("serial-number-store").value = val;
     }
 
     // useEffect(() => {
@@ -2103,13 +2687,14 @@ function SystemConfigurationWirelessEdit(){
     //     SensorSupervised()
     //     SensorChime()
     // });
+
     return(
         <div className="screen-style">
             <div className="screen-header">
                 <img src={wifi_icon} className="resize-1 invert-color" alt="" />
 
                 <p style={{'marginLeft':"30px"}} id="header-name-wireless">
-                    Wireless Zone 001
+                    {Current_Zone}
                 </p>
 
                 <Link to="/installer-toolbox/system-configuration/menu">
@@ -2121,23 +2706,191 @@ function SystemConfigurationWirelessEdit(){
                 </Link>
             </div>
 
+            <div id="invalid-sensor-type" style={{'display':"none"}}>
+                <img src={info_gray_icon} alt=""/>
+
+                <p>
+                    Invalid Entry:
+                </p>
+
+                <p>
+                    Sensor Type
+                </p>
+
+                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidSensorTypeOff()}>
+                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+
+                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                        OK
+                    </p>
+                </div>
+            </div>
+
+            <div id="invalid-equipment-code" style={{'display':"none"}}>
+                <img src={info_gray_icon} alt=""/>
+
+                <p>
+                    Invalid Entry:
+                </p>
+
+                <p>
+                    Equipment Code
+                </p>
+
+                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidEquipmentCodeOff()}>
+                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+
+                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                        OK
+                    </p>
+                </div>
+            </div>
+
+            <div id="invalid-serial-number" style={{'display':"none"}}>
+                <img src={info_gray_icon} alt=""/>
+
+                <p>
+                    Invalid Entry:
+                </p>
+
+                <p>
+                    Serial Number
+                </p>
+
+                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidSerialNumberOff()}>
+                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+
+                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                        OK
+                    </p>
+                </div>
+            </div>
+
             <div className="screen-left-settings">
                 <div className="config-container">
                     <div className="config-container-scroll">
                         <div style={{'marginTop':"110px"}}/>
 
                         <ul className="programming-list" style={{'marginTop':"0", 'marginBottom':"0"}}>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Sensor Type</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Sensor_Type}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Equiment Code</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Equipment_Code}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Serial Number</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Serial_Number}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Smart Areas Assignment</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Smart_Areas_Assignment}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Equipment Age</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Equipment_Age}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Sensor Loop</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Sensor_Loop}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Transmission Delay</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Transmission_Delay}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Voice Descriptor</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Voice_Descriptor}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Sensor Reports</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Sensor_Reports}</p></li>
-                            <li className="programming-right-side-list-option"><p style={{'color':"#404956"}}>Sensor Supervised</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Sensor_Supervised}</p></li>
-                            <li className="programming-right-side-list-option" style={{'borderBottom':"1px lightgrey solid"}}><p style={{'color':"#404956"}}>Sensor Chime</p><p id="sensor-type" className="css-grid-align-right" style={{'color':"#404956"}}>{Sensor_Chime}</p></li>
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-type")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-type">
+                                    Sensor Type
+
+                                    <span className="list-span" id="sensor-type-span">
+                                        {Sensor_Type}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-equipment-type")} style={{'display':"none"}}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-equipment-type">
+                                    Sensor Equipment Type
+
+                                    <span className="list-span" id="sensor-equipment-type-span">
+                                        {Sensor_Equipment_Type}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option"  onClick={() => choseAttribute("equipment-code")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="equipment-code">
+                                    Equiment Code
+
+                                    <span className="list-span" id="equipment-code-span">
+                                        {Equipment_Code}
+                                    </span>
+                                </p>
+                            </li>
+                            
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("serial-number")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="serial-number">
+                                    Serial Number
+                                
+                                    <span className="list-span" id="serial-number-span">
+                                        {Serial_Number}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("smart-areas-assignment")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="smart-areas-assignment">
+                                    Smart Areas Assignment
+                                
+                                    <span className="list-span" id="smart-areas-assignment-span">
+                                        {Smart_Areas_Assignment}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("equipment-age")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="equipment-age">
+                                    Equipment Age
+                                
+                                    <span className="list-span" id="equipment-age-span">
+                                        {Equipment_Age}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-loop")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-loop">
+                                    Sensor Loop
+                                
+                                    <span className="list-span" id="sensor-loop-span">
+                                        {Sensor_Loop}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("transmission-delay")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="transmission-delay">
+                                    Transmission Delay
+                                
+                                    <span className="list-span" id="transmission-delay-span">
+                                        {Transmission_Delay}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("voice-descriptor")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="voice-descriptor">
+                                    Voice Descriptor
+                                
+                                    <span className="list-span" id="voice-descriptor-span">
+                                        {Voice_Descriptor}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-reports")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-reports">
+                                    Sensor Reports
+                                
+                                    <span className="list-span" id="sensor-reports-span">
+                                        {Sensor_Reports}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-supervised")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-supervised">
+                                Sensor Supervised
+                                
+                                    <span className="list-span" id="sensor-supervised-span">
+                                        {Sensor_Supervised}
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li className="programming-right-side-list-option" style={{'borderBottom':"1px lightgrey solid"}} onClick={() => choseAttribute("sensor-chime")}>
+                                <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-chime">
+                                    Sensor Chime
+                                
+                                    <span className="list-span" id="sensor-chime-span">
+                                        {Sensor_Chime}
+                                    </span>
+                                </p>
+                            </li>
                         </ul>
 
                         <div className="reset-button">
@@ -2149,12 +2902,13 @@ function SystemConfigurationWirelessEdit(){
                 </div>
             </div>
 
-            <div className="screen-right">
-                {/* Sensor Type */}
+            <div className="screen-right-edit" id="sensor-type-display">
                 <div className="keypad-data-top">
-                    <p className="display-programming">
+                    <p className="display-programming" id="sensor-type-tag">
                         {Sensor_Type}
                     </p>
+
+                    <input type="text" style={{'display':"none"}} className="programming-edit-input" name="sensor-type-input" value="" maxLength="2" id="sensor-type-store" disabled/>
 
                     <span className="expander-programming" onClick={() => showOptions("sensor-type")}>
                         &#9776;
@@ -2227,68 +2981,579 @@ function SystemConfigurationWirelessEdit(){
                     </div>
                 </div>
 
-                <div id="sensor-type-options" style={{'display':"none"}} className="options-sensor-type">
+                <div id="sensor-type-options" style={{'display':"none"}} className="options-sensor">
                     <div className="config-container-scroll">
-                        <ul className="programming-list">
-                            <li style={{'borderTop':"none"}}><p>00 - Unused</p></li>
-                            <li><p>01 - Exit/Entry 1</p></li>
-                            <li><p>02 - Exit/Entry 2</p></li>
-                            <li><p>03 - Perimeter</p></li>
-                            <li><p>04 - Interior Follower</p></li>
-                            <li><p>05 - Day Zone</p></li>
-                            <li><p>06 - 24-Hour Silent Alarm</p></li>
-                            <li><p>07 - 24-Hour Audible Alarm</p></li>
-                            <li><p>08 - 24-Hour Auxiliary Alarm</p></li>
-                            <li><p>09 - 24-Hour Fire</p></li>
-                            <li><p>10 - Interior with Delay</p></li>
-                            <li><p>14 - 24-Hour Carbon Monoxide</p></li>
-                            <li><p>16 - 24-Hour Fire Verification</p></li>
-                            <li><p>23 - No Response Type</p></li>
-                            <li><p>24 - Silent Burglary</p></li>
-                            <li><p>32 - Remote Device</p></li>
+                        <ul className="options-list-add programming-list">
+                            <li onClick={() => updateSensorType("00 - Unused")} style={{'borderTop':"none"}}><p id="00 - Unused">00 - Unused</p></li>
+                            <li onClick={() => updateSensorType("01 - Exit/Entry 1")}><p id="01 - Exit/Entry 1">01 - Exit/Entry 1</p></li>
+                            <li onClick={() => updateSensorType("02 - Exit/Entry 2")}><p id="02 - Exit/Entry 2">02 - Exit/Entry 2</p></li>
+                            <li onClick={() => updateSensorType("03 - Perimeter")}><p id="03 - Perimeter">03 - Perimeter</p></li>
+                            <li onClick={() => updateSensorType("04 - Interior Follower")}><p id="04 - Interior Follower">04 - Interior Follower</p></li>
+                            <li onClick={() => updateSensorType("05 - Day Zone")}><p id="05 - Day Zone">05 - Day Zone</p></li>
+                            <li onClick={() => updateSensorType("06 - 24-Hour Silent Alarm")}><p id="06 - 24-Hour Silent Alarm">06 - 24-Hour Silent Alarm</p></li>
+                            <li onClick={() => updateSensorType("07 - 24-Hour Audible Alarm")}><p id="07 - 24-Hour Audible Alarm">07 - 24-Hour Audible Alarm</p></li>
+                            <li onClick={() => updateSensorType("08 - 24-Hour Auxiliary Alarm")}><p id="08 - 24-Hour Auxiliary Alarm">08 - 24-Hour Auxiliary Alarm</p></li>
+                            <li onClick={() => updateSensorType("09 - 24-Hour Fire")}><p id="09 - 24-Hour Fire">09 - 24-Hour Fire</p></li>
+                            <li onClick={() => updateSensorType("10 - Interior with Delay")}><p id="10 - Interior with Delay">10 - Interior with Delay</p></li>
+                            <li onClick={() => updateSensorType("14 - 24-Hour Carbon Monoxide")}><p id="14 - 24-Hour Carbon Monoxide">14 - 24-Hour Carbon Monoxide</p></li>
+                            <li onClick={() => updateSensorType("16 - 24-Hour Fire Verification")}><p id="16 - 24-Hour Fire Verification">16 - 24-Hour Fire Verification</p></li>
+                            <li onClick={() => updateSensorType("23 - No Response Type")}><p id="23 - No Response Type">23 - No Response Type</p></li>
+                            <li onClick={() => updateSensorType("24 - Silent Burglary")}><p id="24 - Silent Burglary">24 - Silent Burglary</p></li>
+                            <li onClick={() => updateSensorType("32 - Remote Device")}><p id="32 - Remote Device">32 - Remote Device</p></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div className="screen-right" style={{'display':"none"}}>
+            <div className="screen-right-edit" style={{'display':"none"}} id="equipment-code-display">
                 {/* Equipment Code */}
+                <div className="keypad-data-top">
+                    <p className="display-programming">
+                        {Equipment_Code}
+                    </p>
+
+                    <span className="expander-programming" onClick={() => showOptions("equipment-code")}>
+                        &#9776;
+                    </span>
+                </div>
+
+                <div id="equipment-code-keypad" className="keypad-data-bottom">
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            1
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            2
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            3
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            4
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            5
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            6
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            7
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            8
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            9
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <img src={backspace_icon} style={{'height':"26px", 'marginTop':"6px", 'marginLeft':"23px"}} alt=""/>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            0
+                        </p>
+                    </div>
+                </div>
+
+                <div id="equipment-code-options" style={{'display':"none"}} className="options-sensor">
+                    <div className="config-container-scroll">
+                        <ul className="options-list-add programming-list">
+                            <li style={{'borderTop':"none"}}><p>0000 - Other</p></li>
+                            <li><p>0862 - 2GIG Thin Door/Window Contact</p></li>
+                            <li><p>0863 - 2GIG Recessed Door Contact</p></li>
+                            <li><p>0865 - 2GIG Outdoor Door/Window Sensor</p></li>
+                            <li><p>0869 - 2GIG POR with Pet Immunity</p></li>
+                            <li><p>0864 - 2GIG Glass Break Detector</p></li>
+                            <li><p>0895 - SMKT2-345 GE Smoke/Heat Detector</p></li>
+                            <li><p>1085 - 2GIG Smoke Detector</p></li>
+                            <li><p>0872 - SMKE1-345 Smoke Detector(USA)</p></li>
+                            <li><p>0871 - SMKE1-345 Smoke Detector(Canada)</p></li>
+                            <li><p>0868 - 2GIG Panic Button Remote</p></li>
+                            <li><p>0860 - CO1-345 CO Detector(USA)</p></li>
+                            <li><p>0859 - CO1-345 CO Detector(Canada)</p></li>
+                            <li><p>1026 - 2GIG CO Detector</p></li>
+                            <li><p>1069 - 2GIG FireFighter SMKT/CO Listener</p></li>
+                            <li><p>0873 - 2GIG Takeover Module</p></li>
+                            <li><p>0637 - HW D/W "5816"</p></li>
+                            <li><p>0470 - HW R-D/W "5818MNL"</p></li>
+                            <li><p>0533 - HW PIR "5890"</p></li>
+                            <li><p>0530 - HW PIR "5894PI"</p></li>
+                            <li><p>0519 - HW Glass Break "5853"</p></li>
+                            <li><p>0589 - HW Smoke "5808W3"</p></li>
+                            <li><p>0557 - HW Heat Sensor "5809"</p></li>
+                            <li><p>0624 - HW Flood Sensor "5821"</p></li>
+                            <li><p>0491 - HW Panic Pendant "5802MN2"</p></li>
+                            <li><p>1063 - 2GIG 2GIG Doorbell</p></li>
+                            <li><p>1061 - Tilt Sensor</p></li>
+                            <li><p>1062 - 2GIG Tilt Sensor</p></li>
+                            <li><p>1064 - 2GIG Bypass Sensor</p></li>
+                            <li><p>1065 - 2GIG Flood Sensor</p></li>
+                            <li><p>1066 - 2GIG Shock Sensor</p></li>
+                            <li><p>1067 - 2GIG Repeater</p></li>
+                            <li><p>1068 - 2GIG Translator</p></li>
+                            <li><p>1070 - 2GIG F1-345</p></li>
+                            <li><p>1071 - 2GIG PHB-345</p></li>
+                            <li><p>1072 - 2GIG Smoke Ring</p></li>
+                            <li><p>0655 - Existing Door/Window Contact</p></li>
+                            <li><p>0609 - Existing Motion Detector</p></li>
+                            <li><p>0475 - Existing Glass Break Detector</p></li>
+                            <li><p>0616 - Existing Smoke Detector</p></li>
+                            <li><p>0692 - Existing CO Detector</p></li>
+                            <li><p>0708 - Existing Heat Sensor</p></li>
+                            <li><p>0556 - Existing Flood/Temp Sensor</p></li>
+                            <li><p>9999 - Alarm.com Image Sensor</p></li>
+                            <li><p>2058 - eSeries Smoke Detector (USA)</p></li>
+                            <li><p>2061 - eSeries Tilt Sensor</p></li>
+                            <li><p>2065 - eSeries Flood Sensor</p></li>
+                            <li><p>2066 - eSeries Shock Sensor</p></li>
+                            <li><p>2067 - eSeries Repeater</p></li>
+                            <li><p>2069 - eSeries FireFighter SMKT/CO Listener</p></li>
+                            <li><p>2068 - eSeries Translator</p></li>
+                            <li><p>2070 - eSeries Water Sensor</p></li>
+                            <li><p>2860 - eSeries CO Detector (USA)</p></li>
+                            <li><p>2862 - eSeries Thin Door/Window Contact</p></li>
+                            <li><p>2863 - eSeries Recessed Door Contact</p></li>
+                            <li><p>2865 - eSeries Outdoor Door/Window Sensor</p></li>
+                            <li><p>2864 - eSeries Glass Break Detector</p></li>
+                            <li><p>2868 - eSeries Panic</p></li>
+                            <li><p>2869 - eSeries PIR with Pet Immunity</p></li>
+                            <li><p>2873 - eSeries Takeover Module</p></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div className="screen-right" style={{'display':"none"}}>
+            <div className="screen-right-edit" style={{'display':"none"}} id="serial-number-display">
                 {/* Serial Number */}
+                <div className="keypad-data-top">
+                    <input type="text" className="programming-edit-input" name="serial-number-input" value="" maxLength="7" id="serial-number-store" disabled/>
+
+                    <span className="expander-programming" style={{'marginRight':"8px", 'marginTop':"-1px"}}>
+                        <div className="paste-button key-button number">
+                            &#x2199;
+                        </div>
+                    </span>
+                </div>
+
+                <div id="sensor-type-keypad" className="keypad-data-bottom">
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("1")}>
+                        <p>
+                            1
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}onClick={() => addCodeSerialNumber("2")}>
+                        <p>
+                            2
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("3")}>
+                        <p>
+                            3
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("4")}>
+                        <p>
+                            4
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("5")}>
+                        <p>
+                            5
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("6")}>
+                        <p>
+                            6
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("7")}>
+                        <p>
+                            7
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("8")}>
+                        <p>
+                            8
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("9")}>
+                        <p>
+                            9
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => backspaceCodeSerialNumber()}>
+                        <img src={backspace_icon} style={{'height':"26px", 'marginTop':"6px", 'marginLeft':"23px"}} alt=""/>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSerialNumber("0")}>
+                        <p>
+                            0
+                        </p>
+                    </div>
+
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                        <p>
+                            Learn
+                        </p>
+                    </div>
+                </div>
+
+                <div style={{'display':"none"}}>
+                    {/* <img/> */}
+
+                    <p>
+                        No serial number available to paste
+                    </p>
+
+                    <div>
+                        {/* <img/> */}
+                        Ok
+                    </div>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Smart Areas Assignment */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="smart-areas-assignment-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Smart Areas Assignment */}
+
+                    <p className="options-title-header">
+                        Smart Areas Assignment
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">S1
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">S2
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">S3
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>S4
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Equipment Age */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="equipment-age-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Equipment Age */}
+
+                    <p className="options-title-header">
+                        Equipment Age
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">New
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Existing
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Sensor Loop */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="sensor-loop-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Sensor Loop */}
+
+                    <p className="options-title-header">
+                        Sensor Loop
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container"> Loop 1
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Loop 2
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Loop 3
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Transmission Delay */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="transmission-delay-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Transmission Delay */}
+
+                    <p className="options-title-header">
+                        Transmission Delay
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">Enabled
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Disabled
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Voice Descriptor */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="voice-descriptor-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Voice Descriptor */}
+
+                    <p className="voice-descriptor-text options-title-header">
+                        {Voice_Descriptor}
+                    </p>
+
+                    <div className="voice-descriptor-button">
+                        <p>
+                            Edit Voice
+                        </p>
+
+                        <p style={{'marginTop':"-17px"}}>
+                            Descriptor
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Sensor Reports */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="sensor-reports-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Sensor Reports */}
+
+                    <p className="options-title-header">
+                        Sensor Reports
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">Enabled
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Disabled
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Sensor Supervised */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="sensor-supervised-display">
+                <div className="config-container-scroll"  style={{'overflow':"hidden"}}>
+                    {/* Sensor Supervised */}
+
+                    <p className="options-title-header">
+                        Sensor Supervised
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">Enabled
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Disabled
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div className="screen-right-settings" style={{'display':"none"}}>
-                {/* Sensor Chime */}
+            <div className="screen-right-settings" style={{'display':"none"}} id="sensor-chime-display">
+                <div className="config-container-scroll">
+                    {/* Sensor Chime */}
+
+                    <p className="options-title-header">
+                        Sensor Chime
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li>
+                            <label className="container">Disabled
+                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Voice Only
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #1 with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #2
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #2 with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #1
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #3
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Ding-Dong #3 with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Chime #1
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Chime #1 with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container">Chime #2
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label className="container" style={{'marginBottom':"0"}}>Chime #2 with Voice
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div style={{'bottom':"0",'width':"645px", 'height':"55px", 'position':"absolute", 'marginBottom':"108px", 'display': "inline-grid", 'gridTemplateColumns':"165px 165px 103px 103px 103px", 'marginLeft':"-310px"}}>
@@ -2300,13 +3565,17 @@ function SystemConfigurationWirelessEdit(){
                     </div>
                 </Link>
 
-                <div className="blue-button configuration-buttons" style={{'marginLeft':"-3px", 'width':"135px"}}>
+                <div className="blue-button configuration-buttons" style={{'marginLeft':"-3px", 'width':"135px"}} onClick={() => nextZone()}>
                     <p style={{'marginTop':"10px"}}>
                        Next Zone
                     </p>
                 </div>
 
-                <div id="up-arrow" className="blue-button configuration-buttons">
+                <div id="left-arrow" className="blue-button configuration-buttons" style={{'display':"none"}} onClick={() => previousZone()} onLoad={() => choseAttribute("sensor-type")}>
+                    <img src={rewind_icon} style={{'height':"15px", 'marginTop':"10px"}} className="invert-color" alt=""/>
+                </div>
+
+                <div id="up-arrow" className="blue-button configuration-buttons" onClick={() => goUp()}>
                     <img src={up_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt="" />
                 </div>
 
@@ -2318,8 +3587,12 @@ function SystemConfigurationWirelessEdit(){
 
                 </div>
 
-                <div id="down-arrow" className="blue-button configuration-buttons">
+                <div id="down-arrow" className="blue-button configuration-buttons" onClick={() => goDown()}>
                     <img src={down_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt=""/>
+                </div>
+
+                <div id="right-arrow" className="blue-button configuration-buttons" style={{'display':"none"}} onClick={() => nextZone()} onLoad={() => choseAttribute("sensor-type")}>
+                    <img src={fast_forward_icon} style={{'height':"15px", 'marginTop':"10px"}} className="invert-color" alt=""/>
                 </div>
             </div>
         </div>

@@ -1099,7 +1099,7 @@ function SystemConfigurationWired(){
             setEquipment_Code(`1064 - 2GIG Bypass Sensor`)
         }
         else if (datapass === "1065"){
-            setEquipment_Code(`0863 - 2GIG Flood Sensor`)
+            setEquipment_Code(`1065 - 2GIG Flood Sensor`)
         }
         else if (datapass === "1066"){
             setEquipment_Code(`1066 - 2GIG Shock Sensor`)
