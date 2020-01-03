@@ -1184,3 +1184,45 @@ header{
     margin-top: 5px;
     margin-left: 6px;
 }
+.invalid-entry-blue-button-text{
+    margin-top: -23px;
+    margin-left: 10px;
+    color: white;
+}
+.invalid-entry-blue-button-image{
+    height: 10px;
+    margin-left: -40px;
+    margin-top: 22px;
+}
+.invalid-entry-p-1{
+    margin-top: 54px;
+    margin-left: 55px;
+}
+.invalid-entry-p-2{
+    margin-left: 51px;
+    margin-top: -18px;
+}
+.invalid-entry-info-icon{
+    height: 50px;
+    position: absolute;
+    margin-left: -80px;
+    margin-top: 50px;
+}
+.invalid-entry-area{
+    position: absolute;
+    height: 200px;
+    width: 450px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 40px;
+    margin-left: 100px;
+    text-align: center;
+    font-size: 18px;
+    color: #217bbc;
+}
+.invalid-entry-blue-button{
+    height: 55px;
+    width: 107px;
+    margin-top: 0px;
+    margin-left: 182px;
+}

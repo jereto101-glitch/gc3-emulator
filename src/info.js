@@ -287,6 +287,20 @@ function HackPage() {
                                 Still working on edit page.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/01/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Its a new year! I've also made a ton of progress on edit programming for wireless sensors, they now are all viewable and you can even type in serial number section. One of my longer updates but I have done quite a bit today, turned the edit page from a awful mess into looking how its supposed to. Next step is gettting it to actually work...
+                            </td>
+
+                            <td>
+                                The serial number invalid entry page is the next step to style. I also need to figure out why my defaultCheck on my checkboxes isn't working. I also need to rewrite my redux for how I store my programming and temp programming. After the whole page is working I then need to create the save page to wipe temp programming data and either save it or delete it depending on what is chosen. The home and emergency buttons also need to be reworked a bit to not work when in installer toolbox.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -306,7 +320,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 12/28/2019 6:15:53PM
+                    Last Updated: 01/01/2020 9:17:16PM
                 </footer>
             </div>
         </div>

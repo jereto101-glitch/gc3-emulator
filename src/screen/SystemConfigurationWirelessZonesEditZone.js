@@ -2046,114 +2046,6 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
-    function choseAttribute(id){
-        if (document.getElementById("sensor-chime") !== null){
-            if(document.getElementById("serial-number").style.backgroundColor !== "white"){
-                var fillSerial = true
-                var valCheck = document.getElementById("serial-number-store").value
-                if(valCheck.length === 7){
-                    if(valCheck.slice(0) !== "0"){
-                        invalidSerialNumberOn()
-                        return
-                    }
-                }
-            }
-            var selector = id
-            console.log("id: ", selector)
-            document.getElementById("sensor-type").style.backgroundColor = "white";
-            document.getElementById("sensor-type").style.color = "#404956";
-            document.getElementById("sensor-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-type-span").style.color = "gray";
-            document.getElementById("sensor-equipment-type").style.backgroundColor = "white";
-            document.getElementById("sensor-equipment-type").style.color = "#404956";
-            document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-equipment-type-span").style.color = "gray";
-            document.getElementById("equipment-code").style.backgroundColor = "white";
-            document.getElementById("equipment-code").style.color = "#404956";
-            document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("equipment-code-span").style.color = "gray";
-            document.getElementById("serial-number").style.backgroundColor = "white";
-            document.getElementById("serial-number").style.color = "#404956";
-            document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("serial-number-span").style.color = "gray";
-            document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
-            document.getElementById("smart-areas-assignment").style.color = "#404956";
-            document.getElementById("smart-areas-assignment").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("smart-areas-assignment-span").style.color = "gray";
-            document.getElementById("equipment-age").style.backgroundColor = "white";
-            document.getElementById("equipment-age").style.color = "#404956";
-            document.getElementById("equipment-age").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("equipment-age-span").style.color = "gray";
-            document.getElementById("sensor-loop").style.backgroundColor = "white";
-            document.getElementById("sensor-loop").style.color = "#404956";
-            document.getElementById("sensor-loop").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-loop-span").style.color = "gray";
-            document.getElementById("transmission-delay").style.backgroundColor = "white";
-            document.getElementById("transmission-delay").style.color = "#404956";
-            document.getElementById("transmission-delay").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("transmission-delay-span").style.color = "gray";
-            document.getElementById("voice-descriptor").style.backgroundColor = "white";
-            document.getElementById("voice-descriptor").style.color = "#404956";
-            document.getElementById("voice-descriptor").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("voice-descriptor-span").style.color = "gray";
-            document.getElementById("sensor-reports").style.backgroundColor = "white";
-            document.getElementById("sensor-reports").style.color = "#404956";
-            document.getElementById("sensor-reports").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-reports-span").style.color = "gray";
-            document.getElementById("sensor-supervised").style.backgroundColor = "white";
-            document.getElementById("sensor-supervised").style.color = "#404956";
-            document.getElementById("sensor-supervised").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-supervised-span").style.color = "gray";
-            document.getElementById("sensor-chime").style.backgroundColor = "white";
-            document.getElementById("sensor-chime").style.color = "#404956";
-            document.getElementById("sensor-chime").style.backgroundImage = "linear-gradient(to right, white, transparent)";
-            document.getElementById("sensor-chime-span").style.color = "gray";
-            document.getElementById("sensor-type-display").style.display = "none";
-            document.getElementById("equipment-code-display").style.display = "none";
-            document.getElementById("serial-number-display").style.display = "none";
-            document.getElementById("equipment-age-display").style.display = "none";
-            document.getElementById("transmission-delay-display").style.display = "none";
-            document.getElementById("sensor-reports-display").style.display = "none";
-            document.getElementById("smart-areas-assignment-display").style.display = "none";
-            document.getElementById("sensor-loop-display").style.display = "none";
-            document.getElementById("voice-descriptor-display").style.display = "none";
-            document.getElementById("sensor-supervised-display").style.display = "none";
-            document.getElementById("sensor-chime-display").style.display = "none";
-            document.getElementById(selector).style.backgroundColor = "#448cc0";
-            document.getElementById(selector).style.color = "white";
-            document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
-            var selectorDisplay = selector + "-display"
-            var selectorSpan = selector + "-span"
-            document.getElementById(selectorDisplay).style.display = "";
-            document.getElementById(selectorSpan).style.color = "white";
-
-            updateButtons(selector)
-
-            if(selector === "serial-number"){
-                document.getElementById("serial-number-store").value = Serial_Number
-                document.getElementById("serial-number-store").style.backgroundColor = "#E2E2E2"
-            }
-
-            if(fillSerial === true){
-                var val = document.getElementById("serial-number-store").value;
-                var check = false
-
-                while(check !== true){
-                    if(val.length < 7){
-                        val = "0" + val
-                    }
-
-                    if(val.length === 7){
-                        check = true
-                    }
-                }
-
-                document.getElementById("serial-number-store").value = val
-                setSerial_Number(val)
-            }
-        }
-    }
-
     function goUp(){
         if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
             choseAttribute("sensor-type")
@@ -2312,92 +2204,7 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
-    function addCodeSensorType(key){
-        var val = document.getElementById("sensor-type-store").value;
-
-        if(document.getElementById("sensor-type-store").style.backgroundColor !== "white"){
-            document.getElementById("sensor-type-store").style.backgroundColor = "white"
-            document.getElementById("sensor-type-store").value = key
-        }
-    
-        if(val.length < 2){
-            val = val + "" + key;
-            document.getElementById("sensor-type-store").value = val
-        }
-        if(val.length === 2){
-            if(val === "00"){
-                updateSensorType("00 - Unused")
-            }
-            else if(val === "01"){
-                updateSensorType("01 - Exit/Entry 1")
-            }
-            else if(val === "02"){
-                updateSensorType("02 - Exit/Entry 2")
-            }
-            else if(val === "03"){
-                updateSensorType("03 - Perimeter")
-            }
-            else if(val === "04"){
-                updateSensorType("04 - Interior Follower")
-            }
-            else if(val === "05"){
-                updateSensorType("05 - Day Zone")
-            }
-            else if(val === "06"){
-                updateSensorType("06 - 24-Hour Silent Alarm")
-            }
-            else if(val === "07"){
-                updateSensorType("07 - 24-Hour Audible Alarm")
-            }
-            else if(val === "08"){
-                updateSensorType("08 - 24-Hour Auxiliary Alarm")
-            }
-            else if(val === "09"){
-                updateSensorType("09 - 24-Hour Fire")
-            }
-            else if(val === "10"){
-                updateSensorType("10 - Interior with Delay")
-            }
-            else if(val === "14"){
-                updateSensorType("14 - 24-Hour Carbon Monoxide")
-            }
-            else if(val === "16"){
-                updateSensorType("16 - 24-Hour Fire Verification")
-            }
-            else if(val === "23"){
-                updateSensorType("23 - No Response Type")
-            }
-            else if(val === "24"){
-                updateSensorType("24 - Silent Burglary")
-            }
-            else if(val === "32"){
-                updateSensorType("32 - Remote Device")
-            }
-            else{
-                invalidSensorTypeOn()
-            }
-        }
-    }
-    
-    function backspaceCodeSensorType(){
-        var val = document.getElementById("sensor-type-store").value;
-        val = val.slice(0, -1);
-        document.getElementById("sensor-type-store").value = val;
-    }
-
-
-    function invalidSensorTypeOn(){
-        document.getElementById("invalid-sensor-type").style.display = ""
-    }
-
-    function invalidSensorTypeOff(){
-        document.getElementById("invalid-sensor-type").style.display = "none"
-    }
-
     function updateSensorType(value){
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
-
         if(value === "00 - Unused"){
             setSensor_Type("00 - Unused")  //Hide Sensor Equipment Type
         }
@@ -2448,18 +2255,151 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
+    function addCodeSensorType(key){
+        var val = document.getElementById("sensor-type-store").value;
+
+        if(document.getElementById("sensor-type-tag").style.display !== "none"){
+            document.getElementById("sensor-type-tag").style.display = "none"
+            document.getElementById("sensor-type-store").style.display = ""
+            document.getElementById("sensor-type-store").value = key
+        }
+    
+        if(val.length < 2){
+            val = val + "" + key;
+            document.getElementById("sensor-type-store").value = val
+        }
+        if(val.length === 2){
+            if(val === "00"){
+                updateSensorType("00 - Unused")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "01"){
+                updateSensorType("01 - Exit/Entry 1")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "02"){
+                updateSensorType("02 - Exit/Entry 2")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "03"){
+                updateSensorType("03 - Perimeter")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "04"){
+                updateSensorType("04 - Interior Follower")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "05"){
+                updateSensorType("05 - Day Zone")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "06"){
+                updateSensorType("06 - 24-Hour Silent Alarm")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "07"){
+                updateSensorType("07 - 24-Hour Audible Alarm")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "08"){
+                updateSensorType("08 - 24-Hour Auxiliary Alarm")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "09"){
+                updateSensorType("09 - 24-Hour Fire")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "10"){
+                updateSensorType("10 - Interior with Delay")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "14"){
+                updateSensorType("14 - 24-Hour Carbon Monoxide")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "16"){
+                updateSensorType("16 - 24-Hour Fire Verification")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "23"){
+                updateSensorType("23 - No Response Type")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "24"){
+                updateSensorType("24 - Silent Burglary")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else if(val === "32"){
+                updateSensorType("32 - Remote Device")
+                document.getElementById("sensor-type-tag").style.display = ""
+                document.getElementById("sensor-type-store").style.display = "none"
+                document.getElementById("sensor-type-store").value = ""
+            }
+            else{
+                invalidSensorTypeOn()
+                document.getElementById("sensor-type-store").value = ""
+            }
+        }
+    }
+    
+    function backspaceCodeSensorType(){
+        var val = document.getElementById("sensor-type-store").value;
+        val = val.slice(0, -1);
+        document.getElementById("sensor-type-store").value = val;
+    }
+
+
+    function invalidSensorTypeOn(){
+        document.getElementById("invalid-sensor-type").style.display = ""
+    }
+
+    function invalidSensorTypeOff(){
+        document.getElementById("invalid-sensor-type").style.display = "none"
+        document.getElementById("sensor-type-tag").style.display = ""
+        document.getElementById("sensor-type-store").style.display = "none"
+    }
+
     function invalidEquipmentCodeOn(){
         document.getElementById("invalid-equipment-code").style.display = ""
     }
 
     function invalidEquipmentCodeOff(){
         document.getElementById("invalid-equipment-code").style.display = "none"
+        document.getElementById("equipment-code-tag").style.display = ""
+        document.getElementById("equipment-code-store").style.display = "none"
     }
 
     function updateEquipmentCode(value){
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
-
         if (value === "0000 - Other"){
             setEquipment_Code('0000 - Other')
         }
@@ -2642,6 +2582,393 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
+    function addCodeEquipmentCode(key){
+        var val = document.getElementById("equipment-code-store").value;
+
+        if(document.getElementById("equipment-code-tag").style.display !== "none"){
+            document.getElementById("equipment-code-tag").style.display = "none"
+            document.getElementById("equipment-code-store").style.display = ""
+            document.getElementById("equipment-code-store").value = key
+        }
+    
+        if(val.length < 2){
+            val = val + "" + key;
+            document.getElementById("equipment-code-store").value = val
+        }
+        if(val.length === 2){
+            if (val === "0000"){
+                updateEquipmentCode('0000 - Other')
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0862"){
+                updateEquipmentCode('0862 - 2GIG Thin Door/Window Contact')
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0863"){
+                updateEquipmentCode(`0863 - 2GIG Recessed Door Contact`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0865"){
+                updateEquipmentCode(`0865 - 2GIG Outdoor Door/Window Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0869"){
+                updateEquipmentCode(`0869 - 2GIG POR with Pet Immunity`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0864"){
+                updateEquipmentCode(`0864 - 2GIG Glass Break Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0895"){
+                updateEquipmentCode(`0895 - SMKT2-345 GE Smoke/Heat Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1058"){
+                updateEquipmentCode(`1085 - 2GIG Smoke Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0872"){
+                updateEquipmentCode(`0872 - SMKE1-345 Smoke Detector(USA)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0871"){
+                updateEquipmentCode(`0871 - SMKE1-345 Smoke Detector(Canada)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0868"){
+                updateEquipmentCode(`0868 - 2GIG Panic Button Remote`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0860"){
+                updateEquipmentCode(`0860 - CO1-345 CO Detector(USA)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0859"){
+                updateEquipmentCode(`0859 - CO1-345 CO Detector(Canada)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1026"){
+                updateEquipmentCode(`1026 - 2GIG CO Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1069"){
+                updateEquipmentCode(`1069 - 2GIG FireFighter SMKT/CO Listener`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0873"){
+                updateEquipmentCode(`0873 - 2GIG Takeover Module`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0637"){
+                updateEquipmentCode(`0637 - HW D/W "5816"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0470"){
+                updateEquipmentCode(`0470 - HW R-D/W "5818MNL"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0533"){
+                updateEquipmentCode(`0533 - HW PIR "5890"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0530"){
+                updateEquipmentCode(`0530 - HW PIR "5894PI"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0519"){
+                updateEquipmentCode(`0519 - HW Glass Break "5853"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0589"){
+                updateEquipmentCode(`0589 - HW Smoke "5808W3"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0557"){
+                updateEquipmentCode(`0557 - HW Heat Sensor "5809"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0624"){
+                setEquipment_Code(`0624 - HW Flood Sensor "5821"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0491"){
+                updateEquipmentCode(`0491 - HW Panic Pendant "5802MN2"`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1063"){
+                updateEquipmentCode(`1063 - 2GIG 2GIG Doorbell`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1061"){
+                updateEquipmentCode(`1061 - Tilt Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1062"){
+                updateEquipmentCode(`1062 - 2GIG Tilt Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1064"){
+                updateEquipmentCode(`1064 - 2GIG Bypass Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1065"){
+                updateEquipmentCode(`1065 - 2GIG Flood Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1066"){
+                updateEquipmentCode(`1066 - 2GIG Shock Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1067"){
+                updateEquipmentCode(`1067 - 2GIG Repeater`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1068"){
+                updateEquipmentCode(`1068 - 2GIG Translator`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1070"){
+                updateEquipmentCode(`1070 - 2GIG F1-345`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1071"){
+                updateEquipmentCode(`1071 - 2GIG PHB-345`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "1072"){
+                 updateEquipmentCode(`1072 - 2GIG Smoke Ring`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0655"){
+                 updateEquipmentCode(`0655 - Existing Door/Window Contact`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0609"){
+                 updateEquipmentCode(`0609 - Existing Motion Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0475"){
+                 updateEquipmentCode(`0475 - Existing Glass Break Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0616"){
+                 updateEquipmentCode(`0616 - Existing Smoke Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0692"){
+                 updateEquipmentCode(`0692 - Existing CO Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0708"){
+                 updateEquipmentCode(`0708 - Existing Heat Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "0556"){
+                 updateEquipmentCode(`0556 - Existing Flood/Temp Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "9999"){
+                 updateEquipmentCode(`9999 - Alarm.com Image Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2058"){
+                 updateEquipmentCode(`2058 - eSeries Smoke Detector (USA)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2061"){
+                 updateEquipmentCode(`2061 - eSeries Tilt Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2065"){
+                 updateEquipmentCode(`2065 - eSeries Flood Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2066"){
+                 updateEquipmentCode(`2066 - eSeries Shock Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2067"){
+                 updateEquipmentCode(`2067 - eSeries Repeater`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2069"){
+                 updateEquipmentCode(`2069 - eSeries FireFighter SMKT/CO Listener`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2068"){
+                 updateEquipmentCode(`2068 - eSeries Translator`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2070"){
+                 updateEquipmentCode(`2070 - eSeries Water Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2860"){
+                 updateEquipmentCode(`2860 - eSeries CO Detector (USA)`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2862"){
+                 updateEquipmentCode(`2862 - eSeries Thin Door/Window Contact`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2863"){
+                 updateEquipmentCode(`2863 - eSeries Recessed Door Contact`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2865"){
+                 updateEquipmentCode(`2865 - eSeries Outdoor Door/Window Sensor`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2864"){
+                 updateEquipmentCode(`2864 - eSeries Glass Break Detector`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2868"){
+                 updateEquipmentCode(`2868 - eSeries Panic`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2869"){
+                 updateEquipmentCode(`2869 - eSeries PIR with Pet Immunity`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else if (val === "2873"){
+                updateEquipmentCode(`2873 - eSeries Takeover Module`)
+                document.getElementById("equipment-code-tag").style.display = ""
+                document.getElementById("equipment-code-store").style.display = "none"
+                document.getElementById("equipment-code-store").value = ""
+            }
+            else{
+                invalidEquipmentCodeOn()
+                document.getElementById("equipment-code-store").value = ""
+            }
+        }
+    }
+    
+    function backspaceCodeEquipmentCode(){
+        var val = document.getElementById("sensor-type-store").value;
+        val = val.slice(0, -1);
+        document.getElementById("sensor-type-store").value = val;
+    }
+
     function invalidSerialNumberOn(){
         document.getElementById("invalid-serial-number").style.display = ""
     }
@@ -2672,6 +2999,272 @@ function SystemConfigurationWirelessEdit(){
         var val = document.getElementById("serial-number-store").value;
         val = val.slice(0, -1);
         document.getElementById("serial-number-store").value = val;
+    }
+
+    function choseAttribute(id){
+        var retrievedSensors = localStorage.getItem("panelSensors");
+        retrievedSensors = JSON.parse(retrievedSensors)
+
+        var thisSensor = {}
+
+        if(Current_Zone === "Wireless Zone 001"){
+            thisSensor = retrievedSensors.sensor1
+        }
+        else if(Current_Zone === "Wireless Zone 002"){
+            thisSensor = retrievedSensors.sensor2
+        }
+        else if(Current_Zone === "Wireless Zone 003"){
+            thisSensor = retrievedSensors.sensor3
+        }
+        else if(Current_Zone === "Wireless Zone 004"){
+            thisSensor = retrievedSensors.sensor4
+        }
+        else if(Current_Zone === "Wireless Zone 005"){
+            thisSensor = retrievedSensors.sensor5
+        }
+        else if(Current_Zone === "Wireless Zone 006"){
+            thisSensor = retrievedSensors.sensor6
+        }
+        else if(Current_Zone === "Wireless Zone 007"){
+            thisSensor = retrievedSensors.sensor7
+        }
+        else if(Current_Zone === "Wireless Zone 008"){
+            thisSensor = retrievedSensors.sensor8
+        }
+
+        if (document.getElementById("sensor-chime") !== null){
+            if(document.getElementById("serial-number").style.backgroundColor !== "white"){
+                var fillSerial = true
+                var valCheck = document.getElementById("serial-number-store").value
+                if(valCheck.length === 7){
+                    if(valCheck.slice(0) !== "0"){
+                        invalidSerialNumberOn()
+                        return
+                    }
+                }
+            }
+            var selector = id
+            console.log("id: ", selector)
+            if(thisSensor.sensorType !== Sensor_Type){
+                document.getElementById("sensor-type").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-type").style.color = "#404956";
+            }
+            document.getElementById("sensor-type").style.backgroundColor = "white";
+            document.getElementById("sensor-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-type-span").style.color = "gray";
+            document.getElementById("sensor-equipment-type").style.backgroundColor = "white";
+            if(thisSensor.sensorEquipmentType !== Sensor_Equipment_Type){
+                document.getElementById("sensor-equipment-type").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-equipment-type").style.color = "#404956";
+            }
+            document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-equipment-type-span").style.color = "gray";
+            document.getElementById("equipment-code").style.backgroundColor = "white";
+            if(thisSensor.sensorType !== Sensor_Type){
+                document.getElementById("equipment-code").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("equipment-code").style.color = "#404956";
+            }
+            document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("equipment-code-span").style.color = "gray";
+            document.getElementById("serial-number").style.backgroundColor = "white";
+            document.getElementById("serial-number").style.color = "#404956";
+            document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("serial-number-span").style.color = "gray";
+            document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
+            document.getElementById("smart-areas-assignment").style.color = "#404956";
+            document.getElementById("smart-areas-assignment").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("smart-areas-assignment-span").style.color = "gray";
+            document.getElementById("equipment-age").style.backgroundColor = "white";
+            document.getElementById("equipment-age").style.color = "#404956";
+            document.getElementById("equipment-age").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("equipment-age-span").style.color = "gray";
+            document.getElementById("sensor-loop").style.backgroundColor = "white";
+            document.getElementById("sensor-loop").style.color = "#404956";
+            document.getElementById("sensor-loop").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-loop-span").style.color = "gray";
+            document.getElementById("transmission-delay").style.backgroundColor = "white";
+            document.getElementById("transmission-delay").style.color = "#404956";
+            document.getElementById("transmission-delay").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("transmission-delay-span").style.color = "gray";
+            document.getElementById("voice-descriptor").style.backgroundColor = "white";
+            document.getElementById("voice-descriptor").style.color = "#404956";
+            document.getElementById("voice-descriptor").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("voice-descriptor-span").style.color = "gray";
+            document.getElementById("sensor-reports").style.backgroundColor = "white";
+            document.getElementById("sensor-reports").style.color = "#404956";
+            document.getElementById("sensor-reports").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-reports-span").style.color = "gray";
+            document.getElementById("sensor-supervised").style.backgroundColor = "white";
+            document.getElementById("sensor-supervised").style.color = "#404956";
+            document.getElementById("sensor-supervised").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-supervised-span").style.color = "gray";
+            document.getElementById("sensor-chime").style.backgroundColor = "white";
+            document.getElementById("sensor-chime").style.color = "#404956";
+            document.getElementById("sensor-chime").style.backgroundImage = "linear-gradient(to right, white, transparent)";
+            document.getElementById("sensor-chime-span").style.color = "gray";
+            document.getElementById("sensor-type-display").style.display = "none";
+            document.getElementById("equipment-code-display").style.display = "none";
+            document.getElementById("serial-number-display").style.display = "none";
+            document.getElementById("equipment-age-display").style.display = "none";
+            document.getElementById("transmission-delay-display").style.display = "none";
+            document.getElementById("sensor-reports-display").style.display = "none";
+            document.getElementById("smart-areas-assignment-display").style.display = "none";
+            document.getElementById("sensor-loop-display").style.display = "none";
+            document.getElementById("voice-descriptor-display").style.display = "none";
+            document.getElementById("sensor-supervised-display").style.display = "none";
+            document.getElementById("sensor-chime-display").style.display = "none";
+            document.getElementById(selector).style.backgroundColor = "#448cc0";
+            document.getElementById(selector).style.color = "white";
+            document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
+            var selectorDisplay = selector + "-display"
+            var selectorSpan = selector + "-span"
+            document.getElementById(selectorDisplay).style.display = "";
+            document.getElementById(selectorSpan).style.color = "white";
+
+            if(Sensor_Type === "00 - Unused"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "01 - Exit/Entry 1"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "02 - Exit/Entry 2"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "03 - Perimeter"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "04 - Interior Follower"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
+                document.getElementById("sensor-equipment-type-1-1").style.display = ""
+                document.getElementById("sensor-equipment-type-1-2").style.display = ""
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "05 - Day Zone"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "06 - 24-Hour Silent Alarm"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = ""
+                document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            }
+            else if(Sensor_Type === "07 - 24-Hour Audible Alarm"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = ""
+                document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            }
+            else if(Sensor_Type === "08 - 24-Hour Auxiliary Alarm"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = ""
+                document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            }
+            else if(Sensor_Type === "09 - 24-Hour Fire"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "10 - Interior with Delay"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
+                document.getElementById("sensor-equipment-type-1-1").style.display = ""
+                document.getElementById("sensor-equipment-type-1-2").style.display = ""
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "14 - 24-Hour Carbon Monoxide"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "16 - 24-Hour Fire Verification"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "23 - No Response Type"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
+                document.getElementById("sensor-equipment-type-1-1").style.display = ""
+                document.getElementById("sensor-equipment-type-1-2").style.display = ""
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "24 - Silent Burglary"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+            else if(Sensor_Type === "32 - Remote Device"){
+                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
+                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            }
+
+            updateButtons(selector)
+
+            if(selector === "serial-number"){
+                document.getElementById("serial-number-store").value = Serial_Number
+                document.getElementById("serial-number-store").style.backgroundColor = "#E2E2E2"
+            }
+
+            if(fillSerial === true){
+                var val = document.getElementById("serial-number-store").value;
+                var check = false
+
+                while(check !== true){
+                    if(val.length < 7){
+                        val = "0" + val
+                    }
+
+                    if(val.length === 7){
+                        check = true
+                    }
+                }
+
+                document.getElementById("serial-number-store").value = val
+                setSerial_Number(val)
+            }
+        }
     }
 
     // useEffect(() => {
@@ -2706,61 +3299,61 @@ function SystemConfigurationWirelessEdit(){
                 </Link>
             </div>
 
-            <div id="invalid-sensor-type" style={{'display':"none"}}>
-                <img src={info_gray_icon} alt=""/>
+            <div id="invalid-sensor-type" style={{'display':"none"}} className="invalid-entry-area">
+                <img src={info_gray_icon} alt="" className="invalid-entry-info-icon"/>
 
-                <p>
+                <p className="invalid-entry-p-1">
                     Invalid Entry:
                 </p>
 
-                <p>
+                <p className="invalid-entry-p-2">
                     Sensor Type
                 </p>
 
-                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidSensorTypeOff()}>
-                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+                <div className="invalid-entry-blue-button blue-button" onClick={() => invalidSensorTypeOff()}>
+                    <img src={check_icon} className="invert-color invalid-entry-blue-button-image" alt=""/>
 
-                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                    <p className="invalid-entry-blue-button-text">
                         OK
                     </p>
                 </div>
             </div>
 
-            <div id="invalid-equipment-code" style={{'display':"none"}}>
-                <img src={info_gray_icon} alt=""/>
+            <div id="invalid-equipment-code" style={{'display':"none"}} className="invalid-entry-area">
+                <img src={info_gray_icon} alt="" className="invalid-entry-info-icon"/>
 
-                <p>
+                <p className="invalid-entry-p-1">
                     Invalid Entry:
                 </p>
 
-                <p>
+                <p className="invalid-entry-p-2">
                     Equipment Code
                 </p>
 
-                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidEquipmentCodeOff()}>
-                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+                <div className="invalid-entry-blue-button blue-button" onClick={() => invalidEquipmentCodeOff()}>
+                    <img src={check_icon} className="invalid-entry-blue-button-image invert-color" alt=""/>
 
-                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                    <p className="invalid-entry-blue-button-text">
                         OK
                     </p>
                 </div>
             </div>
 
-            <div id="invalid-serial-number" style={{'display':"none"}}>
-                <img src={info_gray_icon} alt=""/>
+            <div id="invalid-serial-number" style={{'display':"none"}} className="invalid-entry-area">
+                <img src={info_gray_icon} alt="" className="invalid-entry-info-icon"/>
 
-                <p>
+                <p className="invalid-entry-p-1">
                     Invalid Entry:
                 </p>
 
-                <p>
+                <p className="invalid-entry-p-2">
                     Serial Number
                 </p>
 
-                <div className="blue-button" style={{'height':"55px", 'width':"107px", 'marginTop':"99px", 'marginLeft':"182px"}} onClick={() => invalidSerialNumberOff()}>
-                    <img src={check_icon} className="invert-color" style={{'height':"10px", 'marginLeft':"27px", 'marginTop':"22px"}} alt=""/>
+                <div className="invalid-entry-blue-button blue-button" onClick={() => invalidSerialNumberOff()}>
+                    <img src={check_icon} className="invalid-entry-blue-button-image invert-color" alt=""/>
 
-                    <p style={{'marginTop':"-20px", 'marginLeft':"50px", 'color':"white"}}>
+                    <p className="invalid-entry-blue-button-text">
                         OK
                     </p>
                 </div>
@@ -2908,7 +3501,7 @@ function SystemConfigurationWirelessEdit(){
                         {Sensor_Type}
                     </p>
 
-                    <input type="text" style={{'display':"none"}} className="programming-edit-input" name="sensor-type-input" value="" maxLength="2" id="sensor-type-store" disabled/>
+                    <input type="text" style={{'display':"none", 'backgroundColor':"white"}} className="programming-edit-input" name="sensor-type-input" value="" maxLength="2" id="sensor-type-store" disabled/>
 
                     <span className="expander-programming" onClick={() => showOptions("sensor-type")}>
                         &#9776;
@@ -2916,65 +3509,65 @@ function SystemConfigurationWirelessEdit(){
                 </div>
 
                 <div id="sensor-type-keypad" className="keypad-data-bottom">
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("1")}>
                         <p>
                             1
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("2")}>
                         <p>
                             2
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("3")}>
                         <p>
                             3
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("4")}>
                         <p>
                             4
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("5")}>
                         <p>
                             5
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("6")}>
                         <p>
                             6
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("7")}>
                         <p>
                             7
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("8")}>
                         <p>
                             8
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("9")}>
                         <p>
                             9
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => backspaceCodeSensorType()}>
                         <img src={backspace_icon} style={{'height':"26px", 'marginTop':"6px", 'marginLeft':"23px"}} alt=""/>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeSensorType("0")}>
                         <p>
                             0
                         </p>
@@ -3005,12 +3598,54 @@ function SystemConfigurationWirelessEdit(){
                 </div>
             </div>
 
+            <div className="screen-right-settings" style={{'display':"none"}} id="sensor-equipment-type-display">
+                <div className="config-container-scroll" style={{'overflow':"hidden"}}>
+                    {/* Smart Areas Assignment */}
+
+                    <p className="options-title-header">
+                        Sensor Equipment Type
+                    </p>
+
+                    <ul className="checkbox-list">
+                        <li id="sensor-equipment-type-1-1" style={{'display':"none"}}>
+                            <label className="container">Contact
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li id="sensor-equipment-type-1-2" style={{'display':"none"}}>
+                            <label className="container">Motion
+                                <input type="radio" defaultChecked name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li id="sensor-equipment-type-2-1" style={{'display':"none"}}>
+                            <label className="container">Contact
+                                <input type="radio" defaultChecked name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+
+                        <li id="sensor-equipment-type-2-2" style={{'display':"none"}}>
+                            <label className="container">Emergency
+                                <input type="radio" name="radio"/>
+                                <span className="checkmark"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div className="screen-right-edit" style={{'display':"none"}} id="equipment-code-display">
                 {/* Equipment Code */}
                 <div className="keypad-data-top">
-                    <p className="display-programming">
+                <p className="display-programming" id="equipment-code-tag">
                         {Equipment_Code}
                     </p>
+
+                    <input type="text" style={{'display':"none", 'backgroundColor':"white"}} className="programming-edit-input" name="equipment-code-input" value="" maxLength="2" id="equipment-code-store" disabled/>
 
                     <span className="expander-programming" onClick={() => showOptions("equipment-code")}>
                         &#9776;
@@ -3018,65 +3653,65 @@ function SystemConfigurationWirelessEdit(){
                 </div>
 
                 <div id="equipment-code-keypad" className="keypad-data-bottom">
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("1")}>
                         <p>
                             1
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("2")}>
                         <p>
                             2
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("3")}>
                         <p>
                             3
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("4")}>
                         <p>
                             4
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("5")}>
                         <p>
                             5
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("6")}>
                         <p>
                             6
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("7")}>
                         <p>
                             7
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("8")}>
                         <p>
                             8
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("9")}>
                         <p>
                             9
                         </p>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => backspaceCodeEquipmentCode()}>
                         <img src={backspace_icon} style={{'height':"26px", 'marginTop':"6px", 'marginLeft':"23px"}} alt=""/>
                     </div>
 
-                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}}>
+                    <div className="key-button number" style={{'width':"99px", 'marginLeft':"7px"}} onClick={() => addCodeEquipmentCode("0")}>
                         <p>
                             0
                         </p>
@@ -3260,7 +3895,7 @@ function SystemConfigurationWirelessEdit(){
                     <ul className="checkbox-list">
                         <li>
                             <label className="container">S1
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked name="radio"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
