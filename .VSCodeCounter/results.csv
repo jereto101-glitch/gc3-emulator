@@ -11,9 +11,9 @@ c:\Users\jajohnson\gc3_emulator\src\Screen.css, CSS, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\SideBar.js, JavaScript, 666, 0, 0, 0, 2, 197, 865
 c:\Users\jajohnson\gc3_emulator\src\images\chat-icon.svg, XML, 0, 0, 0, 1, 0, 0, 1
 c:\Users\jajohnson\gc3_emulator\src\images\emergency-fire.svg, XML, 0, 0, 0, 3, 0, 1, 4
-c:\Users\jajohnson\gc3_emulator\src\index.css, CSS, 0, 1166, 0, 0, 16, 4, 1186
+c:\Users\jajohnson\gc3_emulator\src\index.css, CSS, 0, 1208, 0, 0, 16, 4, 1228
 c:\Users\jajohnson\gc3_emulator\src\index.js, JavaScript, 8, 0, 0, 0, 0, 3, 11
-c:\Users\jajohnson\gc3_emulator\src\info.js, JavaScript, 253, 0, 0, 0, 0, 63, 316
+c:\Users\jajohnson\gc3_emulator\src\info.js, JavaScript, 264, 0, 0, 0, 0, 66, 330
 c:\Users\jajohnson\gc3_emulator\src\screen\Alarm.js, JavaScript, 207, 0, 0, 0, 0, 38, 245
 c:\Users\jajohnson\gc3_emulator\src\screen\ArmingAway.js, JavaScript, 278, 0, 0, 0, 0, 50, 328
 c:\Users\jajohnson\gc3_emulator\src\screen\ArmingAwaySilent.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
@@ -84,7 +84,7 @@ c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationPanelProgramming.j
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZones.js, JavaScript, 1646, 0, 0, 0, 1, 47, 1694
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZonesEditZone.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZones.js, JavaScript, 2138, 0, 0, 0, 1, 47, 2186
-c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js, JavaScript, 2378, 0, 0, 0, 1010, 214, 3602
+c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js, JavaScript, 3377, 0, 0, 0, 591, 229, 4197
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfo.js, JavaScript, 79, 0, 0, 0, 0, 19, 98
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoDealerInfo.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
 c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoHistory.js, JavaScript, 0, 0, 0, 0, 0, 1, 1
@@ -107,4 +107,4 @@ c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewCodeVerify.js, JavaScript, 67
 c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewName.js, JavaScript, 534, 0, 0, 0, 0, 78, 612
 c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgress.js, JavaScript, 23, 0, 0, 0, 0, 4, 27
 c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgressHack.js, JavaScript, 24, 0, 0, 0, 0, 4, 28
-Total, -, 15979, 1166, 133, 4, 1107, 1977, 20366
+Total, -, 16989, 1208, 133, 4, 688, 1995, 21017
