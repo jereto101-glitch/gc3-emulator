@@ -301,6 +301,20 @@ function HackPage() {
                                 The serial number invalid entry page is the next step to style. I also need to figure out why my defaultCheck on my checkboxes isn't working. I also need to rewrite my redux for how I store my programming and temp programming. After the whole page is working I then need to create the save page to wipe temp programming data and either save it or delete it depending on what is chosen. The home and emergency buttons also need to be reworked a bit to not work when in installer toolbox.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/03/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Not much progress today but was able to resolve most of a bug on the serial number always showing invalid.
+                            </td>
+
+                            <td>
+                                Lots of work to do, read last update. Literally not much further on any of that.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -320,7 +334,7 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 01/01/2020 9:17:16PM
+                    Last Updated: 01/03/2020 9:04:09PM
                 </footer>
             </div>
         </div>
