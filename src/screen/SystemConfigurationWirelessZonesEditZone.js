@@ -920,431 +920,351 @@ function SystemConfigurationWirelessEdit(){
     const [Current_Zone,setCurrent_Zone] = useState(`Wireless Zone 001`)
     const [ZoneProgramming, setZoneProgramming] = useState("idk what to do here yet")
     
-    // function SensorType(){
-    //     if(document.getElementById('sensor-type') !== undefined){
-    //         var zone = ""
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //         console.log(zone)
-    
-    //         var retrievedSensors = localStorage.getItem("panelSensors");
-    //         retrievedSensors = JSON.parse(retrievedSensors)
-    //         var datapass = ""
-    //         if (zone === "1"){
-    //             datapass = retrievedSensors.sensor1.sensorType
-    //         }
-    //         else if (zone === "2"){
-    //             datapass = retrievedSensors.sensor2.sensorType
-    //         }
-    //         else if (zone === "3"){
-    //             datapass = retrievedSensors.sensor3.sensorType
-    //         }
-    //         else if (zone === "4"){
-    //             datapass = retrievedSensors.sensor4.sensorType
-    //         }
-    //         else if (zone === "5"){
-    //             datapass = retrievedSensors.sensor5.sensorType
-    //         }
-    //         else if (zone === "6"){
-    //             datapass = retrievedSensors.sensor6.sensorType
-    //         }
-    //         else if (zone === "7"){
-    //             datapass = retrievedSensors.sensor7.sensorType
-    //         }
-    //         else if (zone === "8"){
-    //             datapass = retrievedSensors.sensor8.sensorType
-    //         }
-    //         console.log("sensorType: ", datapass)
-            
-    //         if (datapass === "00"){
-    //             setSensor_Type("00 - Unused")
-    //         }
-    //         else if (datapass === "01"){
-    //             console.log("correct being run")
-    //             setSensor_Type("01 - Exit/Entry 1")
-    //         }
-    //         else if (datapass === "02"){
-    //             setSensor_Type("02 - Exit/Entry 2")
-    //         }
-    //         else if (datapass === "03"){
-    //             setSensor_Type("03 - Perimeter")
-    //         }
-    //         else if (datapass === "04"){
-    //             setSensor_Type("04 - Interior Follower")
-    //         }
-    //         else if (datapass === "05"){
-    //             setSensor_Type("05 - Day Zone")
-    //         }
-    //         else if (datapass === "06"){
-    //             setSensor_Type("06 - 24-Hour Silent Alarm")
-    //         }
-    //         else if (datapass === "07"){
-    //             setSensor_Type("07 - 24-Hour Audible Alarm")
-    //         }
-    //         else if (datapass === "08"){
-    //             setSensor_Type("08 - 24-Hour Auxiliary Alarm")
-    //         }
-    //         else if (datapass === "09"){
-    //             setSensor_Type("09 - 24-Hour Fire")
-    //         }
-    //         else if (datapass === "10"){
-    //             setSensor_Type("10 - Interior with Delay")
-    //         }
-    //         else if (datapass === "14"){
-    //             setSensor_Type("14 - 24-Hour Carbon Monoxide")
-    //         }
-    //         else if (datapass === "16"){
-    //             setSensor_Type("16 - 24-Hour Fire Verification")
-    //         }
-    //         else if (datapass === "23"){
-    //             setSensor_Type("23 - No Response Type")
-    //         }
-    //         else if (datapass === "24"){
-    //             setSensor_Type("24 - Silent Burglary")
-    //         }
-    //         else if (datapass === "32"){
-    //             setSensor_Type("32 - Remote Device")
-    //         }
-    //         else{
-    //             setSensor_Type("00 - Unused")
-    //             console.log("Sensor Type Else Run")
-    //         }
-    //     }
-    // }
+    function SensorType(){
+        if(document.getElementById('sensor-type') !== undefined){
+            var retrievedSensors = localStorage.getItem("panelSensors");
+            retrievedSensors = JSON.parse(retrievedSensors)
+            var datapass = ""
 
-    // function EquipmentCode(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.equipmentCode
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.equipmentCode
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.equipmentCode
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.equipmentCode
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.equipmentCode
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.equipmentCode
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.equipmentCode
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.equipmentCode
-    //     }
-    //     console.log("equipmentCode: ", datapass)
+            if (Current_Zone === "Wireless Zone 001"){
+                datapass = retrievedSensors.sensor1.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 002"){
+                datapass = retrievedSensors.sensor2.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 003"){
+                datapass = retrievedSensors.sensor3.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 004"){
+                datapass = retrievedSensors.sensor4.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 005"){
+                datapass = retrievedSensors.sensor5.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 006"){
+                datapass = retrievedSensors.sensor6.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 007"){
+                datapass = retrievedSensors.sensor7.sensorType
+            }
+            else if (Current_Zone === "Wireless Zone 008"){
+                datapass = retrievedSensors.sensor8.sensorType
+            }
+            console.log("sensorType: ", datapass)
+            
+            if (datapass === "00"){
+                setSensor_Type("00 - Unused")
+            }
+            else if (datapass === "01"){
+                setSensor_Type("01 - Exit/Entry 1")
+            }
+            else if (datapass === "02"){
+                setSensor_Type("02 - Exit/Entry 2")
+            }
+            else if (datapass === "03"){
+                setSensor_Type("03 - Perimeter")
+            }
+            else if (datapass === "04"){
+                setSensor_Type("04 - Interior Follower")
+            }
+            else if (datapass === "05"){
+                setSensor_Type("05 - Day Zone")
+            }
+            else if (datapass === "06"){
+                setSensor_Type("06 - 24-Hour Silent Alarm")
+            }
+            else if (datapass === "07"){
+                setSensor_Type("07 - 24-Hour Audible Alarm")
+            }
+            else if (datapass === "08"){
+                setSensor_Type("08 - 24-Hour Auxiliary Alarm")
+            }
+            else if (datapass === "09"){
+                setSensor_Type("09 - 24-Hour Fire")
+            }
+            else if (datapass === "10"){
+                setSensor_Type("10 - Interior with Delay")
+            }
+            else if (datapass === "14"){
+                setSensor_Type("14 - 24-Hour Carbon Monoxide")
+            }
+            else if (datapass === "16"){
+                setSensor_Type("16 - 24-Hour Fire Verification")
+            }
+            else if (datapass === "23"){
+                setSensor_Type("23 - No Response Type")
+            }
+            else if (datapass === "24"){
+                setSensor_Type("24 - Silent Burglary")
+            }
+            else if (datapass === "32"){
+                setSensor_Type("32 - Remote Device")
+            }
+            else{
+                setSensor_Type("00 - Unused")
+                console.log("Sensor Type Else Run")
+            }
+        }
+    }
+
+    function EquipmentCode(){
+        var retrievedSensors = localStorage.getItem("panelSensors");
+        retrievedSensors = JSON.parse(retrievedSensors)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedSensors.sensor1.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedSensors.sensor2.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedSensors.sensor3.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedSensors.sensor4.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedSensors.sensor5.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedSensors.sensor6.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedSensors.sensor7.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedSensors.sensor8.sensorType
+        }
     
-    //     if (datapass === "0000"){
-    //         setEquipment_Code('0000 - Other')
-    //     }
-    //     else if (datapass === "0862"){
-    //         setEquipment_Code('0862 - 2GIG Thin Door/Window Contact')
-    //     }
-    //     else if (datapass === "0863"){
-    //         setEquipment_Code(`0863 - 2GIG Recessed Door Contact`)
-    //     }
-    //     else if (datapass === "0865"){
-    //         setEquipment_Code(`0865 - 2GIG Outdoor Door/Window Sensor`)
-    //     }
-    //     else if (datapass === "0869"){
-    //         setEquipment_Code(`0869 - 2GIG POR with Pet Immunity`)
-    //     }
-    //     else if (datapass === "0864"){
-    //         setEquipment_Code(`0864 - 2GIG Glass Break Detector`)
-    //     }
-    //     else if (datapass === "0895"){
-    //         setEquipment_Code(`0895 - SMKT2-345 GE Smoke/Heat Detector`)
-    //     }
-    //     else if (datapass === "1058"){
-    //         setEquipment_Code(`1085 - 2GIG Smoke Detector`)
-    //     }
-    //     else if (datapass === "0872"){
-    //         setEquipment_Code(`0872 - SMKE1-345 Smoke Detector(USA)`)
-    //     }
-    //     else if (datapass === "0871"){
-    //         setEquipment_Code(`0871 - SMKE1-345 Smoke Detector(Canada)`)
-    //     }
-    //     else if (datapass === "0868"){
-    //         setEquipment_Code(`0868 - 2GIG Panic Button Remote`)
-    //     }
-    //     else if (datapass === "0860"){
-    //         setEquipment_Code(`0860 - CO1-345 CO Detector(USA)`)
-    //     }
-    //     else if (datapass === "0859"){
-    //         setEquipment_Code(`0859 - CO1-345 CO Detector(Canada)`)
-    //     }
-    //     else if (datapass === "1026"){
-    //         setEquipment_Code(`1026 - 2GIG CO Detector`)
-    //     }
-    //     else if (datapass === "1069"){
-    //         setEquipment_Code(`1069 - 2GIG FireFighter SMKT/CO Listener`)
-    //     }
-    //     else if (datapass === "0873"){
-    //         setEquipment_Code(`0873 - 2GIG Takeover Module`)
-    //     }
-    //     else if (datapass === "0637"){
-    //         setEquipment_Code(`0637 - HW D/W "5816"`)
-    //     }
-    //     else if (datapass === "0470"){
-    //         setEquipment_Code(`0470 - HW R-D/W "5818MNL"`)
-    //     }
-    //     else if (datapass === "0533"){
-    //         setEquipment_Code(`0533 - HW PIR "5890"`)
-    //     }
-    //     else if (datapass === "0530"){
-    //         setEquipment_Code(`0530 - HW PIR "5894PI"`)
-    //     }
-    //     else if (datapass === "0519"){
-    //         setEquipment_Code(`0519 - HW Glass Break "5853"`)
-    //     }
-    //     else if (datapass === "0589"){
-    //         setEquipment_Code(`0589 - HW Smoke "5808W3"`)
-    //     }
-    //     else if (datapass === "0557"){
-    //         setEquipment_Code(`0557 - HW Heat Sensor "5809"`)
-    //     }
-    //     else if (datapass === "0624"){
-    //         setEquipment_Code(`0624 - HW Flood Sensor "5821"`)
-    //     }
-    //     else if (datapass === "0491"){
-    //         setEquipment_Code(`0491 - HW Panic Pendant "5802MN2"`)
-    //     }
-    //     else if (datapass === "1063"){
-    //         setEquipment_Code(`1063 - 2GIG 2GIG Doorbell`)
-    //     }
-    //     else if (datapass === "1061"){
-    //         setEquipment_Code(`1061 - Tilt Sensor`)
-    //     }
-    //     else if (datapass === "1062"){
-    //         setEquipment_Code(`1062 - 2GIG Tilt Sensor`)
-    //     }
-    //     else if (datapass === "1064"){
-    //         setEquipment_Code(`1064 - 2GIG Bypass Sensor`)
-    //     }
-    //     else if (datapass === "1065"){
-    //         setEquipment_Code(`1065 - 2GIG Flood Sensor`)
-    //     }
-    //     else if (datapass === "1066"){
-    //         setEquipment_Code(`1066 - 2GIG Shock Sensor`)
-    //     }
-    //     else if (datapass === "1067"){
-    //         setEquipment_Code(`1067 - 2GIG Repeater`)
-    //     }
-    //     else if (datapass === "1068"){
-    //         setEquipment_Code(`1068 - 2GIG Translator`)
-    //     }
-    //     else if (datapass === "1070"){
-    //         setEquipment_Code(`1070 - 2GIG F1-345`)
-    //     }
-    //     else if (datapass === "1071"){
-    //         setEquipment_Code(`1071 - 2GIG PHB-345`)
-    //     }
-    //     else if (datapass === "1072"){
-    //         setEquipment_Code(`1072 - 2GIG Smoke Ring`)
-    //     }
-    //     else if (datapass === "0655"){
-    //         setEquipment_Code(`0655 - Existing Door/Window Contact`)
-    //     }
-    //     else if (datapass === "0609"){
-    //         setEquipment_Code(`0609 - Existing Motion Detector`)
-    //     }
-    //     else if (datapass === "0475"){
-    //         setEquipment_Code(`0475 - Existing Glass Break Detector`)
-    //     }
-    //     else if (datapass === "0616"){
-    //         setEquipment_Code(`0616 - Existing Smoke Detector`)
-    //     }
-    //     else if (datapass === "0692"){
-    //         setEquipment_Code(`0692 - Existing CO Detector`)
-    //     }
-    //     else if (datapass === "0708"){
-    //         setEquipment_Code(`0708 - Existing Heat Sensor`)
-    //     }
-    //     else if (datapass === "0556"){
-    //         setEquipment_Code(`0556 - Existing Flood/Temp Sensor`)
-    //     }
-    //     else if (datapass === "9999"){
-    //         setEquipment_Code(`9999 - Alarm.com Image Sensor`)
-    //     }
-    //     else if (datapass === "2058"){
-    //         setEquipment_Code(`2058 - eSeries Smoke Detector (USA)`)
-    //     }
-    //     else if (datapass === "2061"){
-    //         setEquipment_Code(`2061 - eSeries Tilt Sensor`)
-    //     }
-    //     else if (datapass === "2065"){
-    //         setEquipment_Code(`2065 - eSeries Flood Sensor`)
-    //     }
-    //     else if (datapass === "2066"){
-    //         setEquipment_Code(`2066 - eSeries Shock Sensor`)
-    //     }
-    //     else if (datapass === "2067"){
-    //         setEquipment_Code(`2067 - eSeries Repeater`)
-    //     }
-    //     else if (datapass === "2069"){
-    //         setEquipment_Code(`2069 - eSeries FireFighter SMKT/CO Listener`)
-    //     }
-    //     else if (datapass === "2068"){
-    //         setEquipment_Code(`2068 - eSeries Translator`)
-    //     }
-    //     else if (datapass === "2070"){
-    //         setEquipment_Code(`2070 - eSeries Water Sensor`)
-    //     }
-    //     else if (datapass === "2860"){
-    //         setEquipment_Code(`2860 - eSeries CO Detector (USA)`)
-    //     }
-    //     else if (datapass === "2862"){
-    //         setEquipment_Code(`2862 - eSeries Thin Door/Window Contact`)
-    //     }
-    //     else if (datapass === "2863"){
-    //         setEquipment_Code(`2863 - eSeries Recessed Door Contact`)
-    //     }
-    //     else if (datapass === "2865"){
-    //         setEquipment_Code(`2865 - eSeries Outdoor Door/Window Sensor`)
-    //     }
-    //     else if (datapass === "2864"){
-    //         setEquipment_Code(`2864 - eSeries Glass Break Detector`)
-    //     }
-    //     else if (datapass === "2868"){
-    //         setEquipment_Code(`2868 - eSeries Panic`)
-    //     }
-    //     else if (datapass === "2869"){
-    //         setEquipment_Code(`2869 - eSeries PIR with Pet Immunity`)
-    //     }
-    //     else if (datapass === "2873"){
-    //         setEquipment_Code(`2873 - eSeries Takeover Module`)
-    //     }
-    //     else {
-    //         setEquipment_Code(`0000 - Other`)
-    //     }
-    // }
+        if (datapass === "0000"){
+            setEquipment_Code('0000 - Other')
+        }
+        else if (datapass === "0862"){
+            setEquipment_Code('0862 - 2GIG Thin Door/Window Contact')
+        }
+        else if (datapass === "0863"){
+            setEquipment_Code(`0863 - 2GIG Recessed Door Contact`)
+        }
+        else if (datapass === "0865"){
+            setEquipment_Code(`0865 - 2GIG Outdoor Door/Window Sensor`)
+        }
+        else if (datapass === "0869"){
+            setEquipment_Code(`0869 - 2GIG PIR with Pet Immunity`)
+        }
+        else if (datapass === "0864"){
+            setEquipment_Code(`0864 - 2GIG Glass Break Detector`)
+        }
+        else if (datapass === "0895"){
+            setEquipment_Code(`0895 - SMKT2-345 GE Smoke/Heat Detector`)
+        }
+        else if (datapass === "1058"){
+            setEquipment_Code(`1085 - 2GIG Smoke Detector`)
+        }
+        else if (datapass === "0872"){
+            setEquipment_Code(`0872 - SMKE1-345 Smoke Detector(USA)`)
+        }
+        else if (datapass === "0871"){
+            setEquipment_Code(`0871 - SMKE1-345 Smoke Detector(Canada)`)
+        }
+        else if (datapass === "0868"){
+            setEquipment_Code(`0868 - 2GIG Panic Button Remote`)
+        }
+        else if (datapass === "0860"){
+            setEquipment_Code(`0860 - CO1-345 CO Detector(USA)`)
+        }
+        else if (datapass === "0859"){
+            setEquipment_Code(`0859 - CO1-345 CO Detector(Canada)`)
+        }
+        else if (datapass === "1026"){
+            setEquipment_Code(`1026 - 2GIG CO Detector`)
+        }
+        else if (datapass === "1069"){
+            setEquipment_Code(`1069 - 2GIG FireFighter SMKT/CO Listener`)
+        }
+        else if (datapass === "0873"){
+            setEquipment_Code(`0873 - 2GIG Takeover Module`)
+        }
+        else if (datapass === "0637"){
+            setEquipment_Code(`0637 - HW D/W "5816"`)
+        }
+        else if (datapass === "0470"){
+            setEquipment_Code(`0470 - HW R-D/W "5818MNL"`)
+        }
+        else if (datapass === "0533"){
+            setEquipment_Code(`0533 - HW PIR "5890"`)
+        }
+        else if (datapass === "0530"){
+            setEquipment_Code(`0530 - HW PIR "5894PI"`)
+        }
+        else if (datapass === "0519"){
+            setEquipment_Code(`0519 - HW Glass Break "5853"`)
+        }
+        else if (datapass === "0589"){
+            setEquipment_Code(`0589 - HW Smoke "5808W3"`)
+        }
+        else if (datapass === "0557"){
+            setEquipment_Code(`0557 - HW Heat Sensor "5809"`)
+        }
+        else if (datapass === "0624"){
+            setEquipment_Code(`0624 - HW Flood Sensor "5821"`)
+        }
+        else if (datapass === "0491"){
+            setEquipment_Code(`0491 - HW Panic Pendant "5802MN2"`)
+        }
+        else if (datapass === "1063"){
+            setEquipment_Code(`1063 - 2GIG 2GIG Doorbell`)
+        }
+        else if (datapass === "1061"){
+            setEquipment_Code(`1061 - Tilt Sensor`)
+        }
+        else if (datapass === "1062"){
+            setEquipment_Code(`1062 - 2GIG Tilt Sensor`)
+        }
+        else if (datapass === "1064"){
+            setEquipment_Code(`1064 - 2GIG Bypass Sensor`)
+        }
+        else if (datapass === "1065"){
+            setEquipment_Code(`1065 - 2GIG Flood Sensor`)
+        }
+        else if (datapass === "1066"){
+            setEquipment_Code(`1066 - 2GIG Shock Sensor`)
+        }
+        else if (datapass === "1067"){
+            setEquipment_Code(`1067 - 2GIG Repeater`)
+        }
+        else if (datapass === "1068"){
+            setEquipment_Code(`1068 - 2GIG Translator`)
+        }
+        else if (datapass === "1070"){
+            setEquipment_Code(`1070 - 2GIG F1-345`)
+        }
+        else if (datapass === "1071"){
+            setEquipment_Code(`1071 - 2GIG PHB-345`)
+        }
+        else if (datapass === "1072"){
+            setEquipment_Code(`1072 - 2GIG Smoke Ring`)
+        }
+        else if (datapass === "0655"){
+            setEquipment_Code(`0655 - Existing Door/Window Contact`)
+        }
+        else if (datapass === "0609"){
+            setEquipment_Code(`0609 - Existing Motion Detector`)
+        }
+        else if (datapass === "0475"){
+            setEquipment_Code(`0475 - Existing Glass Break Detector`)
+        }
+        else if (datapass === "0616"){
+            setEquipment_Code(`0616 - Existing Smoke Detector`)
+        }
+        else if (datapass === "0692"){
+            setEquipment_Code(`0692 - Existing CO Detector`)
+        }
+        else if (datapass === "0708"){
+            setEquipment_Code(`0708 - Existing Heat Sensor`)
+        }
+        else if (datapass === "0556"){
+            setEquipment_Code(`0556 - Existing Flood/Temp Sensor`)
+        }
+        else if (datapass === "9999"){
+            setEquipment_Code(`9999 - Alarm.com Image Sensor`)
+        }
+        else if (datapass === "2058"){
+            setEquipment_Code(`2058 - eSeries Smoke Detector (USA)`)
+        }
+        else if (datapass === "2061"){
+            setEquipment_Code(`2061 - eSeries Tilt Sensor`)
+        }
+        else if (datapass === "2065"){
+            setEquipment_Code(`2065 - eSeries Flood Sensor`)
+        }
+        else if (datapass === "2066"){
+            setEquipment_Code(`2066 - eSeries Shock Sensor`)
+        }
+        else if (datapass === "2067"){
+            setEquipment_Code(`2067 - eSeries Repeater`)
+        }
+        else if (datapass === "2069"){
+            setEquipment_Code(`2069 - eSeries FireFighter SMKT/CO Listener`)
+        }
+        else if (datapass === "2068"){
+            setEquipment_Code(`2068 - eSeries Translator`)
+        }
+        else if (datapass === "2070"){
+            setEquipment_Code(`2070 - eSeries Water Sensor`)
+        }
+        else if (datapass === "2860"){
+            setEquipment_Code(`2860 - eSeries CO Detector (USA)`)
+        }
+        else if (datapass === "2862"){
+            setEquipment_Code(`2862 - eSeries Thin Door/Window Contact`)
+        }
+        else if (datapass === "2863"){
+            setEquipment_Code(`2863 - eSeries Recessed Door Contact`)
+        }
+        else if (datapass === "2865"){
+            setEquipment_Code(`2865 - eSeries Outdoor Door/Window Sensor`)
+        }
+        else if (datapass === "2864"){
+            setEquipment_Code(`2864 - eSeries Glass Break Detector`)
+        }
+        else if (datapass === "2868"){
+            setEquipment_Code(`2868 - eSeries Panic`)
+        }
+        else if (datapass === "2869"){
+            setEquipment_Code(`2869 - eSeries PIR with Pet Immunity`)
+        }
+        else if (datapass === "2873"){
+            setEquipment_Code(`2873 - eSeries Takeover Module`)
+        }
+        else {
+            setEquipment_Code(`0000 - Other`)
+        }
+    }
     
-    // function SerialNumber(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.serialNumber
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.serialNumber
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.serialNumber
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.serialNumber
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.serialNumber
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.serialNumber
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.serialNumber
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.serialNumber
-    //     }
-    //     console.log("serialNumber: ", datapass)
+    function SerialNumber(){
+        var retrievedSensors = localStorage.getItem("panelSensors");
+        retrievedSensors = JSON.parse(retrievedSensors)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedSensors.sensor1.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedSensors.sensor2.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedSensors.sensor3.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedSensors.sensor4.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedSensors.sensor5.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedSensors.sensor6.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedSensors.sensor7.sensorType
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedSensors.sensor8.sensorType
+        }
+        console.log("serialNumber: ", datapass)
     
-    //     if (datapass !== null){
-    //         if(typeof datapass !== "object"){
-    //             setSerial_Number(datapass)
-    //         }
-    //         else{
-    //             setSerial_Number('0000000')
-    //         }
-    //     }
-    //     else{
-    //         setSerial_Number('0000000')
-    //     }
-    // }
+        if (datapass !== null){
+            if(typeof datapass !== "object"){
+                setSerial_Number(datapass)
+            }
+            else{
+                setSerial_Number('0000000')
+            }
+        }
+        else{
+            setSerial_Number('0000000')
+        }
+    }
     
     // function SmartAreasAssignment(){
     //     var zone = ""
@@ -2412,8 +2332,8 @@ function SystemConfigurationWirelessEdit(){
         else if (value === "0865 - 2GIG Outdoor Door/Window Sensor"){
             setEquipment_Code(`0865 - 2GIG Outdoor Door/Window Sensor`)
         }
-        else if (value === "0869 - 2GIG POR with Pet Immunity"){
-            setEquipment_Code(`0869 - 2GIG POR with Pet Immunity`)
+        else if (value === "0869 - 2GIG PIR with Pet Immunity"){
+            setEquipment_Code(`0869 - 2GIG PIR with Pet Immunity`)
         }
         else if (value === "0864 - 2GIG Glass Break Detector"){
             setEquipment_Code(`0864 - 2GIG Glass Break Detector`)
@@ -2621,7 +2541,7 @@ function SystemConfigurationWirelessEdit(){
                 document.getElementById("equipment-code-store").value = ""
             }
             else if (val === "0869"){
-                updateEquipmentCode(`0869 - 2GIG POR with Pet Immunity`)
+                updateEquipmentCode(`0869 - 2GIG PIR with Pet Immunity`)
                 document.getElementById("equipment-code-tag").style.display = ""
                 document.getElementById("equipment-code-store").style.display = "none"
                 document.getElementById("equipment-code-store").value = ""
@@ -3037,7 +2957,8 @@ function SystemConfigurationWirelessEdit(){
                 var fillSerial = true
                 var valCheck = document.getElementById("serial-number-store").value
                 if(valCheck.length === 7){
-                    if(valCheck.slice(0) !== "0"){
+                    if(valCheck.slice(0) !== 0){
+                        console.log(valCheck, valCheck.slice(0, 1))
                         invalidSerialNumberOn()
                         return
                     }
@@ -3064,7 +2985,7 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-equipment-type-span").style.color = "gray";
             document.getElementById("equipment-code").style.backgroundColor = "white";
-            if(thisSensor.sensorType !== Sensor_Type){
+            if(thisSensor.equipmentCode !== Equipment_Code){
                 document.getElementById("equipment-code").style.color = "#D6A215";
             }
             else{
@@ -3073,7 +2994,12 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("equipment-code-span").style.color = "gray";
             document.getElementById("serial-number").style.backgroundColor = "white";
-            document.getElementById("serial-number").style.color = "#404956";
+            if(thisSensor.serialNumber !== Serial_Number){
+                document.getElementById("serial-number").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("serial-number").style.color = "#404956";
+            }
             document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("serial-number-span").style.color = "gray";
             document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
@@ -3120,7 +3046,41 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-supervised-display").style.display = "none";
             document.getElementById("sensor-chime-display").style.display = "none";
             document.getElementById(selector).style.backgroundColor = "#448cc0";
-            document.getElementById(selector).style.color = "white";
+            if(selector === "sensor-type"){
+                if(thisSensor.equipmentCode !== Equipment_Code){
+                    document.getElementById(selector).style.color = "#D6A215";
+                }
+                else{
+                    document.getElementById(selector).style.color = "white";
+                }
+            }
+            else if(selector === "sensor-equipment-type"){
+                if(thisSensor.equipmentCode !== Equipment_Code){
+                    document.getElementById(selector).style.color = "#D6A215";
+                }
+                else{
+                    document.getElementById(selector).style.color = "white";
+                }
+            }
+            else if(selector === "equipment-code"){
+                if(thisSensor.equipmentCode !== Equipment_Code){
+                    document.getElementById(selector).style.color = "#D6A215";
+                }
+                else{
+                    document.getElementById(selector).style.color = "white";
+                }
+            }
+            else if(selector === "serial-number"){
+                if(thisSensor.equipmentCode !== Equipment_Code){
+                    document.getElementById(selector).style.color = "#D6A215";
+                }
+                else{
+                    document.getElementById(selector).style.color = "white";
+                }
+            }
+            else{
+                document.getElementById(selector).style.color = "white";
+            }
             document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
             var selectorDisplay = selector + "-display"
             var selectorSpan = selector + "-span"
@@ -3725,7 +3685,7 @@ function SystemConfigurationWirelessEdit(){
                             <li><p>0862 - 2GIG Thin Door/Window Contact</p></li>
                             <li><p>0863 - 2GIG Recessed Door Contact</p></li>
                             <li><p>0865 - 2GIG Outdoor Door/Window Sensor</p></li>
-                            <li><p>0869 - 2GIG POR with Pet Immunity</p></li>
+                            <li><p>0869 - 2GIG PIR with Pet Immunity</p></li>
                             <li><p>0864 - 2GIG Glass Break Detector</p></li>
                             <li><p>0895 - SMKT2-345 GE Smoke/Heat Detector</p></li>
                             <li><p>1085 - 2GIG Smoke Detector</p></li>

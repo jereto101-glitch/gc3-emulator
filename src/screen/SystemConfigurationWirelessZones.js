@@ -1096,7 +1096,7 @@ function SystemConfigurationWireless(){
             setEquipment_Code(`0865 - 2GIG Outdoor Door/Window Sensor`)
         }
         else if (datapass === "0869"){
-            setEquipment_Code(`0869 - 2GIG POR with Pet Immunity`)
+            setEquipment_Code(`0869 - 2GIG PIR with Pet Immunity`)
         }
         else if (datapass === "0864"){
             setEquipment_Code(`0864 - 2GIG Glass Break Detector`)
