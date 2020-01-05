@@ -918,7 +918,7 @@ function SystemConfigurationWirelessEdit(){
     const [Sensor_Supervised,setSensor_Supervised] = useState(`Enabled`)
     const [Sensor_Chime,setSensor_Chime] = useState(`Disabled`)
     const [Current_Zone,setCurrent_Zone] = useState(`Wireless Zone 001`)
-    const [ZoneProgramming, setZoneProgramming] = useState("idk what to do here yet")
+    const [Dummy,setDummy] = useState('')
     
     function SensorType(){
         if(document.getElementById('sensor-type') !== undefined){
@@ -1860,16 +1860,16 @@ function SystemConfigurationWirelessEdit(){
     //     }
     // }
 
-    function updateButtons(selector){
+    function updateButtons(selector, desiredZone){
         var el = document.querySelector('.config-container-scroll');
         console.log("scroll: ", el.scrollTop);
+        console.log(desiredZone)
 
         if (selector === "sensor-type"){
             el.scrollTop = 0;
             document.getElementById("up-arrow").style.display = "none"
             document.getElementById("down-arrow").style.display = ""
-            console.log(Current_Zone)
-            if(Current_Zone === "Wireless Zone 001"){
+            if(desiredZone === "Wireless Zone 001" || desiredZone === undefined){
                 document.getElementById("left-arrow").style.display = "none"
                 document.getElementById("filler").style.display = ""
             }
@@ -1878,97 +1878,176 @@ function SystemConfigurationWirelessEdit(){
                 document.getElementById("filler").style.display = "none"
             }
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
+        }
+        else if (selector === "sensor-equipment-type"){
+            el.scrollTop = 34;
+            document.getElementById("up-arrow").style.display = ""
+            document.getElementById("down-arrow").style.display = ""
+            document.getElementById("filler").style.display = "none"
+            document.getElementById("left-arrow").style.display = "none"
+            document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "equipment-code"){
-            el.scrollTop = 30;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 34;
+            }
+            else{
+                el.scrollTop = 66;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "serial-number"){
-            el.scrollTop = 64;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 66;
+            }
+            else{
+                el.scrollTop = 98;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "smart-areas-assignment"){
-            el.scrollTop = 96;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 98;
+            }
+            else{
+                el.scrollTop = 130;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "equipment-age"){
-            el.scrollTop = 128;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 130;
+            }
+            else{
+                el.scrollTop = 162;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "sensor-loop"){
-            el.scrollTop = 160;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 162;
+            }
+            else{
+                el.scrollTop = 194;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "transmission-delay"){
-            el.scrollTop = 192;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 194;
+            }
+            else{
+                el.scrollTop = 226;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "voice-descriptor"){
-            el.scrollTop = 224;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 226;
+            }
+            else{
+                el.scrollTop = 258;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "sensor-reports"){
-            el.scrollTop = 256;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 258;
+            }
+            else{
+                el.scrollTop = 290;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "sensor-supervised"){
-            el.scrollTop = 288;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 290;
+            }
+            else{
+                el.scrollTop = 322;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = ""
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
             document.getElementById("right-arrow").style.display = "none"
+            document.getElementById("next-zone").style.display = ""
         }
         else if (selector === "sensor-chime"){
-            el.scrollTop = 320;
+            if(document.getElementById("sensor-equipment-type-li").style.display === "none"){
+                el.scrollTop = 322;
+            }
+            else{
+                el.scrollTop = 354;
+            }
             document.getElementById("up-arrow").style.display = ""
             document.getElementById("down-arrow").style.display = "none"
             document.getElementById("filler").style.display = "none"
             document.getElementById("left-arrow").style.display = "none"
-            if(Current_Zone !== "Wireless Zone 008"){
+            if(desiredZone !== "Wireless Zone 008"){
                 document.getElementById("right-arrow").style.display = ""
             }
             else{
                 document.getElementById("right-arrow").style.display = ""
             }
+
+            document.getElementById("next-zone").style.display = "none"
         }
     }
 
     function goUp(){
-        if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
+        if(document.getElementById('sensor-equipment-type').style.backgroundColor !== 'white' && document.getElementById('sensor-equipment-type').style.display !== "none"){
             choseAttribute("sensor-type")
+        }
+        else if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
+            if(document.getElementById("sensor-equipment-type-li").style.display !== "none"){
+                choseAttribute("sensor-equipment-type")
+            }
+            else{
+                choseAttribute("sensor-type")
+            }
         }
         else if (document.getElementById('serial-number').style.backgroundColor !== 'white'){
             choseAttribute("equipment-code")
@@ -2001,6 +2080,14 @@ function SystemConfigurationWirelessEdit(){
     
     function goDown(){
         if (document.getElementById('sensor-type').style.backgroundColor !== 'white'){
+            if(document.getElementById("sensor-equipment-type-li").style.display !== "none"){
+                choseAttribute("sensor-equipment-type")
+            }
+            else{
+                choseAttribute("equipment-code")
+            }
+        }
+        else if(document.getElementById('sensor-equipment-type').style.backgroundColor !== 'white' && document.getElementById('sensor-equipment-type').style.display !== "none"){
             choseAttribute("equipment-code")
         }
         else if (document.getElementById('equipment-code').style.backgroundColor !== 'white'){
@@ -2058,121 +2145,192 @@ function SystemConfigurationWirelessEdit(){
     function nextZone(){
         if(Current_Zone === "Wireless Zone 001"){
             setCurrent_Zone('Wireless Zone 002')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type", 'Wireless Zone 002')
         }
         else if(Current_Zone === "Wireless Zone 002"){
             setCurrent_Zone('Wireless Zone 003')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 003')
         }
         else if(Current_Zone === "Wireless Zone 003"){
             setCurrent_Zone('Wireless Zone 004')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 004')
         }
         else if(Current_Zone === "Wireless Zone 004"){
             setCurrent_Zone('Wireless Zone 005')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 005')
         }
         else if(Current_Zone === "Wireless Zone 005"){
             setCurrent_Zone('Wireless Zone 006')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 006')
         }
         else if(Current_Zone === "Wireless Zone 006"){
             setCurrent_Zone('Wireless Zone 007')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 007')
         }
         else if(Current_Zone === "Wireless Zone 007"){
             setCurrent_Zone('Wireless Zone 008')
-            choseAttribute("sensor-type")
-            updateButtons("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 008')
         }
     }
 
     function previousZone(){
         if(Current_Zone === "Wireless Zone 002"){
             setCurrent_Zone('Wireless Zone 001')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 001')
         }
         else if(Current_Zone === "Wireless Zone 003"){
             setCurrent_Zone('Wireless Zone 002')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 002')
         }
         else if(Current_Zone === "Wireless Zone 004"){
             setCurrent_Zone('Wireless Zone 003')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 003')
         }
         else if(Current_Zone === "Wireless Zone 005"){
             setCurrent_Zone('Wireless Zone 004')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 004')
         }
         else if(Current_Zone === "Wireless Zone 006"){
             setCurrent_Zone('Wireless Zone 005')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 005')
         }
         else if(Current_Zone === "Wireless Zone 007"){
             setCurrent_Zone('Wireless Zone 006')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 006')
         }
         else if(Current_Zone === "Wireless Zone 008"){
             setCurrent_Zone('Wireless Zone 007')
-            choseAttribute("sensor-type")
+            choseAttribute("sensor-type",'Wireless Zone 007')
         }
     }
 
-    function updateSensorType(value){
+    function checkSensorEquipmentType(value){
         if(value === "00 - Unused"){
-            setSensor_Type("00 - Unused")  //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "01 - Exit/Entry 1"){
-            setSensor_Type("01 - Exit/Entry 1") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "02 - Exit/Entry 2"){
-            setSensor_Type("02 - Exit/Entry 2") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "03 - Perimeter"){
-            setSensor_Type("03 - Perimeter") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "04 - Interior Follower"){
-            setSensor_Type("04 - Interior Follower") //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-li").style.display = "unset" //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-1-1").style.display = ""
+            document.getElementById("sensor-equipment-type-1-2").style.display = ""
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            setSensor_Equipment_Type("Motion")
         }
         else if(value === "05 - Day Zone"){
-            setSensor_Type("05 - Day Zone") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "06 - 24-Hour Silent Alarm"){
-            setSensor_Type("06 - 24-Hour Silent Alarm") //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-li").style.display = "" //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = ""
+            document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            setSensor_Equipment_Type("Contact")
         }
         else if(value === "07 - 24-Hour Audible Alarm"){
-            setSensor_Type("07 - 24-Hour Audible Alarm") //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-li").style.display = "" //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = ""
+            document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            setSensor_Equipment_Type("Contact")
         }
         else if(value === "08 - 24-Hour Auxiliary Alarm"){
-            setSensor_Type("08 - 24-Hour Auxiliary Alarm") //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-li").style.display = "" //Show Sensor Equipment Type Contact and Emergency
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = ""
+            document.getElementById("sensor-equipment-type-2-2").style.display = ""
+            setSensor_Equipment_Type("Contact")
         }
         else if(value === "09 - 24-Hour Fire"){
-            setSensor_Type("09 - 24-Hour Fire") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "10 - Interior with Delay"){
-            setSensor_Type("10 - Interior with Delay") //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-li").style.display = "" //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-1-1").style.display = ""
+            document.getElementById("sensor-equipment-type-1-2").style.display = ""
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            setSensor_Equipment_Type("Motion")
         }
         else if(value === "14 - 24-Hour Carbon Monoxide"){
-            setSensor_Type("14 - 24-Hour Carbon Monoxide") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "16 - 24-Hour Fire Verification"){
-            setSensor_Type("16 - 24-Hour Fire Verification") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "23 - No Response Type"){
-            setSensor_Type("23 - No Response Type") //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-li").style.display = "" //Show Sensor Equipment Type Motion and Contact
+            document.getElementById("sensor-equipment-type-1-1").style.display = ""
+            document.getElementById("sensor-equipment-type-1-2").style.display = ""
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "24 - Silent Burglary"){
-            setSensor_Type("24 - Silent Burglary") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
         else if(value === "32 - Remote Device"){
-            setSensor_Type("32 - Remote Device") //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-li").style.display = "none" //Hide Sensor Equipment Type
+            document.getElementById("sensor-equipment-type-1-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-1-2").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-1").style.display = "none"
+            document.getElementById("sensor-equipment-type-2-2").style.display = "none"
         }
+        setDummy(Math.random(0,1))
+        console.log(Dummy)
+        console.log(document.getElementById("sensor-equipment-type-li").style.display)
+        console.log(Sensor_Type)
+    }
+
+    function updateSensorType(value){
+        setSensor_Type(value)
+        checkSensorEquipmentType(value)
     }
 
     function addCodeSensorType(key){
@@ -2921,7 +3079,124 @@ function SystemConfigurationWirelessEdit(){
         document.getElementById("serial-number-store").value = val;
     }
 
-    function choseAttribute(id){
+    function updateSmartAreasAssignment(value){
+        if(value === "S1"){
+            setSmart_Areas_Assignment("S1")
+        }
+        else if(value === "S2"){
+            setSmart_Areas_Assignment("S2")
+        }
+        else if(value === "S3"){
+            setSmart_Areas_Assignment("S3")
+        }
+        else if(value === "S4"){
+            setSmart_Areas_Assignment("S4")
+        }
+    }
+
+    function updateEquipmentAge(value){
+        if(value === "New"){
+            setEquipment_Age("New")
+        }
+        else if(value === "Existing"){
+            setEquipment_Age("Existing")
+        }
+    }
+
+    function updateSensorLoop(value){
+        if(value === "Loop 1"){
+            setSmart_Areas_Assignment("Loop 1")
+        }
+        else if(value === "Loop 2"){
+            setSmart_Areas_Assignment("Loop 2")
+        }
+        else if(value === "Loop 3"){
+            setSmart_Areas_Assignment("Loop 3")
+        }
+    }
+
+    function updateTransmissionDelay(value){
+        if(value === "Enabled"){
+            setTransmission_Delay("Enabled")
+        }
+        else if(value === "Disabled"){
+            setTransmission_Delay("Disabled")
+        }
+    }
+
+    function updateSensorReports(value){
+        if(value === "Enabled"){
+            setSensor_Reports("Enabled")
+        }
+        else if(value === "Disabled"){
+            setSensor_Reports("Disabled")
+        }
+    }
+
+    function updateSensorSupervised(value){
+        if(value === "Enabled"){
+            setSensor_Supervised("Enabled")
+        }
+        else if(value === "Disabled"){
+            setSensor_Supervised("Disabled")
+        }
+    }
+
+    function updateSensorChime(value){
+        if(value === "Disabled"){
+            setSensor_Chime("Disabled")
+        }
+        else if(value === "Voice Only"){
+            setSensor_Chime("Voice Only")
+        }
+        else if(value === "Ding-Dong #1 with Voice"){
+            setSensor_Chime("Ding-Dong #1 with Voice")
+        }
+        else if(value === "Ding-Dong #2"){
+            setSensor_Chime("Ding-Dong #2")
+        }
+        else if(value === "Ding-Dong #2 with Voice"){
+            setSensor_Chime("Ding-Dong #2 with Voice")
+        }
+        else if(value === "Ding-Dong #1"){
+            setSensor_Chime("Ding-Dong #1")
+        }
+        else if(value === "Ding-Dong"){
+            setSensor_Chime("Ding-Dong")
+        }
+        else if(value === "Ding-Dong with Voice"){
+            setSensor_Chime("Ding-Dong with Voice")
+        }
+        else if(value === "Ding-Dong"){
+            setSensor_Chime("Ding-Dong")
+        }
+        else if(value === "Ding-Dong with Voice"){
+            setSensor_Chime("Ding-Dong with Voice")
+        }
+        else if(value === "Disabled"){
+            setSensor_Chime("Disabled")
+        }
+        else if(value === "Ding-Dong #3"){
+            setSensor_Chime("Ding-Dong #3")
+        }
+        else if(value === "Ding-Dong #3 with Voice"){
+            setSensor_Chime("Ding-Dong #3 with Voice")
+        }
+        else if(value === "Chime #1"){
+            setSensor_Chime("Chime #1")
+        }
+        else if(value === "Chime #1 with Voice"){
+            setSensor_Chime("Chime #1 with Voice")
+        }
+        else if(value === "Chime #2"){
+            setSensor_Chime("Chime #2")
+        }
+        else if(value === "Chime #2 with Voice"){
+            setSensor_Chime("Chime #2 with Voice")
+        }
+    }
+
+    function choseAttribute(id, desiredZone){
         var retrievedSensors = localStorage.getItem("panelSensors");
         retrievedSensors = JSON.parse(retrievedSensors)
 
@@ -2956,12 +3231,9 @@ function SystemConfigurationWirelessEdit(){
             if(document.getElementById("serial-number").style.backgroundColor !== "white"){
                 var fillSerial = true
                 var valCheck = document.getElementById("serial-number-store").value
-                if(valCheck.length === 7){
-                    if(valCheck.slice(0) !== 0){
-                        console.log(valCheck, valCheck.slice(0, 1))
-                        invalidSerialNumberOn()
-                        return
-                    }
+                if(valCheck.length === 7 && parseInt(valCheck.slice(0, 1)) !== 0){
+                    invalidSerialNumberOn()
+                    return
                 }
             }
             var selector = id
@@ -3046,6 +3318,7 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-supervised-display").style.display = "none";
             document.getElementById("sensor-chime-display").style.display = "none";
             document.getElementById(selector).style.backgroundColor = "#448cc0";
+
             if(selector === "sensor-type"){
                 if(thisSensor.equipmentCode !== Equipment_Code){
                     document.getElementById(selector).style.color = "#D6A215";
@@ -3081,126 +3354,320 @@ function SystemConfigurationWirelessEdit(){
             else{
                 document.getElementById(selector).style.color = "white";
             }
+
             document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
             var selectorDisplay = selector + "-display"
             var selectorSpan = selector + "-span"
             document.getElementById(selectorDisplay).style.display = "";
             document.getElementById(selectorSpan).style.color = "white";
 
-            if(Sensor_Type === "00 - Unused"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "01 - Exit/Entry 1"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "02 - Exit/Entry 2"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "03 - Perimeter"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "04 - Interior Follower"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
-                document.getElementById("sensor-equipment-type-1-1").style.display = ""
-                document.getElementById("sensor-equipment-type-1-2").style.display = ""
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "05 - Day Zone"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "06 - 24-Hour Silent Alarm"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = ""
-                document.getElementById("sensor-equipment-type-2-2").style.display = ""
-            }
-            else if(Sensor_Type === "07 - 24-Hour Audible Alarm"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = ""
-                document.getElementById("sensor-equipment-type-2-2").style.display = ""
-            }
-            else if(Sensor_Type === "08 - 24-Hour Auxiliary Alarm"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Contact and Emergency
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = ""
-                document.getElementById("sensor-equipment-type-2-2").style.display = ""
-            }
-            else if(Sensor_Type === "09 - 24-Hour Fire"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "10 - Interior with Delay"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
-                document.getElementById("sensor-equipment-type-1-1").style.display = ""
-                document.getElementById("sensor-equipment-type-1-2").style.display = ""
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "14 - 24-Hour Carbon Monoxide"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "16 - 24-Hour Fire Verification"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "23 - No Response Type"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Show Sensor Equipment Type Motion and Contact
-                document.getElementById("sensor-equipment-type-1-1").style.display = ""
-                document.getElementById("sensor-equipment-type-1-2").style.display = ""
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "24 - Silent Burglary"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
-            }
-            else if(Sensor_Type === "32 - Remote Device"){
-                document.getElementById("sensor-equipment-type").style.display = "none" //Hide Sensor Equipment Type
-                document.getElementById("sensor-equipment-type-1-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-1-2").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-1").style.display = "none"
-                document.getElementById("sensor-equipment-type-2-2").style.display = "none"
+            if(selector === "smart-areas-assignment"){
+                if(Smart_Areas_Assignment === "S1"){
+                    document.getElementById("s1").defaultChecked = true
+                    document.getElementById("s2").defaultChecked = false
+                    document.getElementById("s3").defaultChecked = false
+                    document.getElementById("s4").defaultChecked = false
+                }
+                else if(Smart_Areas_Assignment === "S2"){
+                    document.getElementById("s1").defaultChecked = false
+                    document.getElementById("s2").defaultChecked = true
+                    document.getElementById("s3").defaultChecked = false
+                    document.getElementById("s4").defaultChecked = false
+                }
+                else if(Smart_Areas_Assignment === "S3"){
+                    document.getElementById("s1").defaultChecked = false
+                    document.getElementById("s2").defaultChecked = false
+                    document.getElementById("s3").defaultChecked = true
+                    document.getElementById("s4").defaultChecked = false
+                }
+                else if(Smart_Areas_Assignment === "S4"){
+                    document.getElementById("s1").defaultChecked = false
+                    document.getElementById("s2").defaultChecked = false
+                    document.getElementById("s3").defaultChecked = false
+                    document.getElementById("s4").defaultChecked = true
+                }
             }
 
-            updateButtons(selector)
+            if(selector === "sensor-loop"){
+                if(Sensor_Loop === "Loop 1"){
+                    document.getElementById("loop1").defaultChecked = true
+                    document.getElementById("loop2").defaultChecked = false
+                    document.getElementById("loop3").defaultChecked = false
+                }
+                else if(Sensor_Loop === "Loop 2"){
+                    document.getElementById("loop1").defaultChecked = false
+                    document.getElementById("loop2").defaultChecked = true
+                    document.getElementById("loop3").defaultChecked = false
+                }
+                else if(Sensor_Loop === "Loop 3"){
+                    document.getElementById("loop1").defaultChecked = false
+                    document.getElementById("loop2").defaultChecked = false
+                    document.getElementById("loop3").defaultChecked = true
+                }
+            }
+
+            if(selector === "transmission-delay"){
+                if(Transmission_Delay === "Enabled"){
+                    document.getElementById("transmission-delay-enabled").defaultChecked = true
+                    document.getElementById("transmission-delay-disabled").defaultChecked = false
+                }
+                else if(Transmission_Delay === "Disabled"){
+                    document.getElementById("transmission-delay-enabled").defaultChecked = false
+                    document.getElementById("transmission-delay-disabled").defaultChecked = true
+                }
+            }
+
+            if(selector === "sensor-reports"){
+                if(Sensor_Reports === "Enabled"){
+                    document.getElementById("sensor-reports-enabled").defaultChecked = true
+                    document.getElementById("sensor-reports-disabled").defaultChecked = false
+                }
+                else if(Sensor_Reports === "Disabled"){
+                    document.getElementById("sensor-reports-enabled").defaultChecked = false
+                    document.getElementById("sensor-reports-disabled").defaultChecked = true
+                }
+            }
+
+            if(selector === "sensor-supervised"){
+                if(Sensor_Supervised === "Enabled"){
+                    document.getElementById("sensor-supervised-enabled").defaultChecked = true
+                    document.getElementById("sensor-supervised-disabled").defaultChecked = false
+                }
+                else if(Sensor_Supervised === "Disabled"){
+                    document.getElementById("sensor-supervised-enabled").defaultChecked = false
+                    document.getElementById("sensor-supervised-disabled").defaultChecked = true
+                }
+            }
+
+            if(selector === "sensor-chime"){
+                if(Sensor_Chime === "Disabled"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = true
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Voice Only"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong #1 with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong #2"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = true
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong #2 with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong #1"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = true
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = true
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                
+                else if(Sensor_Chime === "Ding-Dong #3"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = true
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Ding-Dong #3 with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Chime #1"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = true
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Chime #1 with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = true
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Chime #2"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = true
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = false
+                }
+                else if(Sensor_Chime === "Chime #2 with Voice"){
+                    document.getElementById("sensor-chime-disabled").defaultChecked = false
+                    document.getElementById("sensor-chime-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2").defaultChecked = false
+                    document.getElementById("sensor-chime-ding2-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding1").defaultChecked = false
+                    document.getElementById("sensor-chime-ding").defaultChecked = false
+                    document.getElementById("sensor-chime-ding-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3").defaultChecked = false
+                    document.getElementById("sensor-chime-ding3-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1").defaultChecked = false
+                    document.getElementById("sensor-chime-chime1-voice").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2").defaultChecked = false
+                    document.getElementById("sensor-chime-chime2-voice").defaultChecked = true
+                }
+            }
+
+            updateButtons(selector, desiredZone)
 
             if(selector === "serial-number"){
                 document.getElementById("serial-number-store").value = Serial_Number
@@ -3242,7 +3709,7 @@ function SystemConfigurationWirelessEdit(){
     // });
 
     return(
-        <div className="screen-style">
+        <div className="screen-style" id="edit-sensor-screen">
             <div className="screen-header">
                 <img src={wifi_icon} className="resize-1 invert-color" alt="" />
 
@@ -3335,7 +3802,7 @@ function SystemConfigurationWirelessEdit(){
                                 </p>
                             </li>
 
-                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-equipment-type")} style={{'display':"none"}}>
+                            <li className="programming-right-side-list-option" onClick={() => choseAttribute("sensor-equipment-type")} style={{'display':"none"}} id="sensor-equipment-type-li">
                                 <p style={{'color':"#404956", 'width':"295px"}} tabIndex="0" id="sensor-equipment-type">
                                     Sensor Equipment Type
 
@@ -3853,30 +4320,30 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateSmartAreasAssignment("S1")}>
                             <label className="container">S1
-                                <input type="radio" defaultChecked name="radio"/>
+                                <input type="radio" defaultChecked={true} id="s1" name="smart-areas-assignment"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSmartAreasAssignment("S2")}>
                             <label className="container">S2
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="s2" name="smart-areas-assignment"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSmartAreasAssignment("S3")}>
                             <label className="container">S3
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="s3" name="smart-areas-assignment"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSmartAreasAssignment("S4")}>
                             <label className="container" style={{'marginBottom':"0"}}>S4
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="s4" name="smart-areas-assignment"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -3893,16 +4360,16 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateEquipmentAge("New")}>
                             <label className="container">New
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="new" name="equipment-age"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateEquipmentAge("Existing")}>
                             <label className="container" style={{'marginBottom':"0"}}>Existing
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="existing" name="equipment-age"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -3919,23 +4386,23 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateSensorLoop("Loop 1")}>
                             <label className="container"> Loop 1
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="loop1" name="sensor-loop"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorLoop("Loop 2")}>
                             <label className="container">Loop 2
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="loop2" name="sensor-loop"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorLoop("Loop 3")}>
                             <label className="container" style={{'marginBottom':"0"}}>Loop 3
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="loop3" name="sensor-loop"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -3952,16 +4419,16 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateTransmissionDelay("Enabled")}>
                             <label className="container">Enabled
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="transmission-delay-enabled" name="transmission-delay"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateTransmissionDelay("Disabled")}>
                             <label className="container" style={{'marginBottom':"0"}}>Disabled
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="transmission-delay-disabled" name="transmission-delay"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -3998,16 +4465,16 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateSensorReports("Enabled")}>
                             <label className="container">Enabled
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="sensor-reports-enabled" name="sensor-reports"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorReports("Disabled")}>
                             <label className="container" style={{'marginBottom':"0"}}>Disabled
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-reports-disabled" name="sensor-reports"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -4024,16 +4491,16 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateSensorSupervised("Enabled")}>
                             <label className="container">Enabled
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="sensor-supervised-enabled" name="sensor-supervised"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorSupervised("Disabled")}>
                             <label className="container" style={{'marginBottom':"0"}}>Disabled
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-supervised-disabled" name="sensor-supervised"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -4050,100 +4517,100 @@ function SystemConfigurationWirelessEdit(){
                     </p>
 
                     <ul className="checkbox-list">
-                        <li>
+                        <li onClick={() => updateSensorChime("Disabled")}>
                             <label className="container">Disabled
-                                <input type="radio" defaultChecked={true} name="radio"/>
+                                <input type="radio" defaultChecked={true} id="sensor-chime-disabled" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Voice Only")}>
                             <label className="container">Voice Only
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #1 with Voice")}>
                             <label className="container">Ding-Dong #1 with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding1-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #2")}>
                             <label className="container">Ding-Dong #2
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding2" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #2 with Voice")}>
                             <label className="container">Ding-Dong #2 with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding2-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #1")}>
                             <label className="container">Ding-Dong #1
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding1" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong")}>
                             <label className="container">Ding-Dong
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong with Voice")}>
                             <label className="container">Ding-Dong with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #3")}>
                             <label className="container">Ding-Dong #3
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding3" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Ding-Dong #3 with Voice")}>
                             <label className="container">Ding-Dong #3 with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-ding3-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Chime #1")}>
                             <label className="container">Chime #1
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-chime1" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Chime #1 with Voice")}>
                             <label className="container">Chime #1 with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-chime1-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Chime #2")}>
                             <label className="container">Chime #2
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-chime2" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
 
-                        <li>
+                        <li onClick={() => updateSensorChime("Chime #2 with Voice")}>
                             <label className="container" style={{'marginBottom':"0"}}>Chime #2 with Voice
-                                <input type="radio" name="radio"/>
+                                <input type="radio" defaultChecked={false} id="sensor-chime-chime2-voice" name="sensor-chime"/>
                                 <span className="checkmark"></span>
                             </label>
                         </li>
@@ -4160,7 +4627,7 @@ function SystemConfigurationWirelessEdit(){
                     </div>
                 </Link>
 
-                <div className="blue-button configuration-buttons" style={{'marginLeft':"-3px", 'width':"135px"}} onClick={() => nextZone()}>
+                <div className="blue-button configuration-buttons" style={{'marginLeft':"-3px", 'width':"135px"}} onClick={() => nextZone()} id="next-zone">
                     <p style={{'marginTop':"10px"}}>
                        Next Zone
                     </p>
