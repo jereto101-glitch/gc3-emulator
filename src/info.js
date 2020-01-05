@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function HackPage() {
+function ChangeLog() {
     return (
         <div className="info-container">
             <div className="info-container-scroll" style={{'zIndex':"9999", 'position':"absolute", 'backgroundColor':"white"}}>
@@ -315,6 +315,20 @@ function HackPage() {
                                 Lots of work to do, read last update. Literally not much further on any of that.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/03/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Lots of work done today on edit sensors page. Fixed bug with state not updating in time for stuff to change resulting in bugs. Fixed issues with defaultChecked. Implimented almost everything needed, should be able to have this page finished in a few hours of work.
+                            </td>
+
+                            <td>
+                                Still need to impliment a way to update the initials with the current programmed data, I need to change the redux and how I call all of the things that pull from local storage, get a keyboard set up for the voice descriptors, and that should be just about everything to finish the page.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -334,11 +348,11 @@ function HackPage() {
 
                     <br/>
 
-                    Last Updated: 01/03/2020 9:04:09PM
+                    Last Updated: 01/04/2020 10:16:11PM
                 </footer>
             </div>
         </div>
     );
 }
 
-export default HackPage;
+export default ChangeLog;
