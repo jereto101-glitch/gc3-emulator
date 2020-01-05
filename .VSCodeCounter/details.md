@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-01-03 21:02:16
+Date : 2020-01-04 22:12:45
 
 Directory c:\Users\jajohnson\gc3_emulator\src
 
-Total : 108 files,  18334 codes, 688 comments, 1995 blanks, all 21017 lines
+Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
 
 [summary](results.md)
 
@@ -25,7 +25,7 @@ Total : 108 files,  18334 codes, 688 comments, 1995 blanks, all 21017 lines
 | [images\emergency-fire.svg](file:///c%3A/Users/jajohnson/gc3_emulator/src/images/emergency-fire.svg) | XML | 3 | 0 | 1 | 4 |
 | [index.css](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.css) | CSS | 1,208 | 16 | 4 | 1,228 |
 | [index.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.js) | JavaScript | 8 | 0 | 3 | 11 |
-| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 264 | 0 | 66 | 330 |
+| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 275 | 0 | 69 | 344 |
 | [screen\Alarm.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/Alarm.js) | JavaScript | 207 | 0 | 38 | 245 |
 | [screen\ArmingAway.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAway.js) | JavaScript | 278 | 0 | 50 | 328 |
 | [screen\ArmingAwaySilent.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAwaySilent.js) | JavaScript | 0 | 0 | 1 | 1 |
@@ -96,7 +96,7 @@ Total : 108 files,  18334 codes, 688 comments, 1995 blanks, all 21017 lines
 | [screen\SystemConfigurationWiredZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZones.js) | JavaScript | 1,646 | 1 | 47 | 1,694 |
 | [screen\SystemConfigurationWiredZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZonesEditZone.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemConfigurationWirelessZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZones.js) | JavaScript | 2,138 | 1 | 47 | 2,186 |
-| [screen\SystemConfigurationWirelessZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZonesEditZone.js) | JavaScript | 3,377 | 591 | 229 | 4,197 |
+| [screen\SystemConfigurationWirelessZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZonesEditZone.js) | JavaScript | 3,827 | 591 | 246 | 4,664 |
 | [screen\SystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfo.js) | JavaScript | 79 | 0 | 19 | 98 |
 | [screen\SystemInfoDealerInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoDealerInfo.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemInfoHistory.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoHistory.js) | JavaScript | 0 | 0 | 1 | 1 |
