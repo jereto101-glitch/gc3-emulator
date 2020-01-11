@@ -28,28 +28,32 @@ function Users() {
     return (
         <div id="screen-users" className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt="" />
+                <img src={check_mark_icon} className="resize-1" alt=""/>
 
-                <p>
-                    System <span style={{'fontSize':"16px"}}>Ready</span> To Arm 
+                <p style={{'paddingTop':"9px"}}>
+                    System
                 </p>
 
-                <div className="header-right">
+                <p style={{'marginTop':"-16px"}}>
+                    Ready to Arm
+                </p>
+
+                <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'marginTop':"-56px", 'outline':"none"}} alt="" />
+                        <img src={fluent_logo_icon} className="resize-3" style={{'outline':"none", 'marginTop':"-35px", 'marginBottom':"29px"}} alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="invert-color resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt="" />
+                    <img src={power_cord_icon} className="resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
                     
-                    <img src={sound_on_icon} className="invert-color resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt="" />
+                    <img src={sound_on_icon} className="resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="invert-color resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"26px"}} alt="" />
+                        <img src={screen_turn_off_icon} className="resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"20px"}} alt=""/>
                     </Link>
 
-                    <img src={banner_icon} className="rotateimg90" style={{'height':"18px", 'width':"22px", 'marginRight':"61px"}} alt="" />
+                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"49px"}} alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" style={{'marginRight':"96px"}} alt="" />
+                    <img src={chat_message_icon} className="resize-2" alt="" />
                 </div>
             </div>
 

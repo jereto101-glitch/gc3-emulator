@@ -1226,3 +1226,21 @@ header{
     margin-top: 0px;
     margin-left: 182px;
 }
+.system-info-box{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 30px;
+    margin-left: 10px;
+    width: 500px;
+    margin-top: -7px;
+    color: #404956;
+}
+.system-info-button{
+    margin-top: 10px;
+    width: 100px;
+    margin-left: 0px;
+    height: 23px;
+    padding-top: 6px;
+    padding-left: 12px;
+    color: white;
+}

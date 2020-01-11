@@ -928,21 +928,24 @@ function SystemConfigurationKeyfobs(){
             }
             console.log(zone)
     
-            var retrievedSensors = localStorage.getItem("panelKeyfobs");
-            retrievedSensors = JSON.parse(retrievedSensors)
+            var retrievedWireless = localStorage.getItem("panelKeyfobs");
+            retrievedWireless = JSON.parse(retrievedWireless)
             var datapass = ""
             if (zone === "1"){
-                datapass = retrievedSensors.keyfob1.fobUsed
+                datapass = retrievedWireless.keyfob1.fobUsed
             }
             else if (zone === "2"){
-                datapass = retrievedSensors.keyfob2.fobUsed
+                datapass = retrievedWireless.keyfob2.fobUsed
             }
             else if (zone === "3"){
-                datapass = retrievedSensors.keyfob3.fobUsed
+                datapass = retrievedWireless.keyfob3.fobUsed
             }
             else if (zone === "4"){
-                datapass = retrievedSensors.keyfob4.fobUsed
+                datapass = retrievedWireless.keyfob4.fobUsed
             }
+            
+            datapass = datapass.split("/")
+            datapass = datapass[0]
             console.log("fobUsed: ", datapass)
             
             if(datapass === "enabled"){
@@ -973,21 +976,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.equipmentCode
+            datapass = retrievedWireless.keyfob1.equipmentCode
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.equipmentCode
+            datapass = retrievedWireless.keyfob2.equipmentCode
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.equipmentCode
+            datapass = retrievedWireless.keyfob3.equipmentCode
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.equipmentCode
+            datapass = retrievedWireless.keyfob4.equipmentCode
         }
+                
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentCode: ", datapass)
     
         if (datapass === "0000"){
@@ -1023,21 +1029,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.serialNumber
+            datapass = retrievedWireless.keyfob1.serialNumber
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.serialNumber
+            datapass = retrievedWireless.keyfob2.serialNumber
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.serialNumber
+            datapass = retrievedWireless.keyfob3.serialNumber
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.serialNumber
+            datapass = retrievedWireless.keyfob4.serialNumber
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("serialNumber: ", datapass)
     
         if (datapass !== null){
@@ -1069,21 +1078,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.smartAreasAssignment
+            datapass = retrievedWireless.keyfob1.smartAreasAssignment
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.smartAreasAssignment
+            datapass = retrievedWireless.keyfob2.smartAreasAssignment
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.smartAreasAssignment
+            datapass = retrievedWireless.keyfob3.smartAreasAssignment
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.smartAreasAssignment
+            datapass = retrievedWireless.keyfob4.smartAreasAssignment
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("smartAreasAssignment: ", datapass)
     
         if (datapass === "s1"){
@@ -1119,21 +1131,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.equipmentAge
+            datapass = retrievedWireless.keyfob1.equipmentAge
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.equipmentAge
+            datapass = retrievedWireless.keyfob2.equipmentAge
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.equipmentAge
+            datapass = retrievedWireless.keyfob3.equipmentAge
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.equipmentAge
+            datapass = retrievedWireless.keyfob4.equipmentAge
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentAge: ", datapass)
     
         if (datapass === "new"){
@@ -1163,21 +1178,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.emergencyKey
+            datapass = retrievedWireless.keyfob1.emergencyKey
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.emergencyKey
+            datapass = retrievedWireless.keyfob2.emergencyKey
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.emergencyKey
+            datapass = retrievedWireless.keyfob3.emergencyKey
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.emergencyKey
+            datapass = retrievedWireless.keyfob4.emergencyKey
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("emergencyKey: ", datapass)
     
         if (datapass === "enabled"){
@@ -1207,21 +1225,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.fobCanDisarm
+            datapass = retrievedWireless.keyfob1.fobCanDisarm
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.fobCanDisarm
+            datapass = retrievedWireless.keyfob2.fobCanDisarm
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.fobCanDisarm
+            datapass = retrievedWireless.keyfob3.fobCanDisarm
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.fobCanDisarm
+            datapass = retrievedWireless.keyfob4.fobCanDisarm
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("fobCanDisarm: ", datapass)
     
         if(datapass === "enabled"){
@@ -1251,21 +1272,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.voiceDescriptor
+            datapass = retrievedWireless.keyfob1.voiceDescriptor
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.voiceDescriptor
+            datapass = retrievedWireless.keyfob2.voiceDescriptor
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.voiceDescriptor
+            datapass = retrievedWireless.keyfob3.voiceDescriptor
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.voiceDescriptor
+            datapass = retrievedWireless.keyfob4.voiceDescriptor
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("voiceDescriptor: ", datapass)
     
         var fullDescriptor = ""
@@ -1300,21 +1324,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.armWithNoEntryDelay
+            datapass = retrievedWireless.keyfob1.armWithNoEntryDelay
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.armWithNoEntryDelay
+            datapass = retrievedWireless.keyfob2.armWithNoEntryDelay
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.armWithNoEntryDelay
+            datapass = retrievedWireless.keyfob3.armWithNoEntryDelay
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.armWithNoEntryDelay
+            datapass = retrievedWireless.keyfob4.armWithNoEntryDelay
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("sensorReports: ", datapass)
     
         if (datapass === "enabled"){
@@ -1344,21 +1371,24 @@ function SystemConfigurationKeyfobs(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeyfobs");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeyfobs");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keyfob1.fobOutput
+            datapass = retrievedWireless.keyfob1.fobOutput
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keyfob2.fobOutput
+            datapass = retrievedWireless.keyfob2.fobOutput
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keyfob3.fobOutput
+            datapass = retrievedWireless.keyfob3.fobOutput
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keyfob4.fobOutput
+            datapass = retrievedWireless.keyfob4.fobOutput
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("fobOutput: ", datapass)
     
         if (datapass === "toggle"){

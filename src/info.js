@@ -329,6 +329,20 @@ function ChangeLog() {
                                 Still need to impliment a way to update the initials with the current programmed data, I need to change the redux and how I call all of the things that pull from local storage, get a keyboard set up for the voice descriptors, and that should be just about everything to finish the page.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/10/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Finished up a few basic pages today to make the emulator feel a bit more finished. 
+                            </td>
+
+                            <td>
+                                Need to finish getting the state to update in edit zones. 
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -348,7 +362,7 @@ function ChangeLog() {
 
                     <br/>
 
-                    Last Updated: 01/04/2020 10:16:11PM
+                    Last Updated: 01/10/2020 9:18:51PM
                 </footer>
             </div>
         </div>

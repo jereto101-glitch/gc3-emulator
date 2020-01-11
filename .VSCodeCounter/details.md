@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-01-04 22:12:45
+Date : 2020-01-10 21:18:58
 
 Directory c:\Users\jajohnson\gc3_emulator\src
 
-Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
+Total : 108 files,  20049 codes, 98 comments, 2212 blanks, all 22359 lines
 
 [summary](results.md)
 
@@ -17,15 +17,15 @@ Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
 | [DinoApp.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/DinoApp.js) | JavaScript | 341 | 4 | 81 | 426 |
 | [Footer.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Footer.js) | JavaScript | 13 | 0 | 2 | 15 |
 | [Header.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Header.js) | JavaScript | 13 | 0 | 3 | 16 |
-| [Panel.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Panel.js) | JavaScript | 172 | 3 | 9 | 184 |
-| [Redux.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Redux.js) | JavaScript | 792 | 11 | 37 | 840 |
+| [Panel.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Panel.js) | JavaScript | 180 | 3 | 9 | 192 |
+| [Redux.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/Redux.js) | JavaScript | 851 | 11 | 48 | 910 |
 | [Screen.css](file:///c%3A/Users/jajohnson/gc3_emulator/src/Screen.css) | CSS | 0 | 0 | 1 | 1 |
 | [SideBar.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/SideBar.js) | JavaScript | 666 | 2 | 197 | 865 |
 | [images\chat-icon.svg](file:///c%3A/Users/jajohnson/gc3_emulator/src/images/chat-icon.svg) | XML | 1 | 0 | 0 | 1 |
 | [images\emergency-fire.svg](file:///c%3A/Users/jajohnson/gc3_emulator/src/images/emergency-fire.svg) | XML | 3 | 0 | 1 | 4 |
-| [index.css](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.css) | CSS | 1,208 | 16 | 4 | 1,228 |
+| [index.css](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.css) | CSS | 1,226 | 16 | 4 | 1,246 |
 | [index.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/index.js) | JavaScript | 8 | 0 | 3 | 11 |
-| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 275 | 0 | 69 | 344 |
+| [info.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/info.js) | JavaScript | 297 | 0 | 75 | 372 |
 | [screen\Alarm.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/Alarm.js) | JavaScript | 207 | 0 | 38 | 245 |
 | [screen\ArmingAway.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAway.js) | JavaScript | 278 | 0 | 50 | 328 |
 | [screen\ArmingAwaySilent.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/ArmingAwaySilent.js) | JavaScript | 0 | 0 | 1 | 1 |
@@ -60,10 +60,10 @@ Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
 | [screen\SmartAreasCode.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartAreasCode.js) | JavaScript | 14 | 0 | 2 | 16 |
 | [screen\SmartAreasControls.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartAreasControls.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartAreasSettings.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartAreasSettings.js) | JavaScript | 41 | 0 | 14 | 55 |
-| [screen\SmartHomeControls.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControls.js) | JavaScript | 103 | 0 | 24 | 127 |
-| [screen\SmartHomeControlsGarageDoors.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsGarageDoors.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SmartHomeControlsLights.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsLights.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SmartHomeControlsLocks.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsLocks.js) | JavaScript | 0 | 0 | 1 | 1 |
+| [screen\SmartHomeControls.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControls.js) | JavaScript | 106 | 0 | 25 | 131 |
+| [screen\SmartHomeControlsGarageDoors.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsGarageDoors.js) | JavaScript | 58 | 0 | 16 | 74 |
+| [screen\SmartHomeControlsLights.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsLights.js) | JavaScript | 58 | 0 | 16 | 74 |
+| [screen\SmartHomeControlsLocks.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsLocks.js) | JavaScript | 58 | 0 | 16 | 74 |
 | [screen\SmartHomeControlsRooms.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsRooms.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartHomeControlsRoomsEditRoom.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsRoomsEditRoom.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartHomeControlsRoomsEditRoomName.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsRoomsEditRoomName.js) | JavaScript | 0 | 0 | 1 | 1 |
@@ -72,7 +72,7 @@ Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
 | [screen\SmartHomeControlsScenesEditScene.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsScenesEditScene.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartHomeControlsScenesEditSceneName.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsScenesEditSceneName.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartHomeControlsScenesNewName.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsScenesNewName.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SmartHomeControlsThermostats.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsThermostats.js) | JavaScript | 0 | 0 | 1 | 1 |
+| [screen\SmartHomeControlsThermostats.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeControlsThermostats.js) | JavaScript | 58 | 0 | 16 | 74 |
 | [screen\SmartHomeSettings.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeSettings.js) | JavaScript | 236 | 0 | 57 | 293 |
 | [screen\SmartHomeSettingsAddDevice.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeSettingsAddDevice.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SmartHomeSettingsAdvancedSettings.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SmartHomeSettingsAdvancedSettings.js) | JavaScript | 0 | 0 | 1 | 1 |
@@ -88,32 +88,32 @@ Total : 108 files,  18795 codes, 688 comments, 2015 blanks, all 21498 lines
 | [screen\SoundsSettings.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SoundsSettings.js) | JavaScript | 41 | 0 | 14 | 55 |
 | [screen\SystemConfiguration.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfiguration.js) | JavaScript | 94 | 0 | 21 | 115 |
 | [screen\SystemConfigurationImageSensors.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationImageSensors.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemConfigurationKeyfobs.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeyfobs.js) | JavaScript | 1,519 | 1 | 45 | 1,565 |
+| [screen\SystemConfigurationKeyfobs.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeyfobs.js) | JavaScript | 1,539 | 1 | 55 | 1,595 |
 | [screen\SystemConfigurationKeyfobsEditKeyfob.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeyfobsEditKeyfob.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemConfigurationKeypads.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeypads.js) | JavaScript | 1,378 | 1 | 39 | 1,418 |
+| [screen\SystemConfigurationKeypads.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeypads.js) | JavaScript | 1,392 | 1 | 46 | 1,439 |
 | [screen\SystemConfigurationKeypadsEditKeypad.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationKeypadsEditKeypad.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemConfigurationPanelProgramming.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationPanelProgramming.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemConfigurationWiredZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZones.js) | JavaScript | 1,646 | 1 | 47 | 1,694 |
+| [screen\SystemConfigurationWiredZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZones.js) | JavaScript | 1,668 | 1 | 58 | 1,727 |
 | [screen\SystemConfigurationWiredZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWiredZonesEditZone.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemConfigurationWirelessZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZones.js) | JavaScript | 2,138 | 1 | 47 | 2,186 |
-| [screen\SystemConfigurationWirelessZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZonesEditZone.js) | JavaScript | 3,827 | 591 | 246 | 4,664 |
-| [screen\SystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfo.js) | JavaScript | 79 | 0 | 19 | 98 |
-| [screen\SystemInfoDealerInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoDealerInfo.js) | JavaScript | 0 | 0 | 1 | 1 |
+| [screen\SystemConfigurationWirelessZones.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZones.js) | JavaScript | 2,278 | 1 | 61 | 2,340 |
+| [screen\SystemConfigurationWirelessZonesEditZone.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemConfigurationWirelessZonesEditZone.js) | JavaScript | 4,337 | 1 | 267 | 4,605 |
+| [screen\SystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfo.js) | JavaScript | 82 | 0 | 20 | 102 |
+| [screen\SystemInfoDealerInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoDealerInfo.js) | JavaScript | 79 | 0 | 25 | 104 |
 | [screen\SystemInfoHistory.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoHistory.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemInfoLicenseInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoLicenseInfo.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\SystemInfoSystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoSystemInfo.js) | JavaScript | 0 | 0 | 1 | 1 |
+| [screen\SystemInfoSystemInfo.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemInfoSystemInfo.js) | JavaScript | 115 | 0 | 29 | 144 |
 | [screen\SystemPairing.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemPairing.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemSettingsCode.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemSettingsCode.js) | JavaScript | 163 | 25 | 37 | 225 |
 | [screen\SystemSettingsInstallerMenu.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemSettingsInstallerMenu.js) | JavaScript | 234 | 0 | 53 | 287 |
-| [screen\SystemSettingsMenu.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemSettingsMenu.js) | JavaScript | 234 | 0 | 53 | 287 |
+| [screen\SystemSettingsMenu.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemSettingsMenu.js) | JavaScript | 237 | 0 | 54 | 291 |
 | [screen\SystemTests.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemTests.js) | JavaScript | 41 | 0 | 14 | 55 |
 | [screen\SystemTestsConsoleTest.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemTestsConsoleTest.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\SystemTestsSensorTest.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/SystemTestsSensorTest.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\Users.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/Users.js) | JavaScript | 214 | 0 | 87 | 301 |
+| [screen\Users.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/Users.js) | JavaScript | 217 | 0 | 88 | 305 |
 | [screen\UsersEditCode.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersEditCode.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\UsersEditCodeVerify.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersEditCodeVerify.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [screen\UsersEditName.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersEditName.js) | JavaScript | 0 | 0 | 1 | 1 |
-| [screen\UsersEditUser.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersEditUser.js) | JavaScript | 100 | 0 | 32 | 132 |
+| [screen\UsersEditUser.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersEditUser.js) | JavaScript | 103 | 0 | 33 | 136 |
 | [screen\UsersNewCode.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersNewCode.js) | JavaScript | 81 | 0 | 17 | 98 |
 | [screen\UsersNewCodeVerify.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersNewCodeVerify.js) | JavaScript | 67 | 0 | 13 | 80 |
 | [screen\UsersNewName.js](file:///c%3A/Users/jajohnson/gc3_emulator/src/screen/UsersNewName.js) | JavaScript | 534 | 0 | 78 | 612 |

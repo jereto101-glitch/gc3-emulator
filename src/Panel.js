@@ -26,6 +26,13 @@ import SystemConfigurationWiredZones from './screen/SystemConfigurationWiredZone
 import SystemConfigurationKeyfobs from './screen/SystemConfigurationKeyfobs';
 import SystemConfigurationKeypads from './screen/SystemConfigurationKeypads';
 import SystemConfigurationWirelessEdit from './screen/SystemConfigurationWirelessZonesEditZone';
+import SystemInfoDealerInfo from './screen/SystemInfoDealerInfo';
+import SystemInfoSystemInfo from './screen/SystemInfoSystemInfo';
+import Users from './screen/Users'
+import SmartHomeControlsGarageDoors from './screen/SmartHomeControlsGarageDoors'
+import SmartHomeControlsLights from './screen/SmartHomeControlsLights'
+import SmartHomeControlsLocks from './screen/SmartHomeControlsLocks'
+import SmartHomeControlsThermostats from './screen/SmartHomeControlsThermostats'
 // import Users from "./screen/Users";
 // import UsersEditUser from "./screen/UsersEditUser";
 
@@ -119,7 +126,7 @@ function Panel() {
                     <Route path="/system-settings/code" component={SystemSettingsCode} />
                     <Route path="/system-settings/menu" component={SystemSettingsMenu} />
                     <Route path="/system-settings/installer-menu" component={SystemSettingsInstallerMenu} />
-                    <Route path="/system-settings/users/menu" component={WorkInProgress} />
+                    <Route path="/system-settings/users/menu" component={Users} />
                     <Route path="/system-settings/users/edit/:id" component={WorkInProgress} />
                     <Route path="/system-settings/users/new/name" component={WorkInProgress} />
                     <Route path="/system-settings/sounds" component={WorkInProgress} />
@@ -143,17 +150,18 @@ function Panel() {
                     <Route path="/system-settings/sensor-chimes" component={WorkInProgress} />
                     <Route path="/system-settings/smart-area" component={WorkInProgress} />
                     <Route path="/smart-home-controls/menu" component={SmartHomeControls} />
-                    <Route path="/smart-home-controls/lights" component={WorkInProgress} />
-                    <Route path="/smart-home-controls/locks" component={WorkInProgress} />
-                    <Route path="/smart-home-controls/thermostats" component={WorkInProgress} />
-                    <Route path="/smart-home-controls/garage-doors" component={WorkInProgress} />
+                    <Route path="/smart-home-controls/lights" component={SmartHomeControlsLights} />
+                    <Route path="/smart-home-controls/locks" component={SmartHomeControlsLocks} />
+                    <Route path="/smart-home-controls/thermostats" component={SmartHomeControlsThermostats} />
+                    <Route path="/smart-home-controls/garage-doors" component={SmartHomeControlsGarageDoors} />
                     <Route path="/smart-home-controls/scenes" component={WorkInProgress} />
                     <Route path="/smart-home-controls/rooms" component={WorkInProgress} />
                     <Route path="/smart-areas/code" component={WorkInProgress} />
                     <Route path="/system-info/menu" component={SystemInfo} />
                     <Route path="/system-info/history" component={WorkInProgress} />
-                    <Route path="/system-info/system-info" component={WorkInProgress} />
-                    <Route path="/system-info/dealer-info" component={WorkInProgress} />
+                    <Route path="/system-info/system-info" component={SystemInfoSystemInfo} />
+                    <Route path="/system-info/dealer-info" component={SystemInfoDealerInfo} />
+                    <Route path="/system-info/license-info" component={WorkInProgress} />
                     <Route path="/broadband-failure" component={DinoGame} />
                     <Route exact path="/" component={Home} />
                     <Route component={HackPage}/>

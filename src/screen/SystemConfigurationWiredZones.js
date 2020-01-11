@@ -923,15 +923,18 @@ function SystemConfigurationWired(){
             }
             console.log(zone)
     
-            var retrievedSensors = localStorage.getItem("panelSensors");
-            retrievedSensors = JSON.parse(retrievedSensors)
+            var retrievedWireless = localStorage.getItem("panelWireless");
+            retrievedWireless = JSON.parse(retrievedWireless)
             var datapass = ""
             if (zone === "1"){
-                datapass = retrievedSensors.sensor1.sensorType
+                datapass = retrievedWireless.sensor1.sensorType
             }
             else if (zone === "2"){
-                datapass = retrievedSensors.sensor2.sensorType
+                datapass = retrievedWireless.sensor2.sensorType
             }
+
+            datapass = datapass.split("/")
+            datapass = datapass[0]
             console.log("sensorType: ", datapass)
             
             if (datapass === "00"){
@@ -1000,15 +1003,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.equipmentCode
+            datapass = retrievedWireless.sensor1.equipmentCode
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.equipmentCode
+            datapass = retrievedWireless.sensor2.equipmentCode
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentCode: ", datapass)
     
         if (datapass === "0000"){
@@ -1206,15 +1212,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.serialNumber
+            datapass = retrievedWireless.sensor1.serialNumber
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.serialNumber
+            datapass = retrievedWireless.sensor2.serialNumber
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("serialNumber: ", datapass)
     
         if (datapass !== null){
@@ -1240,15 +1249,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.smartAreasAssignment
+            datapass = retrievedWireless.sensor1.smartAreasAssignment
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.smartAreasAssignment
+            datapass = retrievedWireless.sensor2.smartAreasAssignment
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("smartAreasAssignment: ", datapass)
     
         if (datapass === "s1"){
@@ -1278,15 +1290,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.equipmentAge
+            datapass = retrievedWireless.sensor1.equipmentAge
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.equipmentAge
+            datapass = retrievedWireless.sensor2.equipmentAge
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentAge: ", datapass)
     
         if (datapass === "new"){
@@ -1310,15 +1325,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.sensorLoop
+            datapass = retrievedWireless.sensor1.sensorLoop
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.sensorLoop
+            datapass = retrievedWireless.sensor2.sensorLoop
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("sensorLoop: ", datapass)
     
         if(datapass === "1"){
@@ -1345,15 +1363,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.transmissionDelay
+            datapass = retrievedWireless.sensor1.transmissionDelay
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.transmissionDelay
+            datapass = retrievedWireless.sensor2.transmissionDelay
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("transmissionDelay: ", datapass)
     
         if(datapass === "enabled"){
@@ -1377,15 +1398,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.voiceDescriptor
+            datapass = retrievedWireless.sensor1.voiceDescriptor
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.voiceDescriptor
+            datapass = retrievedWireless.sensor2.voiceDescriptor
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("voiceDescriptor: ", datapass)
     
         var fullDescriptor = ""
@@ -1414,15 +1438,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.sensorReports
+            datapass = retrievedWireless.sensor1.sensorReports
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.sensorReports
+            datapass = retrievedWireless.sensor2.sensorReports
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("sensorReports: ", datapass)
     
         if (datapass === "enabled"){
@@ -1446,15 +1473,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.sensorSupervised
+            datapass = retrievedWireless.sensor1.sensorSupervised
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.sensorSupervised
+            datapass = retrievedWireless.sensor2.sensorSupervised
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("sensorSupervised: ", datapass)
     
         if (datapass === "enabled"){
@@ -1478,15 +1508,18 @@ function SystemConfigurationWired(){
                 zone = "2"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.sensor1.sensorChime
+            datapass = retrievedWireless.sensor1.sensorChime
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.sensor2.sensorChime
+            datapass = retrievedWireless.sensor2.sensorChime
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("sensorChime: ", datapass)
     
         if (datapass === "disbabled"){

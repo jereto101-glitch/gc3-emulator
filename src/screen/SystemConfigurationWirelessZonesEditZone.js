@@ -12,40 +12,34 @@ import check_icon from '../images/check.png';
 // Update functions to change inner html and to be run on every click of a new zone and the onload of the last JSX element
 
 function partDescription(source, indicator){
-    var datapass = ""
+    var datapass = source
     var partDescriptor = ""
     if(indicator === 1){
-        datapass = source.descriptor1
         if(datapass === ""){
             return(` <None>`)
         }
     }
     else if(indicator === 2){
-        datapass = source.descriptor2
         if(datapass === ""){
             return(` <None>`)
         }
     }
     else if(indicator === 3){
-        datapass = source.descriptor3
         if(datapass === ""){
             return(` <None>`)
         }
     }
     else if(indicator === 4){
-        datapass = source.descriptor4
         if(datapass === ""){
             return(` <None>`)
         }
     }
     else if(indicator === 5){
-        datapass = source.descriptor5
         if(datapass === ""){
             return(` <None>`)
         }
     }
     else if(indicator === 6){
-        datapass = source.descriptor6
         if(datapass === ""){
             return(` <None>`)
         }
@@ -922,34 +916,37 @@ function SystemConfigurationWirelessEdit(){
     
     function SensorType(){
         if(document.getElementById('sensor-type') !== undefined){
-            var retrievedSensors = localStorage.getItem("panelSensors");
-            retrievedSensors = JSON.parse(retrievedSensors)
+            var retrievedWireless = localStorage.getItem("panelWireless");
+            retrievedWireless = JSON.parse(retrievedWireless)
             var datapass = ""
 
             if (Current_Zone === "Wireless Zone 001"){
-                datapass = retrievedSensors.sensor1.sensorType
+                datapass = retrievedWireless.sensor1.sensorType
             }
             else if (Current_Zone === "Wireless Zone 002"){
-                datapass = retrievedSensors.sensor2.sensorType
+                datapass = retrievedWireless.sensor2.sensorType
             }
             else if (Current_Zone === "Wireless Zone 003"){
-                datapass = retrievedSensors.sensor3.sensorType
+                datapass = retrievedWireless.sensor3.sensorType
             }
             else if (Current_Zone === "Wireless Zone 004"){
-                datapass = retrievedSensors.sensor4.sensorType
+                datapass = retrievedWireless.sensor4.sensorType
             }
             else if (Current_Zone === "Wireless Zone 005"){
-                datapass = retrievedSensors.sensor5.sensorType
+                datapass = retrievedWireless.sensor5.sensorType
             }
             else if (Current_Zone === "Wireless Zone 006"){
-                datapass = retrievedSensors.sensor6.sensorType
+                datapass = retrievedWireless.sensor6.sensorType
             }
             else if (Current_Zone === "Wireless Zone 007"){
-                datapass = retrievedSensors.sensor7.sensorType
+                datapass = retrievedWireless.sensor7.sensorType
             }
             else if (Current_Zone === "Wireless Zone 008"){
-                datapass = retrievedSensors.sensor8.sensorType
+                datapass = retrievedWireless.sensor8.sensorType
             }
+
+            datapass = datapass.split("/")
+            datapass = datapass[0]
             console.log("sensorType: ", datapass)
             
             if (datapass === "00"){
@@ -1007,35 +1004,89 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
+    function SensorEquipmentType(){
+        if(document.getElementById('sensor-type') !== undefined){
+            var retrievedWireless = localStorage.getItem("panelWireless");
+            retrievedWireless = JSON.parse(retrievedWireless)
+            var datapass = ""
+
+            if (Current_Zone === "Wireless Zone 001"){
+                datapass = retrievedWireless.sensor1.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 002"){
+                datapass = retrievedWireless.sensor2.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 003"){
+                datapass = retrievedWireless.sensor3.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 004"){
+                datapass = retrievedWireless.sensor4.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 005"){
+                datapass = retrievedWireless.sensor5.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 006"){
+                datapass = retrievedWireless.sensor6.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 007"){
+                datapass = retrievedWireless.sensor7.sensorEquipmentType
+            }
+            else if (Current_Zone === "Wireless Zone 008"){
+                datapass = retrievedWireless.sensor8.sensorEquipmentType
+            }
+
+            datapass = datapass.split("/")
+            datapass = datapass[0]
+            console.log("sensorType: ", datapass)
+            
+            if (datapass === "contact"){
+                setSensor_Type("Contact")
+            }
+            else if (datapass === "motion"){
+                setSensor_Type("Motion")
+            }
+            else if (datapass === "emergency"){
+                setSensor_Type("Emergency")
+            }
+            else{
+                setSensor_Type("Contact")
+            }
+        }
+    }
+
     function EquipmentCode(){
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         
         if (Current_Zone === "Wireless Zone 001"){
-            datapass = retrievedSensors.sensor1.sensorType
+            datapass = retrievedWireless.sensor1.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 002"){
-            datapass = retrievedSensors.sensor2.sensorType
+            datapass = retrievedWireless.sensor2.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 003"){
-            datapass = retrievedSensors.sensor3.sensorType
+            datapass = retrievedWireless.sensor3.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 004"){
-            datapass = retrievedSensors.sensor4.sensorType
+            datapass = retrievedWireless.sensor4.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 005"){
-            datapass = retrievedSensors.sensor5.sensorType
+            datapass = retrievedWireless.sensor5.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 006"){
-            datapass = retrievedSensors.sensor6.sensorType
+            datapass = retrievedWireless.sensor6.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 007"){
-            datapass = retrievedSensors.sensor7.sensorType
+            datapass = retrievedWireless.sensor7.equipmentCode
         }
         else if (Current_Zone === "Wireless Zone 008"){
-            datapass = retrievedSensors.sensor8.sensorType
+            datapass = retrievedWireless.sensor8.equipmentCode
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("Equipment Code: ", datapass)
     
         if (datapass === "0000"){
             setEquipment_Code('0000 - Other')
@@ -1223,34 +1274,37 @@ function SystemConfigurationWirelessEdit(){
     }
     
     function SerialNumber(){
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         
         if (Current_Zone === "Wireless Zone 001"){
-            datapass = retrievedSensors.sensor1.sensorType
+            datapass = retrievedWireless.sensor1.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 002"){
-            datapass = retrievedSensors.sensor2.sensorType
+            datapass = retrievedWireless.sensor2.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 003"){
-            datapass = retrievedSensors.sensor3.sensorType
+            datapass = retrievedWireless.sensor3.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 004"){
-            datapass = retrievedSensors.sensor4.sensorType
+            datapass = retrievedWireless.sensor4.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 005"){
-            datapass = retrievedSensors.sensor5.sensorType
+            datapass = retrievedWireless.sensor5.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 006"){
-            datapass = retrievedSensors.sensor6.sensorType
+            datapass = retrievedWireless.sensor6.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 007"){
-            datapass = retrievedSensors.sensor7.sensorType
+            datapass = retrievedWireless.sensor7.serialNumber
         }
         else if (Current_Zone === "Wireless Zone 008"){
-            datapass = retrievedSensors.sensor8.sensorType
+            datapass = retrievedWireless.sensor8.serialNumber
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("serialNumber: ", datapass)
     
         if (datapass !== null){
@@ -1266,599 +1320,444 @@ function SystemConfigurationWirelessEdit(){
         }
     }
     
-    // function SmartAreasAssignment(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.smartAreasAssignment
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.smartAreasAssignment
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.smartAreasAssignment
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.smartAreasAssignment
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.smartAreasAssignment
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.smartAreasAssignment
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.smartAreasAssignment
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.smartAreasAssignment
-    //     }
-    //     console.log("smartAreasAssignment: ", datapass)
-    
-    //     if (datapass === "s1"){
-    //         setSmart_Areas_Assignment(`S1`)
-    //     }
-    //     else if(datapass === "s2"){
-    //         setSmart_Areas_Assignment(`S2`)
-    //     }
-    //     else if(datapass === "s3"){
-    //         setSmart_Areas_Assignment(`S3`)
-    //     }
-    //     else if(datapass === "s4"){
-    //         setSmart_Areas_Assignment(`S4`)
-    //     }
-    //     else{
-    //         setSmart_Areas_Assignment(`S1`)
-    //     }
-    // }
-    
-    // function EquipmentAge(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.equipmentAge
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.equipmentAge
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.equipmentAge
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.equipmentAge
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.equipmentAge
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.equipmentAge
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.equipmentAge
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.equipmentAge
-    //     }
-    //     console.log("equipmentAge: ", datapass)
-    
-    //     if (datapass === "new"){
-    //         setEquipment_Age(`New`)
-    //     }
-    //     else if (datapass === "existing"){
-    //         setEquipment_Age(`Existing`)
-    //     }
-    //     else{
-    //         setEquipment_Age(`New`)
-    //     }
-    // }
-    
-    // function SensorLoop(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.sensorLoop
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.sensorLoop
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.sensorLoop
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.sensorLoop
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.sensorLoop
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.sensorLoop
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.sensorLoop
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.sensorLoop
-    //     }
-    //     console.log("sensorLoop: ", datapass)
-    
-    //     if(datapass === "1"){
-    //         setSensor_Loop(`Loop 1`)
-    //     }
-    //     else if(datapass === "2"){
-    //         setSensor_Loop(`Loop 2`)
-    //     }
-    //     else if(datapass === "3"){
-    //         setSensor_Loop(`Loop 3`)
-    //     }
-    //     else{
-    //         setSensor_Loop(`Loop 1`)
-    //     }
-    // }
-    
-    // function TransmissionDelay(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.transmissionDelay
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.transmissionDelay
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.transmissionDelay
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.transmissionDelay
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.transmissionDelay
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.transmissionDelay
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.transmissionDelay
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.transmissionDelay
-    //     }
-    //     console.log("transmissionDelay: ", datapass)
-    
-    //     if(datapass === "enabled"){
-    //        setTransmission_Delay(`Enabled`)
-    //     }
-    //     else if(datapass === "disabled"){
-    //         setTransmission_Delay(`Disabled`)
-    //     }
-    //     else {
-    //         setTransmission_Delay(`Enabled`)
-    //     }
-    // }
-    
-    // function VoiceDescriptor(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.voiceDescriptor
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.voiceDescriptor
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.voiceDescriptor
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.voiceDescriptor
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.voiceDescriptor
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.voiceDescriptor
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.voiceDescriptor
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.voiceDescriptor
-    //     }
-    //     console.log("voiceDescriptor: ", datapass)
-    
-    //     var fullDescriptor = ""
+    function SmartAreasAssignment(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
         
-    //     for(var i=1; i<7; i++){
-    //         var temp = partDescription(datapass, i)
-    //         if (temp === " <None>"){
-    //             if (i === 1){
-    //                 fullDescriptor = ` <None>`
-    //             }
-    //             break
-    //         }
-    //         fullDescriptor += temp
-    //     }
-    //     fullDescriptor = fullDescriptor.slice(1)
-    //     setVoice_Descriptor(fullDescriptor)
-    // }
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.smartAreasAssignment
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.smartAreasAssignment
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("smartAreasAssignment: ", datapass)
     
-    // function SensorReports(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.sensorReports
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.sensorReports
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.sensorReports
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.sensorReports
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.sensorReports
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.sensorReports
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.sensorReports
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.sensorReports
-    //     }
-    //     console.log("sensorReports: ", datapass)
+        if (datapass === "s1"){
+            setSmart_Areas_Assignment(`S1`)
+        }
+        else if(datapass === "s2"){
+            setSmart_Areas_Assignment(`S2`)
+        }
+        else if(datapass === "s3"){
+            setSmart_Areas_Assignment(`S3`)
+        }
+        else if(datapass === "s4"){
+            setSmart_Areas_Assignment(`S4`)
+        }
+        else{
+            setSmart_Areas_Assignment(`S1`)
+        }
+    }
     
-    //     if (datapass === "enabled"){
-    //         setSensor_Reports(`Enabled`)
-    //     }
-    //     else if(datapass === "disabled"){
-    //         setSensor_Reports(`Disabled`)
-    //     }
-    //     else{
-    //         setSensor_Reports(`Enabled`)
-    //     }
-    // }
+    function EquipmentAge(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.equipmentAge
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.equipmentAge
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("equipmentAge: ", datapass)
     
-    // function SensorSupervised(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.sensorSupervised
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.sensorSupervised
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.sensorSupervised
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.sensorSupervised
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.sensorSupervised
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.sensorSupervised
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.sensorSupervised
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.sensorSupervised
-    //     }
-    //     console.log("sensorSupervised: ", datapass)
+        if (datapass === "new"){
+            setEquipment_Age(`New`)
+        }
+        else if (datapass === "existing"){
+            setEquipment_Age(`Existing`)
+        }
+        else{
+            setEquipment_Age(`New`)
+        }
+    }
     
-    //     if (datapass === "enabled"){
-    //         setSensor_Supervised(`Enabled`)
-    //     }
-    //     else if(datapass === "disabled"){
-    //         setSensor_Supervised(`Disabled`)
-    //     }
-    //     else{
-    //         setSensor_Supervised(`Enabled`)
-    //     }
-    // }
+    function SensorLoop(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.sensorLoop
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.sensorLoop
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("sensorLoop: ", datapass)
     
-    // function SensorChime(){
-    //     var zone = ""
-    //     if (document.getElementById("zone-eight") !== null){
-    //         if (document.getElementById("zone-one").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "1"
-    //         }
-    //         else if (document.getElementById("zone-two").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "2"
-    //         }
-    //         else if (document.getElementById("zone-three").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "3"
-    //         }
-    //         else if (document.getElementById("zone-four").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "4"
-    //         }
-    //         else if (document.getElementById("zone-five").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "5"
-    //         }
-    //         else if (document.getElementById("zone-six").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "6"
-    //         }
-    //         else if (document.getElementById("zone-seven").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "7"
-    //         }
-    //         else if (document.getElementById("zone-eight").style.backgroundColor === "rgb(68, 140, 192)"){
-    //             zone = "8"
-    //         }
-    //     }
-    //     var retrievedSensors = localStorage.getItem("panelSensors");
-    //     retrievedSensors = JSON.parse(retrievedSensors)
-    //     var datapass = ""
-    //     if (zone === "1"){
-    //         datapass = retrievedSensors.sensor1.sensorChime
-    //     }
-    //     else if (zone === "2"){
-    //         datapass = retrievedSensors.sensor2.sensorChime
-    //     }
-    //     else if (zone === "3"){
-    //         datapass = retrievedSensors.sensor3.sensorChime
-    //     }
-    //     else if (zone === "4"){
-    //         datapass = retrievedSensors.sensor4.sensorChime
-    //     }
-    //     else if (zone === "5"){
-    //         datapass = retrievedSensors.sensor5.sensorChime
-    //     }
-    //     else if (zone === "6"){
-    //         datapass = retrievedSensors.sensor6.sensorChime
-    //     }
-    //     else if (zone === "7"){
-    //         datapass = retrievedSensors.sensor7.sensorChime
-    //     }
-    //     else if (zone === "8"){
-    //         datapass = retrievedSensors.sensor8.sensorChime
-    //     }
-    //     console.log("sensorChime: ", datapass)
+        if(datapass === "1"){
+            setSensor_Loop(`Loop 1`)
+        }
+        else if(datapass === "2"){
+            setSensor_Loop(`Loop 2`)
+        }
+        else if(datapass === "3"){
+            setSensor_Loop(`Loop 3`)
+        }
+        else{
+            setSensor_Loop(`Loop 1`)
+        }
+    }
     
-    //     if (datapass === "disbabled"){
-    //         setSensor_Chime(`Disabled`)
-    //     }
-    //     else if(datapass === "voice"){
-    //         setSensor_Chime(`Voice Only`)
-    //     }
-    //     else if(datapass === "ding1voice"){
-    //         setSensor_Chime(`Ding-Dong #1 with Voice`)
-    //     }
-    //     else if(datapass === "ding2"){
-    //         setSensor_Chime(`Ding-Dong #2`)
-    //     }
-    //     else if(datapass === "ding2voice"){
-    //         setSensor_Chime(`Ding-Dong #2 with Voice`)
-    //     }
-    //     else if(datapass === "ding1"){
-    //         setSensor_Chime(`Ding-Dong #1`)
-    //     }
-    //     else if(datapass === "ding"){
-    //         setSensor_Chime(`Ding-Dong`)
-    //     }
-    //     else if(datapass === "dingvoice"){
-    //         setSensor_Chime(`Ding-Dong with Voice`)
-    //     }
-    //     else if(datapass === "ding3"){
-    //         setSensor_Chime(`Ding-Dong #3`)
-    //     }
-    //     else if(datapass === "ding3voice"){
-    //         setSensor_Chime(`Ding-Dong #3 with Voice`)
-    //     }
-    //     else if(datapass === "chime1"){
-    //         setSensor_Chime(`Chime #1`)
-    //     }
-    //     else if(datapass === "chime1voice"){
-    //         setSensor_Chime(`Chime #1 with Voice`)
-    //     }
-    //     else if(datapass === "chime2"){
-    //         setSensor_Chime(`Chime #2`)
-    //     }
-    //     else if(datapass === "chime2voice"){
-    //         setSensor_Chime(`Chime #2 with Voice`)
-    //     }
-    //     else{
-    //         setSensor_Chime(`Disabled`)
-    //     }
-    // }
+    function TransmissionDelay(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.transmissionDelay
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.transmissionDelay
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("transmissionDelay: ", datapass)
+    
+        if(datapass === "enabled"){
+           setTransmission_Delay(`Enabled`)
+        }
+        else if(datapass === "disabled"){
+            setTransmission_Delay(`Disabled`)
+        }
+        else {
+            setTransmission_Delay(`Enabled`)
+        }
+    }
+    
+    function VoiceDescriptor(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.voiceDescriptor
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.voiceDescriptor
+        }
+
+        console.log("voiceDescriptor: ", datapass)
+    
+        var fullDescriptor = ""
+        var datapasstemp = ""
+        
+        for(var i=1; i<7; i++){
+            if(i === 1){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor1.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            else if(i === 2){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor2.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            else if(i === 3){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor3.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            else if(i === 4){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor4.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            else if(i === 5){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor5.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            else if(i === 6){
+                console.log(datapass)
+                datapasstemp = datapass.descriptor6.split("/") //check if temp is programmed if "" then set [0], else 1
+                datapasstemp = datapasstemp[0]
+            }
+            var temp = partDescription(datapasstemp, i)
+            if (temp === " <None>"){
+                if (i === 1){
+                    fullDescriptor = ` <None>`
+                }
+                break
+            }
+            fullDescriptor += temp
+        }
+        fullDescriptor = fullDescriptor.slice(1)
+        setVoice_Descriptor(fullDescriptor)
+    }
+    
+    function SensorReports(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.sensorReports
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.sensorReports
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("sensorReports: ", datapass)
+    
+        if (datapass === "enabled"){
+            setSensor_Reports(`Enabled`)
+        }
+        else if(datapass === "disabled"){
+            setSensor_Reports(`Disabled`)
+        }
+        else{
+            setSensor_Reports(`Enabled`)
+        }
+    }
+    
+    function SensorSupervised(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.sensorSupervised
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.sensorSupervised
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("sensorSupervised: ", datapass)
+    
+        if (datapass === "enabled"){
+            setSensor_Supervised(`Enabled`)
+        }
+        else if(datapass === "disabled"){
+            setSensor_Supervised(`Disabled`)
+        }
+        else{
+            setSensor_Supervised(`Enabled`)
+        }
+    }
+    
+    function SensorChime(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+        var datapass = ""
+        
+        if (Current_Zone === "Wireless Zone 001"){
+            datapass = retrievedWireless.sensor1.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 002"){
+            datapass = retrievedWireless.sensor2.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 003"){
+            datapass = retrievedWireless.sensor3.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 004"){
+            datapass = retrievedWireless.sensor4.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 005"){
+            datapass = retrievedWireless.sensor5.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 006"){
+            datapass = retrievedWireless.sensor6.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 007"){
+            datapass = retrievedWireless.sensor7.sensorChime
+        }
+        else if (Current_Zone === "Wireless Zone 008"){
+            datapass = retrievedWireless.sensor8.sensorChime
+        }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
+        console.log("sensorChime: ", datapass)
+    
+        if (datapass === "disbabled"){
+            setSensor_Chime(`Disabled`)
+        }
+        else if(datapass === "voice"){
+            setSensor_Chime(`Voice Only`)
+        }
+        else if(datapass === "ding1voice"){
+            setSensor_Chime(`Ding-Dong #1 with Voice`)
+        }
+        else if(datapass === "ding2"){
+            setSensor_Chime(`Ding-Dong #2`)
+        }
+        else if(datapass === "ding2voice"){
+            setSensor_Chime(`Ding-Dong #2 with Voice`)
+        }
+        else if(datapass === "ding1"){
+            setSensor_Chime(`Ding-Dong #1`)
+        }
+        else if(datapass === "ding"){
+            setSensor_Chime(`Ding-Dong`)
+        }
+        else if(datapass === "dingvoice"){
+            setSensor_Chime(`Ding-Dong with Voice`)
+        }
+        else if(datapass === "ding3"){
+            setSensor_Chime(`Ding-Dong #3`)
+        }
+        else if(datapass === "ding3voice"){
+            setSensor_Chime(`Ding-Dong #3 with Voice`)
+        }
+        else if(datapass === "chime1"){
+            setSensor_Chime(`Chime #1`)
+        }
+        else if(datapass === "chime1voice"){
+            setSensor_Chime(`Chime #1 with Voice`)
+        }
+        else if(datapass === "chime2"){
+            setSensor_Chime(`Chime #2`)
+        }
+        else if(datapass === "chime2voice"){
+            setSensor_Chime(`Chime #2 with Voice`)
+        }
+        else{
+            setSensor_Chime(`Disabled`)
+        }
+    }
 
     function updateButtons(selector, desiredZone){
         var el = document.querySelector('.config-container-scroll');
@@ -3197,34 +3096,34 @@ function SystemConfigurationWirelessEdit(){
     }
 
     function choseAttribute(id, desiredZone){
-        var retrievedSensors = localStorage.getItem("panelSensors");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
 
         var thisSensor = {}
 
         if(Current_Zone === "Wireless Zone 001"){
-            thisSensor = retrievedSensors.sensor1
+            thisSensor = retrievedWireless.sensor1
         }
         else if(Current_Zone === "Wireless Zone 002"){
-            thisSensor = retrievedSensors.sensor2
+            thisSensor = retrievedWireless.sensor2
         }
         else if(Current_Zone === "Wireless Zone 003"){
-            thisSensor = retrievedSensors.sensor3
+            thisSensor = retrievedWireless.sensor3
         }
         else if(Current_Zone === "Wireless Zone 004"){
-            thisSensor = retrievedSensors.sensor4
+            thisSensor = retrievedWireless.sensor4
         }
         else if(Current_Zone === "Wireless Zone 005"){
-            thisSensor = retrievedSensors.sensor5
+            thisSensor = retrievedWireless.sensor5
         }
         else if(Current_Zone === "Wireless Zone 006"){
-            thisSensor = retrievedSensors.sensor6
+            thisSensor = retrievedWireless.sensor6
         }
         else if(Current_Zone === "Wireless Zone 007"){
-            thisSensor = retrievedSensors.sensor7
+            thisSensor = retrievedWireless.sensor7
         }
         else if(Current_Zone === "Wireless Zone 008"){
-            thisSensor = retrievedSensors.sensor8
+            thisSensor = retrievedWireless.sensor8
         }
 
         if (document.getElementById("sensor-chime") !== null){
@@ -3238,7 +3137,7 @@ function SystemConfigurationWirelessEdit(){
             }
             var selector = id
             console.log("id: ", selector)
-            if(thisSensor.sensorType !== Sensor_Type){
+            if(thisSensor.sensorType.split("/")[0] !== Sensor_Type){ //Need to reqork these as Sensor_Type will always show different from the sensor local storage programming
                 document.getElementById("sensor-type").style.color = "#D6A215";
             }
             else{
@@ -3248,7 +3147,7 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-type-span").style.color = "gray";
             document.getElementById("sensor-equipment-type").style.backgroundColor = "white";
-            if(thisSensor.sensorEquipmentType !== Sensor_Equipment_Type){
+            if(thisSensor.sensorEquipmentType.split("/")[0] !== Sensor_Equipment_Type){
                 document.getElementById("sensor-equipment-type").style.color = "#D6A215";
             }
             else{
@@ -3257,7 +3156,8 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-equipment-type-span").style.color = "gray";
             document.getElementById("equipment-code").style.backgroundColor = "white";
-            if(thisSensor.equipmentCode !== Equipment_Code){
+            console.log(thisSensor.equipmentCode.split("/")[0].toString(), Equipment_Code.slice(0,5).toString(), thisSensor.equipmentCode.split("/")[1].toString())
+            if(thisSensor.equipmentCode.split("/")[0].toString() !== thisSensor.equipmentCode.split("/")[1].toString() || thisSensor.equipmentCode.split("/")[1].toString() !== " "){ //This is not working
                 document.getElementById("equipment-code").style.color = "#D6A215";
             }
             else{
@@ -3266,7 +3166,7 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("equipment-code-span").style.color = "gray";
             document.getElementById("serial-number").style.backgroundColor = "white";
-            if(thisSensor.serialNumber !== Serial_Number){
+            if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
                 document.getElementById("serial-number").style.color = "#D6A215";
             }
             else{
@@ -3275,19 +3175,39 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("serial-number-span").style.color = "gray";
             document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
-            document.getElementById("smart-areas-assignment").style.color = "#404956";
+            if(thisSensor.smartAreasAssignment.split("/")[0] !== Smart_Areas_Assignment){
+                document.getElementById("smart-areas-assignment").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("smart-areas-assignment").style.color = "#404956";
+            }
             document.getElementById("smart-areas-assignment").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("smart-areas-assignment-span").style.color = "gray";
             document.getElementById("equipment-age").style.backgroundColor = "white";
-            document.getElementById("equipment-age").style.color = "#404956";
+            if(thisSensor.equipmentAge.split("/")[0] !== Equipment_Age){
+                document.getElementById("equipment-age").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("equipment-age").style.color = "#404956";
+            }
             document.getElementById("equipment-age").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("equipment-age-span").style.color = "gray";
             document.getElementById("sensor-loop").style.backgroundColor = "white";
-            document.getElementById("sensor-loop").style.color = "#404956";
+            if(thisSensor.sensorLoop.split("/")[0] !== Sensor_Loop){
+                document.getElementById("sensor-loop").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-loop").style.color = "#404956";
+            }
             document.getElementById("sensor-loop").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-loop-span").style.color = "gray";
             document.getElementById("transmission-delay").style.backgroundColor = "white";
-            document.getElementById("transmission-delay").style.color = "#404956";
+            if(thisSensor.transmissionDelay.split("/")[0] !== Transmission_Delay){
+                document.getElementById("transmission-delay").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("transmission-delay").style.color = "#404956";
+            }
             document.getElementById("transmission-delay").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("transmission-delay-span").style.color = "gray";
             document.getElementById("voice-descriptor").style.backgroundColor = "white";
@@ -3295,15 +3215,30 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("voice-descriptor").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("voice-descriptor-span").style.color = "gray";
             document.getElementById("sensor-reports").style.backgroundColor = "white";
-            document.getElementById("sensor-reports").style.color = "#404956";
+            if(thisSensor.sensorReports.split("/")[0] !== Sensor_Reports){
+                document.getElementById("sensor-reports").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-reports").style.color = "#404956";
+            }
             document.getElementById("sensor-reports").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-reports-span").style.color = "gray";
             document.getElementById("sensor-supervised").style.backgroundColor = "white";
-            document.getElementById("sensor-supervised").style.color = "#404956";
+            if(thisSensor.sensorSupervised.split("/")[0] !== Sensor_Supervised){
+                document.getElementById("sensor-supervised").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-supervised").style.color = "#404956";
+            }
             document.getElementById("sensor-supervised").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-supervised-span").style.color = "gray";
             document.getElementById("sensor-chime").style.backgroundColor = "white";
-            document.getElementById("sensor-chime").style.color = "#404956";
+            if(thisSensor.sensorChime.split("/")[0] !== Sensor_Chime){
+                document.getElementById("sensor-chime").style.color = "#D6A215";
+            }
+            else{
+                document.getElementById("sensor-chime").style.color = "#404956";
+            }
             document.getElementById("sensor-chime").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-chime-span").style.color = "gray";
             document.getElementById("sensor-type-display").style.display = "none";
@@ -3320,7 +3255,7 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById(selector).style.backgroundColor = "#448cc0";
 
             if(selector === "sensor-type"){
-                if(thisSensor.equipmentCode !== Equipment_Code){
+                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
                     document.getElementById(selector).style.color = "#D6A215";
                 }
                 else{
@@ -3328,7 +3263,7 @@ function SystemConfigurationWirelessEdit(){
                 }
             }
             else if(selector === "sensor-equipment-type"){
-                if(thisSensor.equipmentCode !== Equipment_Code){
+                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
                     document.getElementById(selector).style.color = "#D6A215";
                 }
                 else{
@@ -3336,7 +3271,7 @@ function SystemConfigurationWirelessEdit(){
                 }
             }
             else if(selector === "equipment-code"){
-                if(thisSensor.equipmentCode !== Equipment_Code){
+                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code.slice(0,5)){
                     document.getElementById(selector).style.color = "#D6A215";
                 }
                 else{
@@ -3344,7 +3279,7 @@ function SystemConfigurationWirelessEdit(){
                 }
             }
             else if(selector === "serial-number"){
-                if(thisSensor.equipmentCode !== Equipment_Code){
+                if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
                     document.getElementById(selector).style.color = "#D6A215";
                 }
                 else{
@@ -3693,21 +3628,27 @@ function SystemConfigurationWirelessEdit(){
             }
         }
     }
-
-    // useEffect(() => {
-    //     SensorType()
-    //     EquipmentCode()
-    //     SerialNumber()
-    //     SmartAreasAssignment()
-    //     EquipmentAge()
-    //     SensorLoop()
-    //     TransmissionDelay()
-    //     VoiceDescriptor()
-    //     SensorReports()
-    //     SensorSupervised()
-    //     SensorChime()
-    // });
-
+    function updateInitialValues(){
+        SensorType()
+        SensorEquipmentType()
+        EquipmentCode()
+        SerialNumber()
+        SmartAreasAssignment()
+        EquipmentAge()
+        SensorLoop()
+        TransmissionDelay()
+        VoiceDescriptor()
+        SensorReports()
+        SensorSupervised()
+        SensorChime()
+    }
+    function updateLocalStorage(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+    }
+    useEffect(() => {
+        updateLocalStorage()
+    });
     return(
         <div className="screen-style" id="edit-sensor-screen">
             <div className="screen-header">
@@ -4649,7 +4590,7 @@ function SystemConfigurationWirelessEdit(){
 
                 </div>
 
-                <div id="down-arrow" className="blue-button configuration-buttons" onClick={() => goDown()}>
+                <div id="down-arrow" className="blue-button configuration-buttons" onClick={() => goDown()} onLoad={() => updateInitialValues()}>
                     <img src={down_arrow_icon} style={{'height':"15px", 'marginTop':"10px"}} alt=""/>
                 </div>
 

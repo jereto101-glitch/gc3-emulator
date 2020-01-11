@@ -408,7 +408,7 @@ function SideBar() {
                         Reset Panel State
                     </p>
     
-                    <p onClick={() => removeLocal('panelSensors')}>
+                    <p onClick={() => removeLocal('panelWireless')}>
                         Reset Sensors
                     </p>
 

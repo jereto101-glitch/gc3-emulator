@@ -925,21 +925,24 @@ function SystemConfigurationKeypads(){
             }
             console.log(zone)
     
-            var retrievedSensors = localStorage.getItem("panelKeypads");
-            retrievedSensors = JSON.parse(retrievedSensors)
+            var retrievedWireless = localStorage.getItem("panelKeypads");
+            retrievedWireless = JSON.parse(retrievedWireless)
             var datapass = ""
             if (zone === "1"){
-                datapass = retrievedSensors.keypad1.keypadUsed
+                datapass = retrievedWireless.keypad1.keypadUsed
             }
             else if (zone === "2"){
-                datapass = retrievedSensors.keypad2.keypadUsed
+                datapass = retrievedWireless.keypad2.keypadUsed
             }
             else if (zone === "3"){
-                datapass = retrievedSensors.keypad3.keypadUsed
+                datapass = retrievedWireless.keypad3.keypadUsed
             }
             else if (zone === "4"){
-                datapass = retrievedSensors.keypad4.keypadUsed
+                datapass = retrievedWireless.keypad4.keypadUsed
             }
+            
+            datapass = datapass.split("/")
+            datapass = datapass[0]
             console.log("fobUsed: ", datapass)
             
             if(datapass === "enabled"){
@@ -970,21 +973,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.equipmentCode
+            datapass = retrievedWireless.keypad1.equipmentCode
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.equipmentCode
+            datapass = retrievedWireless.keypad2.equipmentCode
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.equipmentCode
+            datapass = retrievedWireless.keypad3.equipmentCode
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.equipmentCode
+            datapass = retrievedWireless.keypad4.equipmentCode
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentCode: ", datapass)
     
         if (datapass === "0000"){
@@ -1020,21 +1026,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.serialNumber
+            datapass = retrievedWireless.keypad1.serialNumber
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.serialNumber
+            datapass = retrievedWireless.keypad2.serialNumber
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.serialNumber
+            datapass = retrievedWireless.keypad3.serialNumber
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.serialNumber
+            datapass = retrievedWireless.keypad4.serialNumber
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("serialNumber: ", datapass)
     
         if (datapass !== null){
@@ -1066,21 +1075,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.smartAreasAssignment
+            datapass = retrievedWireless.keypad1.smartAreasAssignment
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.smartAreasAssignment
+            datapass = retrievedWireless.keypad2.smartAreasAssignment
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.smartAreasAssignment
+            datapass = retrievedWireless.keypad3.smartAreasAssignment
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.smartAreasAssignment
+            datapass = retrievedWireless.keypad4.smartAreasAssignment
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("smartAreasAssignment: ", datapass)
     
         if (datapass === "s1"){
@@ -1116,21 +1128,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.equipmentAge
+            datapass = retrievedWireless.keypad1.equipmentAge
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.equipmentAge
+            datapass = retrievedWireless.keypad2.equipmentAge
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.equipmentAge
+            datapass = retrievedWireless.keypad3.equipmentAge
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.equipmentAge
+            datapass = retrievedWireless.keypad4.equipmentAge
         }
+        
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("equipmentAge: ", datapass)
     
         if (datapass === "new"){
@@ -1160,21 +1175,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.emergencyKeys
+            datapass = retrievedWireless.keypad1.emergencyKeys
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.emergencyKeys
+            datapass = retrievedWireless.keypad2.emergencyKeys
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.emergencyKeys
+            datapass = retrievedWireless.keypad3.emergencyKeys
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.emergencyKey
+            datapass = retrievedWireless.keypad4.emergencyKey
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("emergencyKeys: ", datapass)
     
         if (datapass === "enabled"){
@@ -1204,21 +1222,24 @@ function SystemConfigurationKeypads(){
                 zone = "4"
             }
         }
-        var retrievedSensors = localStorage.getItem("panelKeypads");
-        retrievedSensors = JSON.parse(retrievedSensors)
+        var retrievedWireless = localStorage.getItem("panelKeypads");
+        retrievedWireless = JSON.parse(retrievedWireless)
         var datapass = ""
         if (zone === "1"){
-            datapass = retrievedSensors.keypad1.voiceDescriptor
+            datapass = retrievedWireless.keypad1.voiceDescriptor
         }
         else if (zone === "2"){
-            datapass = retrievedSensors.keypad2.voiceDescriptor
+            datapass = retrievedWireless.keypad2.voiceDescriptor
         }
         else if (zone === "3"){
-            datapass = retrievedSensors.keypad3.voiceDescriptor
+            datapass = retrievedWireless.keypad3.voiceDescriptor
         }
         else if (zone === "4"){
-            datapass = retrievedSensors.keypad4.voiceDescriptor
+            datapass = retrievedWireless.keypad4.voiceDescriptor
         }
+
+        datapass = datapass.split("/")
+        datapass = datapass[0]
         console.log("voiceDescriptor: ", datapass)
     
         var fullDescriptor = ""
