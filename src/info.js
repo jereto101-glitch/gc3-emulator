@@ -343,6 +343,20 @@ function ChangeLog() {
                                 Need to finish getting the state to update in edit zones. 
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/16/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Steven made a weather api for me to impliment. Updated it into the panel.
+                            </td>
+
+                            <td>
+                                Lots to do. Currently working on time on front page.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -362,7 +376,7 @@ function ChangeLog() {
 
                     <br/>
 
-                    Last Updated: 01/10/2020 9:18:51PM
+                    Last Updated: 01/16/2020 9:20:49PM
                 </footer>
             </div>
         </div>

@@ -15,6 +15,7 @@ import smart_areas_icon from "../images/smart-areas.png";
 import settings_icon from "../images/settings.png";
 import silence_icon from "../images/silence.png";
 import disarm_icon from "../images/disarm.png";
+import Weather from "../Weather"
 
 function statusChange(status){
     var retrievedState = localStorage.getItem('panelState');
@@ -37,6 +38,15 @@ function statusChange(status){
 }
 
 function Disarmed(){
+    var timeRun = setInterval(() => {
+            var d1 = new Date();
+            var minute = d1.getMinutes();
+            var hour = d1.getHours();
+            return (
+                <div>{hour}:{minute}</div>
+            )
+        }
+    )
     return (
         <div className="screen-style">
             <div className="screen-header">
@@ -115,7 +125,7 @@ function Disarmed(){
 
             <div className="screen-right">
                 <div className="time-top" style={{'paddingTop':"10px", 'marginLeft':"9px"}}>
-                    
+                    {new Date().toLocaleTimeString()}
                 </div>
 
                 <div className="time-bottom" style={{'marginLeft':"9px"}}>
@@ -123,21 +133,11 @@ function Disarmed(){
                 </div>
 
                 <div className="weather-top" style={{'marginLeft':"9px"}}>
-
+                    <Weather />
                 </div>
 
                 <div className="weather-bottom" style={{'marginLeft':"9px"}}>
-                    <p> 
-                        Edmonton, AB 
-                    </p>
-
-                    <div className="hourly">
-
-                    </div>
-
-                    <div className="five-day">
-
-                    </div>
+                    
                 </div>
             </div>
 

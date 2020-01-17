@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Overpass|PT+Sans|Poppins|Roboto|Rubik|Ubuntu|Yanone+Kaffeesatz&display=swap');
+
+.weather {
+  font-family: 'Overpass', sans-serif;
+  width: 316px;
+  height: 127px;
+  background-image: linear-gradient(#c8cdd3, #f8f8f8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fiveDay {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0px;
+}
+.day {
+  display:flex;
+  flex-direction: column;
+}
+
+.icon {
+  align-self: center;
+  width: 25px;
+  height: 25px;
+  background-image: url('./images/climacons.png');
+  background-size: 265px 213px;
+}
+.text-center {
+  text-align: center;
+}
+.high {
+  color:#c45e50;
+}
+.low {
+  color: #6ab0cb;
+}
