@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import check_mark_icon from "../images/check-mark.png";
 import backdrop1 from '../images/screen_saver/1.jpg';
 import backdrop2 from '../images/screen_saver/2.jpg';
 import backdrop3 from '../images/screen_saver/3.jpg';
@@ -65,7 +66,9 @@ function ScreenSaver() {
     <Link to="/">
       <div className="screen-style">
         <span onClick={() => homeState()}>
-          <div className="fill" id="backdrop" style={{ backgroundImage: `url("${backdrop1}")` }} />
+          <div className="fill" id="backdrop" style={{ backgroundImage: `url("${backdrop1}")` }}>
+            <img src={check_mark_icon} className="disarm-icon" alt=""/>
+          </div>
         </span>
       </div>
     </Link>
