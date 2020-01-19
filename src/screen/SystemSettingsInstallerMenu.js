@@ -60,7 +60,7 @@ function SystemSettingsInstallerMenu() {
     return (
         <div id="screen-system-settings-menu" className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt="" />
+                <img src={check_mark_icon} className="disarm-icon" alt="" />
 
                 <p>
                     System <span style={{'fontSize':"16px"}}>Ready</span> To Arm 

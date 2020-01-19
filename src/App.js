@@ -141,7 +141,7 @@ function HomeNote(){
         </h4>
   
         <p style={{'marginLeft':"20px", 'marginRight':"20px", 'marginTop':"-10px"}}>
-          This emulator uses the newest firmware update. Panels on older updates such as 3.0.1, 3.1.3, or 3.2.0 will look slightly different due to some features not being implimented yet.
+          This emulator is modeled after the newest firmware update. Panels on older updates such as 3.0.1, 3.1.3, or 3.2.0 will look slightly different due to some features not being implimented yet.
         </p>
           
         <p style={{'marginLeft':"20px", 'marginRight':"20px"}}>

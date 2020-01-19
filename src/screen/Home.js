@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import check_mark_icon from "../images/check-mark.png";
 import fluent_logo_icon from "../images/fluent-logo.png";
@@ -37,20 +37,51 @@ function statusChange(status){
     localStorage.setItem('panelState', JSON.stringify(retrievedState));
 }
 
+
+
 function Disarmed(){
-    var timeRun = setInterval(() => {
-            var d1 = new Date();
-            var minute = d1.getMinutes();
-            var hour = d1.getHours();
-            return (
-                <div>{hour}:{minute}</div>
-            )
+    const [Time_Value,setTime_Value] = useState("")
+    const [Week_Day,setWeek_Day] = useState("")
+    const [Month,setMonth] = useState("")
+    const [Check, setCheck] = useState(false)
+
+    function getTime(){
+        var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        return (time)
+    }
+    
+    var time_value = ""
+    setInterval(() => {
+        time_value = getTime()
+        setTime_Value(time_value)
+    },1000)
+
+    function getWeekDay(){
+        if(Check === false){
+            setTime_Value(getTime())
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            console.log(weekday[new Date().getDay()])
+            setWeek_Day(weekday[new Date().getDay()])
+            setCheck(true)
         }
-    )
+    }
+
+    function getMonth(){
+        if(Check === false){
+            var month = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            console.log(month[new Date().getMonth()])
+            setMonth(month[new Date().getMonth()])
+            setCheck(true)
+        }
+    }
+
+    getWeekDay()
+    getMonth()
+
     return (
         <div className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+                <img src={check_mark_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System
@@ -62,20 +93,20 @@ function Disarmed(){
 
                 <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'outline':"none", 'marginTop':"-35px", 'marginBottom':"29px"}} alt=""/>
+                        <img src={fluent_logo_icon} className="fluent-logo-icon" alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={power_cord_icon} className="power-cord-icon" alt=""/>
                     
-                    <img src={sound_on_icon} className="resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={sound_on_icon} className="sound-on-icon" alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"20px"}} alt=""/>
+                        <img src={screen_turn_off_icon} className="screen-turn-off-icon" alt=""/>
                     </Link>
 
-                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"49px"}} alt=""/>
+                    <img src={banner_icon} className="banner-icon" alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" alt="" />
+                    <img src={chat_message_icon} className="chat-message-icon" alt="" />
                 </div>
             </div>
 
@@ -124,8 +155,14 @@ function Disarmed(){
             </div>
 
             <div className="screen-right">
-                <div className="time-top" style={{'paddingTop':"10px", 'marginLeft':"9px"}}>
-                    {new Date().toLocaleTimeString()}
+                <div className="time-top">
+                    <div>
+                        {Time_Value}
+                    </div>
+
+                    <div style={{'fontSize':"18px",'marginTop':"-10px"}}>
+                        {Week_Day}, {Month} {new Date().getDate()}
+                    </div>
                 </div>
 
                 <div className="time-bottom" style={{'marginLeft':"9px"}}>
@@ -133,7 +170,7 @@ function Disarmed(){
                 </div>
 
                 <div className="weather-top" style={{'marginLeft':"9px"}}>
-                    <Weather />
+                    <Weather/>
                 </div>
 
                 <div className="weather-bottom" style={{'marginLeft':"9px"}}>
@@ -157,7 +194,7 @@ function Disarmed(){
                 </Link>
 
                 <Link to="/smart-areas/code">
-                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'backgroundColor':"#cf8419", 'marginTop':"7px", 'backgroundImage':" linear-gradient(to right, #f49d22, transparent)"}}>
+                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'marginTop':"7px"}}>
                         <img src={smart_areas_icon} style={{'height':"30px", 'marginLeft':"7px", 'marginTop':"13px"}} className="invert-color" alt="" />
 
                         <h4 style={{'color':"white", 'marginTop':"-28px", 'fontSize':"13px", 'marginLeft':"45px"}}>
@@ -199,13 +236,51 @@ function Disarmed(){
 }
 
 function Stay(){
+    const [Time_Value,setTime_Value] = useState("")
+    const [Week_Day,setWeek_Day] = useState("")
+    const [Month,setMonth] = useState("")
+    const [Check, setCheck] = useState(false)
+
+    function getTime(){
+        var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        return (time)
+    }
+    
+    var time_value = ""
+    setInterval(() => {
+        time_value = getTime()
+        setTime_Value(time_value)
+    },1000)
+
+    function getWeekDay(){
+        if(Check === false){
+            setTime_Value(getTime())
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            console.log(weekday[new Date().getDay()])
+            setWeek_Day(weekday[new Date().getDay()])
+            setCheck(true)
+        }
+    }
+
+    function getMonth(){
+        if(Check === false){
+            var month = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            console.log(month[new Date().getMonth()])
+            setMonth(month[new Date().getMonth()])
+            setCheck(true)
+        }
+    }
+
+    getWeekDay()
+    getMonth()
+
     // document.getElementById("arm-stay-code-home").style.display="none"; 
     // document.getElementById("weather-arm-stay-home").style.display="";
 
     return (
         <div className="screen-style">
-            <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+           <div className="screen-header">
+                <img src={arm_stay_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System
@@ -217,20 +292,20 @@ function Stay(){
 
                 <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'marginTop':"-56px", 'outline':"none"}} alt=""/>
+                        <img src={fluent_logo_icon} className="fluent-logo-icon" alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="invert-color resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={power_cord_icon} className="power-cord-icon" alt=""/>
                     
-                    <img src={sound_on_icon} className="invert-color resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={sound_on_icon} className="sound-on-icon" alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="invert-color resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"26px"}} alt=""/>
+                        <img src={screen_turn_off_icon} className="screen-turn-off-icon" alt=""/>
                     </Link>
 
-                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"61px"}} alt=""/>
+                    <img src={banner_icon} className="banner-icon" alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" style={{'marginRight':"96px"}} alt="" />
+                    <img src={chat_message_icon} className="chat-message-icon" alt="" />
                 </div>
             </div>
 
@@ -271,8 +346,14 @@ function Stay(){
             </div>
 
             <div className="screen-right" id="weather-arm-stay-home">
-                <div className="time-top" style={{'paddingTop':"10px", 'marginLeft':"9px"}}>
-                    
+                <div className="time-top">
+                    <div>
+                        {Time_Value}
+                    </div>
+
+                    <div style={{'fontSize':"18px",'marginTop':"-10px"}}>
+                        {Week_Day}, {Month} {new Date().getDate()}
+                    </div>
                 </div>
 
                 <div className="time-bottom" style={{'marginLeft':"9px"}}>
@@ -280,21 +361,11 @@ function Stay(){
                 </div>
 
                 <div className="weather-top" style={{'marginLeft':"9px"}}>
-
+                    <Weather/>
                 </div>
 
                 <div className="weather-bottom" style={{'marginLeft':"9px"}}>
-                    <p> 
-                        Edmonton, AB 
-                    </p>
-
-                    <div className="hourly">
-
-                    </div>
-
-                    <div className="five-day">
-
-                    </div>
+                    
                 </div>
             </div>
 
@@ -314,7 +385,7 @@ function Stay(){
                 </Link>
 
                 <Link to="/smart-areas/code">
-                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'backgroundColor':"#cf8419", 'marginTop':"7px", 'backgroundImage':" linear-gradient(to right, #f49d22, transparent)"}}>
+                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'marginTop':"7px"}}>
                         <img src={smart_areas_icon} style={{'height':"30px", 'marginLeft':"7px", 'marginTop':"13px"}} className="invert-color" alt="" />
 
                         <h4 style={{'color':"white", 'marginTop':"-28px", 'fontSize':"13px", 'marginLeft':"45px"}}>
@@ -356,13 +427,51 @@ function Stay(){
 }
 
 function Away(){
+    const [Time_Value,setTime_Value] = useState("")
+    const [Week_Day,setWeek_Day] = useState("")
+    const [Month,setMonth] = useState("")
+    const [Check, setCheck] = useState(false)
+
+    function getTime(){
+        var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        return (time)
+    }
+    
+    var time_value = ""
+    setInterval(() => {
+        time_value = getTime()
+        setTime_Value(time_value)
+    },1000)
+
+    function getWeekDay(){
+        if(Check === false){
+            setTime_Value(getTime())
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            console.log(weekday[new Date().getDay()])
+            setWeek_Day(weekday[new Date().getDay()])
+            setCheck(true)
+        }
+    }
+
+    function getMonth(){
+        if(Check === false){
+            var month = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            console.log(month[new Date().getMonth()])
+            setMonth(month[new Date().getMonth()])
+            setCheck(true)
+        }
+    }
+
+    getWeekDay()
+    getMonth()
+
     // document.getElementById("arm-away-code-home").style.display="none"; 
     // document.getElementById("weather-arm-away-home").style.display="";
 
     return (
         <div className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+                <img src={arm_away_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System
@@ -374,20 +483,20 @@ function Away(){
 
                 <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'marginTop':"-56px", 'outline':"none"}} alt=""/>
+                        <img src={fluent_logo_icon} className="fluent-logo-icon" alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="invert-color resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={power_cord_icon} className="power-cord-icon" alt=""/>
                     
-                    <img src={sound_on_icon} className="invert-color resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={sound_on_icon} className="sound-on-icon" alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="invert-color resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"26px"}} alt=""/>
+                        <img src={screen_turn_off_icon} className="screen-turn-off-icon" alt=""/>
                     </Link>
 
-                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"61px"}} alt=""/>
+                    <img src={banner_icon} className="banner-icon" alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" style={{'marginRight':"96px"}} alt="" />
+                    <img src={chat_message_icon} className="chat-message-icon" alt="" />
                 </div>
             </div>
 
@@ -428,8 +537,14 @@ function Away(){
             </div>
 
             <div className="screen-right" id="weather-arm-away-home">
-                <div className="time-top" style={{'paddingTop':"10px", 'marginLeft':"9px"}}>
-                    
+                <div className="time-top">
+                    <div>
+                        {Time_Value}
+                    </div>
+
+                    <div style={{'fontSize':"18px",'marginTop':"-10px"}}>
+                        {Week_Day}, {Month} {new Date().getDate()}
+                    </div>
                 </div>
 
                 <div className="time-bottom" style={{'marginLeft':"9px"}}>
@@ -437,21 +552,11 @@ function Away(){
                 </div>
 
                 <div className="weather-top" style={{'marginLeft':"9px"}}>
-
+                    <Weather/>
                 </div>
 
                 <div className="weather-bottom" style={{'marginLeft':"9px"}}>
-                    <p> 
-                        Edmonton, AB 
-                    </p>
-
-                    <div className="hourly">
-
-                    </div>
-
-                    <div className="five-day">
-
-                    </div>
+                    
                 </div>
             </div>
 
@@ -471,7 +576,7 @@ function Away(){
                 </Link>
 
                 <Link to="/smart-areas/code">
-                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'backgroundColor':"#cf8419", 'marginTop':"7px", 'backgroundImage':" linear-gradient(to right, #f49d22, transparent)"}}>
+                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'marginTop':"7px"}}>
                         <img src={smart_areas_icon} style={{'height':"30px", 'marginLeft':"7px", 'marginTop':"13px"}} className="invert-color" alt="" />
 
                         <h4 style={{'color':"white", 'marginTop':"-28px", 'fontSize':"13px", 'marginLeft':"45px"}}>
@@ -513,11 +618,49 @@ function Away(){
 }
 
 function NotReady(){
+    const [Time_Value,setTime_Value] = useState("")
+    const [Week_Day,setWeek_Day] = useState("")
+    const [Month,setMonth] = useState("")
+    const [Check, setCheck] = useState(false)
+
+    function getTime(){
+        var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        return (time)
+    }
+    
+    var time_value = ""
+    setInterval(() => {
+        time_value = getTime()
+        setTime_Value(time_value)
+    },1000)
+
+    function getWeekDay(){
+        if(Check === false){
+            setTime_Value(getTime())
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            console.log(weekday[new Date().getDay()])
+            setWeek_Day(weekday[new Date().getDay()])
+            setCheck(true)
+        }
+    }
+
+    function getMonth(){
+        if(Check === false){
+            var month = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            console.log(month[new Date().getMonth()])
+            setMonth(month[new Date().getMonth()])
+            setCheck(true)
+        }
+    }
+
+    getWeekDay()
+    getMonth()
+
     //Not finished - Need to update!!!
     return (
         <div className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+                <img src={check_mark_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System
@@ -529,20 +672,20 @@ function NotReady(){
 
                 <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'marginTop':"-56px", 'outline':"none"}} alt=""/>
+                        <img src={fluent_logo_icon} className="fluent-logo-icon" alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="invert-color resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={power_cord_icon} className="power-cord-icon" alt=""/>
                     
-                    <img src={sound_on_icon} className="invert-color resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={sound_on_icon} className="sound-on-icon" alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="invert-color resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"26px"}} alt=""/>
+                        <img src={screen_turn_off_icon} className="screen-turn-off-icon" alt=""/>
                     </Link>
 
-                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"61px"}} alt=""/>
+                    <img src={banner_icon} className="banner-icon" alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" style={{'marginRight':"96px"}} alt="" />
+                    <img src={chat_message_icon} className="chat-message-icon" alt="" />
                 </div>
             </div>
 
@@ -587,8 +730,14 @@ function NotReady(){
             </div>
 
             <div className="screen-right">
-                <div className="time-top" style={{'paddingTop':"10px", 'marginLeft':"9px"}}>
-                    
+                <div className="time-top">
+                    <div>
+                        {Time_Value}
+                    </div>
+
+                    <div style={{'fontSize':"18px",'marginTop':"-10px"}}>
+                        {Week_Day}, {Month} {new Date().getDate()}
+                    </div>
                 </div>
 
                 <div className="time-bottom" style={{'marginLeft':"9px"}}>
@@ -596,21 +745,11 @@ function NotReady(){
                 </div>
 
                 <div className="weather-top" style={{'marginLeft':"9px"}}>
-
+                    <Weather/>
                 </div>
 
                 <div className="weather-bottom" style={{'marginLeft':"9px"}}>
-                    <p> 
-                        Edmonton, AB 
-                    </p>
-
-                    <div className="hourly">
-
-                    </div>
-
-                    <div className="five-day">
-
-                    </div>
+                    
                 </div>
             </div>
 
@@ -630,7 +769,7 @@ function NotReady(){
                 </Link>
 
                 <Link to="/smart-areas/code">
-                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'backgroundColor':"#cf8419", 'marginTop':"7px", 'backgroundImage':" linear-gradient(to right, #f49d22, transparent)"}}>
+                    <div className="blue-button" style={{'marginLeft':"-159px", 'width':"22%", 'marginTop':"7px"}}>
                         <img src={smart_areas_icon} style={{'height':"30px", 'marginLeft':"7px", 'marginTop':"13px"}} className="invert-color" alt="" />
 
                         <h4 style={{'color':"white", 'marginTop':"-28px", 'fontSize':"13px", 'marginLeft':"45px"}}>

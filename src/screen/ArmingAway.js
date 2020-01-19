@@ -169,7 +169,7 @@ function ArmingAway() {
     return (
         <div className="screen-style" >
             <div className="screen-header">
-                <img src={lock_icon} className="resize-1 invert-color" alt=""/>
+                <img src={lock_icon} className="disarm-icon invert-color" alt=""/>
 
                 <p style={{'paddingTop':"6px"}}>
                     System

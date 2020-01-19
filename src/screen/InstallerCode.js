@@ -52,7 +52,7 @@ function InstallerCode() {
     return (
         <div className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+                <img src={check_mark_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System

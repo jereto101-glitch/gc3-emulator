@@ -15,7 +15,7 @@ function SmartHomeControlsLocks() {
     return (
         <div id="screen-users" className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt=""/>
+                <img src={check_mark_icon} className="disarm-icon" alt=""/>
 
                 <p style={{'paddingTop':"9px"}}>
                     System
@@ -27,20 +27,20 @@ function SmartHomeControlsLocks() {
 
                 <div className="header-right" style={{'marginTop':"-11px"}}>
                     <Link to="/installer-toolbox/code">
-                        <img src={fluent_logo_icon} className="resize-3" style={{'outline':"none", 'marginTop':"-35px", 'marginBottom':"29px"}} alt=""/>
+                        <img src={fluent_logo_icon} className="fluent-logo-icon" alt=""/>
                     </Link>
 
-                    <img src={power_cord_icon} className="resize-2" style={{'marginLeft':"-22px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={power_cord_icon} className="power-cord-icon" alt=""/>
                     
-                    <img src={sound_on_icon} className="resize-2" style={{'marginLeft':"-12px", 'marginRight':"34px", 'marginTop':"-21px"}} alt=""/>
+                    <img src={sound_on_icon} className="sound-on-icon" alt=""/>
 
                     <Link to="/screen-saver">
-                        <img src={screen_turn_off_icon} className="resize-2" style={{'outline':"none", 'marginTop':"-22px", 'marginRight':"20px"}} alt=""/>
+                        <img src={screen_turn_off_icon} className="screen-turn-off-icon" alt=""/>
                     </Link>
 
-                    <img src={banner_icon} style={{'height':"22px", 'marginRight':"49px"}} alt=""/>
+                    <img src={banner_icon} className="banner-icon" alt=""/>
 
-                    <img src={chat_message_icon} className="resize-2" alt="" />
+                    <img src={chat_message_icon} className="chat-message-icon" alt="" />
                 </div>
             </div>
 

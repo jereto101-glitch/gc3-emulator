@@ -56,7 +56,7 @@ if(loaded===false){
   return(<div className="weather" style={{display:`flex`, justifyContent:`center`, alignItems:`center`}}>Loading</div>)
 } else {
   return (
-    <div className="weather">
+    <div className="weather" style={{'paddingTop':"6px"}}>
       <div className="text-center" style={{ color: "#4da1c3" }}>Daily Forcast</div>
       <div className="fiveDay">
         <div className="day">

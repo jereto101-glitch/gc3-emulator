@@ -140,15 +140,6 @@ body {
     font-size:15px;
     padding-left:20px;
 }
-.screen-header img{
-    float:left;
-    margin-top:9px;
-    margin-left:9px;
-}
-.header-right img{
-    float:right;
-    margin-top:-20px;
-}
 .rotateimg90 {
     -webkit-transform:rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -303,6 +294,11 @@ h2{
     background-color:white;
     margin-top:13px;
     border-radius:10px;
+    margin-left: 9px;
+    color: #448cc0;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 11px;
 }
 .time-bottom{
     height:20px;
@@ -344,6 +340,8 @@ h2{
     border-radius:1px;
     float:left;
     background-color:#181a1b;
+    background-repeat: no-repeat;
+    background-size: 680px 360px;
 }
 .blue-button h4{
     font-weight:500;
@@ -1243,4 +1241,56 @@ header{
     padding-top: 6px;
     padding-left: 12px;
     color: white;
+}
+.fluent-logo-icon{
+    outline: none;
+    margin-top: -35px;
+    margin-bottom: 29px;
+    margin-left: 15px;
+    float: right;
+    height: 50px;
+}
+.power-cord-icon{
+    margin-top: -23px;
+    width: 20px;
+    height: 23px;
+    float: right;
+    margin-left: 9px;
+}
+.sound-on-icon{
+    margin-right: 35px;
+    margin-top: -23px;
+    height: 23px;
+    float: right;
+    margin-left: 9px;
+}
+.screen-turn-off-icon{
+    outline: none;
+    margin-top: -25px;
+    margin-right: 75px;
+    height: 25px;
+    float: right;
+    margin-left: 9px;
+}
+.banner-icon{
+    margin-right: 115px;
+    margin-top: -23px;
+    height: 23px;
+    float: right;
+    margin-left: 9px;
+}
+.chat-message-icon{
+    margin-right: 150px;
+    margin-top: -23px;
+    height: 24px;
+    float: right;
+    margin-left: 9px;
+}
+.disarm-icon{
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+    height: 30px;
+    width: 30px;
+    margin-right: 9px;
 }

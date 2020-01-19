@@ -7,7 +7,7 @@ import Home from './screen/Home';
 import Emergency from './screen/Emergency';
 import InstallerCode from './screen/InstallerCode';
 import InstallerMenu from './screen/InstallerMenu';
-import ScreenSaver from './screen/ScreenSaver';
+import ScreenSaver from './screen/ScreenSaver1';
 import HackPage from './screen/HackPage';
 import Alarm from './screen/Alarm';
 import SystemSettingsCode from './screen/SystemSettingsCode';
@@ -38,13 +38,10 @@ import SmartHomeControlsThermostats from './screen/SmartHomeControlsThermostats'
 
 function HomeButton(){
     setInterval(()=>{
-        console.log(document.getElementById("home-circle"))
         if(document.getElementById("home-box") !== null){
             var retrievedState = localStorage.getItem('panelState');
             retrievedState = JSON.parse(retrievedState)
 
-            console.log(window.location.pathname.split('/')[1])
-            console.log(retrievedState.mode)
             if(window.location.pathname.split('/')[1] === "installer-toolbox"){
                 document.getElementById("home-circle").className = "btn-home-gray"
                 document.getElementById("home-box").className = "home-square-gray"
@@ -63,7 +60,6 @@ function HomeButton(){
 
 function EmergencyButton(){
     setInterval(()=>{
-        console.log(document.getElementById("emergency-circle"))
         if(document.getElementById("emergency-circle") !== null){
             if(window.location.pathname.split('/')[1] === "installer-toolbox"){
                 document.getElementById("emergency-circle").className = "btn-emergency-gray"

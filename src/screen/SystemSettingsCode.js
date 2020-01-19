@@ -22,31 +22,6 @@ function addCode(key){
         if (code === retrievedCodes.master.code){
             userpass = "True";
         }
-        // else if (code === retrievedCodes.user3.code){
-        //     if (retrievedCodes.user3.access === "1"){
-        //         userpass = "True";
-        //     }
-        // }
-        // else if (code === retrievedCodes.user4.code){
-        //     if (retrievedCodes.user3.access === "1"){
-        //         userpass = "True";
-        //     }
-        // }
-        // else if (code === retrievedCodes.user5.code){
-        //     if (retrievedCodes.user3.access === "1"){
-        //         userpass = "True";
-        //     }
-        // }
-        // else if (code === retrievedCodes.user6.code){
-        //     if (retrievedCodes.user3.access === "1"){
-        //         userpass = "True";
-        //     }
-        // }
-        // else if (code === retrievedCodes.user7.code){
-        //     if (retrievedCodes.user3.access === "1"){
-        //         userpass = "True";
-        //     }
-        // }
         else if (code === retrievedCodes.installer.code){
             userpass = "Installer"
         }
@@ -88,17 +63,17 @@ function SystemSettingsCode() {
     return (
         <div id="screen-system-settings-code" className="screen-style">
             <div className="screen-header">
-                <img src={check_mark_icon} className="resize-1" alt="" />
+                <img src={check_mark_icon} className="disarm-icon" alt="" />
 
                 <p>
                     System <span style={{'fontSize':"16px"}}>Ready</span> To Arm 
                 </p>
 
-                <p style={{'float':"right", 'position':"absolute", 'marginLeft':"478px", 'marginTop':"-41px"}}>
+                <p style={{'float':"right", 'position':"absolute", 'marginLeft':"478px", 'marginTop':"-43px"}}>
                     Enter your code to access
                 </p>
 
-                <p style={{'float':"right", 'marginRight':"7px", 'marginTop':"-22px"}}>
+                <p style={{'float':"right", 'marginRight':"7px", 'marginTop':"-24px"}}>
                     System Settings
                 </p>
             </div>
@@ -144,7 +119,7 @@ function SystemSettingsCode() {
             </div>
 
             <div className="code-feild">
-                <input type="password" name="code" value="" maxlength="4" id="code-store" disabled style={{'border':"0"}}/>
+                <input type="password" name="code" value="" maxLength="4" id="code-store" disabled style={{'border':"0"}}/>
             </div>
 
             <div className="right-side-code">

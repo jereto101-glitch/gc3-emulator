@@ -899,19 +899,19 @@ function partDescription(source, indicator){
 }
 
 function SystemConfigurationWirelessEdit(){
-    const [Sensor_Type,setSensor_Type] = useState(`00 - Unused`)
-    const [Sensor_Equipment_Type,setSensor_Equipment_Type] = useState(`Motion`)
-    const [Equipment_Code,setEquipment_Code] = useState(`0000 - Other`)
-    const [Serial_Number,setSerial_Number] = useState(`0000000`)
-    const [Smart_Areas_Assignment,setSmart_Areas_Assignment] = useState(`S1`)
-    const [Equipment_Age,setEquipment_Age] = useState(`New`)
-    const [Sensor_Loop,setSensor_Loop] = useState(`Loop 1`)
-    const [Transmission_Delay,setTransmission_Delay] = useState(`Enabled`)
-    const [Voice_Descriptor,setVoice_Descriptor] = useState(`<None>`)
-    const [Sensor_Reports,setSensor_Reports] = useState(`Enabled`)
-    const [Sensor_Supervised,setSensor_Supervised] = useState(`Enabled`)
-    const [Sensor_Chime,setSensor_Chime] = useState(`Disabled`)
-    const [Current_Zone,setCurrent_Zone] = useState(`Wireless Zone 001`)
+    const [Sensor_Type,setSensor_Type] = useState("00 - Unused")
+    const [Sensor_Equipment_Type,setSensor_Equipment_Type] = useState("Motion")
+    const [Equipment_Code,setEquipment_Code] = useState("0000 - Other")
+    const [Serial_Number,setSerial_Number] = useState("0000000")
+    const [Smart_Areas_Assignment,setSmart_Areas_Assignment] = useState("S1")
+    const [Equipment_Age,setEquipment_Age] = useState("New")
+    const [Sensor_Loop,setSensor_Loop] = useState("Loop 1")
+    const [Transmission_Delay,setTransmission_Delay] = useState("Enabled")
+    const [Voice_Descriptor,setVoice_Descriptor] = useState("<None>")
+    const [Sensor_Reports,setSensor_Reports] = useState("Enabled")
+    const [Sensor_Supervised,setSensor_Supervised] = useState("Enabled")
+    const [Sensor_Chime,setSensor_Chime] = useState("Disabled")
+    const [Current_Zone,setCurrent_Zone] = useState("Wireless Zone 001")
     const [Dummy,setDummy] = useState('')
     
     function SensorType(){
@@ -1040,16 +1040,16 @@ function SystemConfigurationWirelessEdit(){
             console.log("sensorType: ", datapass)
             
             if (datapass === "contact"){
-                setSensor_Type("Contact")
+                setSensor_Equipment_Type("Contact")
             }
             else if (datapass === "motion"){
-                setSensor_Type("Motion")
+                setSensor_Equipment_Type("Motion")
             }
             else if (datapass === "emergency"){
-                setSensor_Type("Emergency")
+                setSensor_Equipment_Type("Emergency")
             }
             else{
-                setSensor_Type("Contact")
+                setSensor_Equipment_Type("Contact")
             }
         }
     }
@@ -3095,6 +3095,56 @@ function SystemConfigurationWirelessEdit(){
         }
     }
 
+    function updateTempData(){
+        var retrievedWireless = localStorage.getItem("panelWireless");
+        retrievedWireless = JSON.parse(retrievedWireless)
+
+        var thisSensor = {}
+
+        if(Current_Zone === "Wireless Zone 001"){
+            thisSensor = retrievedWireless.sensor1
+        }
+        else if(Current_Zone === "Wireless Zone 002"){
+            thisSensor = retrievedWireless.sensor2
+        }
+        else if(Current_Zone === "Wireless Zone 003"){
+            thisSensor = retrievedWireless.sensor3
+        }
+        else if(Current_Zone === "Wireless Zone 004"){
+            thisSensor = retrievedWireless.sensor4
+        }
+        else if(Current_Zone === "Wireless Zone 005"){
+            thisSensor = retrievedWireless.sensor5
+        }
+        else if(Current_Zone === "Wireless Zone 006"){
+            thisSensor = retrievedWireless.sensor6
+        }
+        else if(Current_Zone === "Wireless Zone 007"){
+            thisSensor = retrievedWireless.sensor7
+        }
+        else if(Current_Zone === "Wireless Zone 008"){
+            thisSensor = retrievedWireless.sensor8
+        }
+
+        console.log(thisSensor.sensorType.split("/")[0], Sensor_Type)
+        console.log(thisSensor.sensorEquipmentType.split("/")[0], Sensor_Equipment_Type)
+        console.log(thisSensor.equipmentCode.split("/")[0], Equipment_Code)
+        console.log(thisSensor.serialNumber.split("/")[0], Serial_Number)
+        console.log(thisSensor.smartAreasAssignment.split("/")[0], Smart_Areas_Assignment)
+        console.log(thisSensor.equipmentAge.split("/")[0], Equipment_Age)
+        console.log(thisSensor.sensorLoop.split("/")[0], Sensor_Loop)
+        console.log(thisSensor.transmissionDelay.split("/")[0], Transmission_Delay)
+        console.log(thisSensor.voiceDescriptor.descriptor1.split("/")[0], Voice_Descriptor.split(" ")[0])
+        console.log(thisSensor.voiceDescriptor.descriptor2.split("/")[0], Voice_Descriptor.split(" ")[1])
+        console.log(thisSensor.voiceDescriptor.descriptor3.split("/")[0], Voice_Descriptor.split(" ")[2])
+        console.log(thisSensor.voiceDescriptor.descriptor4.split("/")[0], Voice_Descriptor.split(" ")[3])
+        console.log(thisSensor.voiceDescriptor.descriptor5.split("/")[0], Voice_Descriptor.split(" ")[4])
+        console.log(thisSensor.voiceDescriptor.descriptor6.split("/")[0], Voice_Descriptor.split(" ")[5])
+        console.log(thisSensor.sensorReport.split("/")[0], Sensor_Reports)
+        console.log(thisSensor.sensorSupervised.split("/")[0], Sensor_Supervised)
+        console.log(thisSensor.sensorChime.split("/")[0], Sensor_Chime)
+    }
+
     function choseAttribute(id, desiredZone){
         var retrievedWireless = localStorage.getItem("panelWireless");
         retrievedWireless = JSON.parse(retrievedWireless)
@@ -3137,77 +3187,77 @@ function SystemConfigurationWirelessEdit(){
             }
             var selector = id
             console.log("id: ", selector)
-            if(thisSensor.sensorType.split("/")[0] !== Sensor_Type){ //Need to reqork these as Sensor_Type will always show different from the sensor local storage programming
-                document.getElementById("sensor-type").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorType.split("/")[0].slice(0,3) !== Sensor_Type.slice(0,3)){ //Need to rework these as Sensor_Type will always show different from the sensor local storage programming
+            //     document.getElementById("sensor-type").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-type").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-type").style.backgroundColor = "white";
             document.getElementById("sensor-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-type-span").style.color = "gray";
             document.getElementById("sensor-equipment-type").style.backgroundColor = "white";
-            if(thisSensor.sensorEquipmentType.split("/")[0] !== Sensor_Equipment_Type){
-                document.getElementById("sensor-equipment-type").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorEquipmentType.split("/")[0] !== Sensor_Equipment_Type){
+            //     document.getElementById("sensor-equipment-type").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-equipment-type").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-equipment-type").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-equipment-type-span").style.color = "gray";
             document.getElementById("equipment-code").style.backgroundColor = "white";
             console.log(thisSensor.equipmentCode.split("/")[0].toString(), Equipment_Code.slice(0,5).toString(), thisSensor.equipmentCode.split("/")[1].toString())
-            if(thisSensor.equipmentCode.split("/")[0].toString() !== thisSensor.equipmentCode.split("/")[1].toString() || thisSensor.equipmentCode.split("/")[1].toString() !== " "){ //This is not working
-                document.getElementById("equipment-code").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.equipmentCode.split("/")[0].toString() !== thisSensor.equipmentCode.split("/")[1].toString() || thisSensor.equipmentCode.split("/")[1].toString() !== " "){ //This is not working
+            //     document.getElementById("equipment-code").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("equipment-code").style.color = "#404956";
-            }
+            // }
             document.getElementById("equipment-code").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("equipment-code-span").style.color = "gray";
             document.getElementById("serial-number").style.backgroundColor = "white";
-            if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
-                document.getElementById("serial-number").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
+            //     document.getElementById("serial-number").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("serial-number").style.color = "#404956";
-            }
+            // }
             document.getElementById("serial-number").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("serial-number-span").style.color = "gray";
             document.getElementById("smart-areas-assignment").style.backgroundColor = "white";
-            if(thisSensor.smartAreasAssignment.split("/")[0] !== Smart_Areas_Assignment){
-                document.getElementById("smart-areas-assignment").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.smartAreasAssignment.split("/")[0] !== Smart_Areas_Assignment){
+            //     document.getElementById("smart-areas-assignment").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("smart-areas-assignment").style.color = "#404956";
-            }
+            // }
             document.getElementById("smart-areas-assignment").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("smart-areas-assignment-span").style.color = "gray";
             document.getElementById("equipment-age").style.backgroundColor = "white";
-            if(thisSensor.equipmentAge.split("/")[0] !== Equipment_Age){
-                document.getElementById("equipment-age").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.equipmentAge.split("/")[0] !== Equipment_Age){
+            //     document.getElementById("equipment-age").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("equipment-age").style.color = "#404956";
-            }
+            // }
             document.getElementById("equipment-age").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("equipment-age-span").style.color = "gray";
             document.getElementById("sensor-loop").style.backgroundColor = "white";
-            if(thisSensor.sensorLoop.split("/")[0] !== Sensor_Loop){
-                document.getElementById("sensor-loop").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorLoop.split("/")[0] !== Sensor_Loop){
+            //     document.getElementById("sensor-loop").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-loop").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-loop").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-loop-span").style.color = "gray";
             document.getElementById("transmission-delay").style.backgroundColor = "white";
-            if(thisSensor.transmissionDelay.split("/")[0] !== Transmission_Delay){
-                document.getElementById("transmission-delay").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.transmissionDelay.split("/")[0] !== Transmission_Delay){
+            //     document.getElementById("transmission-delay").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("transmission-delay").style.color = "#404956";
-            }
+            // }
             document.getElementById("transmission-delay").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("transmission-delay-span").style.color = "gray";
             document.getElementById("voice-descriptor").style.backgroundColor = "white";
@@ -3215,30 +3265,30 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("voice-descriptor").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("voice-descriptor-span").style.color = "gray";
             document.getElementById("sensor-reports").style.backgroundColor = "white";
-            if(thisSensor.sensorReports.split("/")[0] !== Sensor_Reports){
-                document.getElementById("sensor-reports").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorReports.split("/")[0] !== Sensor_Reports){
+            //     document.getElementById("sensor-reports").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-reports").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-reports").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-reports-span").style.color = "gray";
             document.getElementById("sensor-supervised").style.backgroundColor = "white";
-            if(thisSensor.sensorSupervised.split("/")[0] !== Sensor_Supervised){
-                document.getElementById("sensor-supervised").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorSupervised.split("/")[0] !== Sensor_Supervised){
+            //     document.getElementById("sensor-supervised").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-supervised").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-supervised").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-supervised-span").style.color = "gray";
             document.getElementById("sensor-chime").style.backgroundColor = "white";
-            if(thisSensor.sensorChime.split("/")[0] !== Sensor_Chime){
-                document.getElementById("sensor-chime").style.color = "#D6A215";
-            }
-            else{
+            // if(thisSensor.sensorChime.split("/")[0] !== Sensor_Chime){
+            //     document.getElementById("sensor-chime").style.color = "#D6A215";
+            // }
+            // else{
                 document.getElementById("sensor-chime").style.color = "#404956";
-            }
+            // }
             document.getElementById("sensor-chime").style.backgroundImage = "linear-gradient(to right, white, transparent)";
             document.getElementById("sensor-chime-span").style.color = "gray";
             document.getElementById("sensor-type-display").style.display = "none";
@@ -3254,41 +3304,41 @@ function SystemConfigurationWirelessEdit(){
             document.getElementById("sensor-chime-display").style.display = "none";
             document.getElementById(selector).style.backgroundColor = "#448cc0";
 
-            if(selector === "sensor-type"){
-                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
-                    document.getElementById(selector).style.color = "#D6A215";
-                }
-                else{
-                    document.getElementById(selector).style.color = "white";
-                }
-            }
-            else if(selector === "sensor-equipment-type"){
-                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
-                    document.getElementById(selector).style.color = "#D6A215";
-                }
-                else{
-                    document.getElementById(selector).style.color = "white";
-                }
-            }
-            else if(selector === "equipment-code"){
-                if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code.slice(0,5)){
-                    document.getElementById(selector).style.color = "#D6A215";
-                }
-                else{
-                    document.getElementById(selector).style.color = "white";
-                }
-            }
-            else if(selector === "serial-number"){
-                if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
-                    document.getElementById(selector).style.color = "#D6A215";
-                }
-                else{
-                    document.getElementById(selector).style.color = "white";
-                }
-            }
-            else{
+            // if(selector === "sensor-type"){
+            //     if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
+            //         document.getElementById(selector).style.color = "#D6A215";
+            //     }
+            //     else{
+            //         document.getElementById(selector).style.color = "white";
+            //     }
+            // }
+            // else if(selector === "sensor-equipment-type"){
+            //     if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code){
+            //         document.getElementById(selector).style.color = "#D6A215";
+            //     }
+            //     else{
+            //         document.getElementById(selector).style.color = "white";
+            //     }
+            // }
+            // else if(selector === "equipment-code"){
+            //     if(thisSensor.equipmentCode.split("/")[0] !== Equipment_Code.slice(0,5)){
+            //         document.getElementById(selector).style.color = "#D6A215";
+            //     }
+            //     else{
+            //         document.getElementById(selector).style.color = "white";
+            //     }
+            // }
+            // else if(selector === "serial-number"){
+            //     if(thisSensor.serialNumber.split("/")[0] !== Serial_Number){
+            //         document.getElementById(selector).style.color = "#D6A215";
+            //     }
+            //     else{
+            //         document.getElementById(selector).style.color = "white";
+            //     }
+            // }
+            // else{
                 document.getElementById(selector).style.color = "white";
-            }
+            // }
 
             document.getElementById(selector).style.backgroundImage = "linear-gradient(to right, #3f94d1, transparent)";
             var selectorDisplay = selector + "-display"
@@ -3626,6 +3676,8 @@ function SystemConfigurationWirelessEdit(){
                 document.getElementById("serial-number-store").value = val
                 setSerial_Number(val)
             }
+
+            updateTempData()
         }
     }
     function updateInitialValues(){
@@ -3643,6 +3695,7 @@ function SystemConfigurationWirelessEdit(){
         SensorChime()
     }
     function updateLocalStorage(){
+        // eslint-disable-next-line
         var retrievedWireless = localStorage.getItem("panelWireless");
         retrievedWireless = JSON.parse(retrievedWireless)
     }

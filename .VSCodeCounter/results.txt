@@ -1,14 +1,16 @@
-Date : 2020-01-10 21:18:58
-Directory : c:\Users\jajohnson\gc3_emulator\src
-Total : 108 files,  20049 codes, 98 comments, 2212 blanks, all 22359 lines
+Date : 2020-01-18 21:00:09
+Directory : c:\Users\jajohnson\gc3_emulator
+Total : 116 files,  34855 codes, 164 comments, 2259 blanks, all 37278 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| JavaScript |        102 |     18,686 |         82 |      2,193 |     20,961 |
-| CSS        |          2 |      1,226 |         16 |          5 |      1,247 |
-| Markdown   |          2 |        133 |          0 |         13 |        146 |
+| JavaScript |        104 |     19,055 |        148 |      2,230 |     21,433 |
+| JSON       |          3 |     14,332 |          0 |          3 |     14,335 |
+| CSS        |          3 |      1,311 |         16 |          7 |      1,334 |
+| Markdown   |          3 |        134 |          0 |         13 |        147 |
+| HTML       |          1 |         19 |          0 |          5 |         24 |
 | XML        |          2 |          4 |          0 |          1 |          5 |
 +------------+------------+------------+------------+------------+------------+
 
@@ -16,31 +18,40 @@ Directories
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                           | files      | code       | comment    | blank      | total      |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                              |        108 |     20,049 |         98 |      2,212 |     22,359 |
-| .VSCodeCounter                                                                                 |          2 |        133 |          0 |         13 |        146 |
-| images                                                                                         |          2 |          4 |          0 |          1 |          5 |
-| screen                                                                                         |         93 |     16,128 |         35 |      1,735 |     17,898 |
+| .                                                                                              |        116 |     34,855 |        164 |      2,259 |     37,278 |
+| public                                                                                         |          2 |         27 |          0 |          6 |         33 |
+| src                                                                                            |        111 |     20,503 |        164 |      2,251 |     22,918 |
+| src\.VSCodeCounter                                                                             |          2 |        133 |          0 |         13 |        146 |
+| src\images                                                                                     |          2 |          4 |          0 |          1 |          5 |
+| src\screen                                                                                     |         94 |     16,402 |        101 |      1,760 |     18,263 |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 
 Files
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | filename                                                                                       | language   | code       | comment    | blank      | total      |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\jajohnson\gc3_emulator\README.md                                                      | Markdown   |          1 |          0 |          0 |          1 |
+| c:\Users\jajohnson\gc3_emulator\package-lock.json                                              | JSON       |     14,286 |          0 |          1 |     14,287 |
+| c:\Users\jajohnson\gc3_emulator\package.json                                                   | JSON       |         38 |          0 |          1 |         39 |
+| c:\Users\jajohnson\gc3_emulator\public\index.html                                              | HTML       |         19 |          0 |          5 |         24 |
+| c:\Users\jajohnson\gc3_emulator\public\manifest.json                                           | JSON       |          8 |          0 |          1 |          9 |
 | c:\Users\jajohnson\gc3_emulator\src\.VSCodeCounter\details.md                                  | Markdown   |        115 |          0 |          6 |        121 |
 | c:\Users\jajohnson\gc3_emulator\src\.VSCodeCounter\results.md                                  | Markdown   |         18 |          0 |          7 |         25 |
 | c:\Users\jajohnson\gc3_emulator\src\App.js                                                     | JavaScript |        189 |         27 |         40 |        256 |
 | c:\Users\jajohnson\gc3_emulator\src\DinoApp.js                                                 | JavaScript |        341 |          4 |         81 |        426 |
 | c:\Users\jajohnson\gc3_emulator\src\Footer.js                                                  | JavaScript |         13 |          0 |          2 |         15 |
 | c:\Users\jajohnson\gc3_emulator\src\Header.js                                                  | JavaScript |         13 |          0 |          3 |         16 |
-| c:\Users\jajohnson\gc3_emulator\src\Panel.js                                                   | JavaScript |        180 |          3 |          9 |        192 |
+| c:\Users\jajohnson\gc3_emulator\src\Panel.js                                                   | JavaScript |        176 |          3 |          9 |        188 |
 | c:\Users\jajohnson\gc3_emulator\src\Redux.js                                                   | JavaScript |        851 |         11 |         48 |        910 |
 | c:\Users\jajohnson\gc3_emulator\src\Screen.css                                                 | CSS        |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\SideBar.js                                                 | JavaScript |        666 |          2 |        197 |        865 |
+| c:\Users\jajohnson\gc3_emulator\src\Weather.css                                                | CSS        |         35 |          0 |          2 |         37 |
+| c:\Users\jajohnson\gc3_emulator\src\Weather.js                                                 | JavaScript |         88 |          0 |          9 |         97 |
 | c:\Users\jajohnson\gc3_emulator\src\images\chat-icon.svg                                       | XML        |          1 |          0 |          0 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\images\emergency-fire.svg                                  | XML        |          3 |          0 |          1 |          4 |
-| c:\Users\jajohnson\gc3_emulator\src\index.css                                                  | CSS        |      1,226 |         16 |          4 |      1,246 |
+| c:\Users\jajohnson\gc3_emulator\src\index.css                                                  | CSS        |      1,276 |         16 |          4 |      1,296 |
 | c:\Users\jajohnson\gc3_emulator\src\index.js                                                   | JavaScript |          8 |          0 |          3 |         11 |
-| c:\Users\jajohnson\gc3_emulator\src\info.js                                                    | JavaScript |        297 |          0 |         75 |        372 |
+| c:\Users\jajohnson\gc3_emulator\src\info.js                                                    | JavaScript |        308 |          0 |         78 |        386 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\Alarm.js                                            | JavaScript |        207 |          0 |         38 |        245 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\ArmingAway.js                                       | JavaScript |        278 |          0 |         50 |        328 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\ArmingAwaySilent.js                                 | JavaScript |          0 |          0 |          1 |          1 |
@@ -55,7 +66,7 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\Emergency.js                                        | JavaScript |         39 |          0 |         10 |         49 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\FirmwareUpdate.js                                   | JavaScript |         41 |          0 |         14 |         55 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\HackPage.js                                         | JavaScript |         25 |          0 |          5 |         30 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\Home.js                                             | JavaScript |        520 |          5 |        169 |        694 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\Home.js                                             | JavaScript |        649 |          5 |        179 |        833 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\InstallerCode.js                                    | JavaScript |        157 |          0 |         38 |        195 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\InstallerMenu.js                                    | JavaScript |        179 |          0 |         39 |        218 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\LanguageSettings.js                                 | JavaScript |         41 |          0 |         14 |         55 |
@@ -67,7 +78,8 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\NetworkTest.js                                      | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\RadioStatus.js                                      | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\RestoreDefaults.js                                  | JavaScript |          0 |          0 |          1 |          1 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\ScreenSaver.js                                      | JavaScript |         31 |          0 |          5 |         36 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\ScreenSaver.js                                      | JavaScript |        154 |          0 |          8 |        162 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\ScreenSaver1.js                                     | JavaScript |         64 |          0 |          7 |         71 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\ScreenSettings.js                                   | JavaScript |         41 |          0 |         14 |         55 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\ScreenSettingsScreenSaver.js                        | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SensorChimes.js                                     | JavaScript |         41 |          0 |         14 |         55 |
@@ -111,20 +123,20 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZones.js                    | JavaScript |      1,668 |          1 |         58 |      1,727 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWiredZonesEditZone.js            | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZones.js                 | JavaScript |      2,278 |          1 |         61 |      2,340 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js         | JavaScript |      4,337 |          1 |        267 |      4,605 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\SystemConfigurationWirelessZonesEditZone.js         | JavaScript |      4,295 |         91 |        272 |      4,658 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfo.js                                       | JavaScript |         82 |          0 |         20 |        102 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoDealerInfo.js                             | JavaScript |         79 |          0 |         25 |        104 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoHistory.js                                | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoLicenseInfo.js                            | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemInfoSystemInfo.js                             | JavaScript |        115 |          0 |         29 |        144 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemPairing.js                                    | JavaScript |          0 |          0 |          1 |          1 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\SystemSettingsCode.js                               | JavaScript |        163 |         25 |         37 |        225 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\SystemSettingsCode.js                               | JavaScript |        163 |          0 |         37 |        200 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemSettingsInstallerMenu.js                      | JavaScript |        234 |          0 |         53 |        287 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemSettingsMenu.js                               | JavaScript |        237 |          0 |         54 |        291 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemTests.js                                      | JavaScript |         41 |          0 |         14 |         55 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemTestsConsoleTest.js                           | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\SystemTestsSensorTest.js                            | JavaScript |          0 |          0 |          1 |          1 |
-| c:\Users\jajohnson\gc3_emulator\src\screen\Users.js                                            | JavaScript |        217 |          0 |         88 |        305 |
+| c:\Users\jajohnson\gc3_emulator\src\screen\Users.js                                            | JavaScript |        217 |          1 |         88 |        306 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\UsersEditCode.js                                    | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\UsersEditCodeVerify.js                              | JavaScript |          0 |          0 |          1 |          1 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\UsersEditName.js                                    | JavaScript |          0 |          0 |          1 |          1 |
@@ -134,5 +146,5 @@ Files
 | c:\Users\jajohnson\gc3_emulator\src\screen\UsersNewName.js                                     | JavaScript |        534 |          0 |         78 |        612 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgress.js                                   | JavaScript |         23 |          0 |          4 |         27 |
 | c:\Users\jajohnson\gc3_emulator\src\screen\WorkInProgressHack.js                               | JavaScript |         24 |          0 |          4 |         28 |
-| Total                                                                                          |            |     20,049 |         98 |      2,212 |     22,359 |
+| Total                                                                                          |            |     34,855 |        164 |      2,259 |     37,278 |
 +------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

@@ -357,6 +357,20 @@ function ChangeLog() {
                                 Lots to do. Currently working on time on front page.
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                01/18/2020 Jared J.
+                            </td>
+
+                            <td>
+                                Did a lot of style updates today and reworked the CSS classes on a couple of pages. Fixed the header images to be more akin to the panel. With help from Stephen made the Screen Saver page working to rotate through my 20 images that I have saved.
+                            </td>
+
+                            <td>
+                                Need to finish the Edit zones to update the temp data on a chose attribute. Almost the 20th, not sure if I can have it done by then.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -376,7 +390,7 @@ function ChangeLog() {
 
                     <br/>
 
-                    Last Updated: 01/16/2020 9:20:49PM
+                    Last Updated: 01/18/2020 9:07:13PM
                 </footer>
             </div>
         </div>
