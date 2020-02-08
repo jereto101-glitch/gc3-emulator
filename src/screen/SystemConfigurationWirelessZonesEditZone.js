@@ -3134,13 +3134,13 @@ function SystemConfigurationWirelessEdit(){
         console.log(thisSensor.equipmentAge.split("/")[0], Equipment_Age)
         console.log(thisSensor.sensorLoop.split("/")[0], Sensor_Loop)
         console.log(thisSensor.transmissionDelay.split("/")[0], Transmission_Delay)
-        console.log(thisSensor.voiceDescriptor.descriptor1.split("/")[0], Voice_Descriptor.split(" ")[0])
-        console.log(thisSensor.voiceDescriptor.descriptor2.split("/")[0], Voice_Descriptor.split(" ")[1])
-        console.log(thisSensor.voiceDescriptor.descriptor3.split("/")[0], Voice_Descriptor.split(" ")[2])
-        console.log(thisSensor.voiceDescriptor.descriptor4.split("/")[0], Voice_Descriptor.split(" ")[3])
-        console.log(thisSensor.voiceDescriptor.descriptor5.split("/")[0], Voice_Descriptor.split(" ")[4])
-        console.log(thisSensor.voiceDescriptor.descriptor6.split("/")[0], Voice_Descriptor.split(" ")[5])
-        console.log(thisSensor.sensorReport.split("/")[0], Sensor_Reports)
+        console.log(thisSensor.voiceDescriptor.descriptor1, Voice_Descriptor.split(" ")[0])//split has issue here
+        console.log(thisSensor.voiceDescriptor.descriptor2, Voice_Descriptor.split(" ")[1])//split has issue here
+        console.log(thisSensor.voiceDescriptor.descriptor3, Voice_Descriptor.split(" ")[2])//split has issue here
+        console.log(thisSensor.voiceDescriptor.descriptor4, Voice_Descriptor.split(" ")[3])//split has issue here
+        console.log(thisSensor.voiceDescriptor.descriptor5, Voice_Descriptor.split(" ")[4])//split has issue here
+        console.log(thisSensor.voiceDescriptor.descriptor6, Voice_Descriptor.split(" ")[5])//split has issue here
+        console.log(thisSensor.sensorReports.split("/")[0], Sensor_Reports) //split has issue here
         console.log(thisSensor.sensorSupervised.split("/")[0], Sensor_Supervised)
         console.log(thisSensor.sensorChime.split("/")[0], Sensor_Chime)
     }
@@ -3705,7 +3705,7 @@ function SystemConfigurationWirelessEdit(){
     return(
         <div className="screen-style" id="edit-sensor-screen">
             <div className="screen-header">
-                <img src={wifi_icon} className="resize-1 invert-color" alt="" />
+                <img src={wifi_icon} className="disarm-icon invert-color" alt="" />
 
                 <p style={{'marginLeft':"30px"}} id="header-name-wireless">
                     {Current_Zone}

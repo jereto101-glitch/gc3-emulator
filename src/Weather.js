@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Weather.css';
 import axios from 'axios';
+import cloud_icon from './images/weather/Cloud.svg'
+import cloud_drizzle_icon from './images/weather/Cloud-Drizzle.svg'
+import cloud_fog_icon from './images/weather/Cloud-Fog.svg'
+import cloud_snow_alt_icon from './images/weather/Cloud-Snow-Alt.svg'
+import cloud_sun_icon from './images/weather/Cloud-Sun.svg'
+import sun_icon from './images/weather/Sun.svg'
+import sun_low_icon from './images/weather/Sun-Low.svg'
 
 
 export default function Weather() {
@@ -22,16 +29,19 @@ export default function Weather() {
             obj.temperatureMin = Math.round(obj.temperatureMin)
             switch (obj.icon) {
               case 'sun':
-                obj.bgPos = `-24px -110px`
+                obj.bgPos = sun_icon
                 break;
               case 'clear-day':
-                obj.bgPos = `-24px -110px`
+                obj.bgPos = sun_low_icon
                 break;
               case 'fog':
-                obj.bgPos = `-24px -2px`
+                obj.bgPos = cloud_fog_icon
                 break;
               case 'partly-cloudy-day':
-                obj.bgPos = `-51px -1px`
+                obj.bgPos = cloud_sun_icon
+                break;
+              case 'cloudy':
+                obj.bgPos = cloud_icon
                 break;
               default:
                 obj.bgPos = `-240px -188px`
@@ -45,10 +55,7 @@ export default function Weather() {
           setDayFour(res.data.daily.data[3])
           setDayFive(res.data.daily.data[4])
           setLoaded(true)
-
         })
-
-
       }, []
   )
 

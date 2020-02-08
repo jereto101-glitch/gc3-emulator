@@ -342,6 +342,7 @@ h2{
     background-color:#181a1b;
     background-repeat: no-repeat;
     background-size: 680px 360px;
+    transition: background-image 1s;
 }
 .blue-button h4{
     font-weight:500;

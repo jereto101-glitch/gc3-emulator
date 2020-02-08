@@ -1792,34 +1792,34 @@ function SystemConfigurationWireless(){
         
         for(var i=1; i<7; i++){
             if(i === 1){
-                console.log(datapass)
-                datapasstemp = datapass.descriptor1.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                console.log(datapass, datapass.descriptor1) /* <--- Saying split of descriptor1 is undefined, descriptor1 is valued at "/" need to figure out why ---> */
+                // datapasstemp = datapass.descriptor1.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             else if(i === 2){
                 console.log(datapass)
-                datapasstemp = datapass.descriptor2.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                // datapasstemp = datapass.descriptor2.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             else if(i === 3){
                 console.log(datapass)
-                datapasstemp = datapass.descriptor3.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                // datapasstemp = datapass.descriptor3.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             else if(i === 4){
                 console.log(datapass)
-                datapasstemp = datapass.descriptor4.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                // datapasstemp = datapass.descriptor4.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             else if(i === 5){
                 console.log(datapass)
-                datapasstemp = datapass.descriptor5.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                // datapasstemp = datapass.descriptor5.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             else if(i === 6){
                 console.log(datapass)
-                datapasstemp = datapass.descriptor6.split("/") //check if temp is programmed if "" then set [0], else 1
-                datapasstemp = datapasstemp[0]
+                // datapasstemp = datapass.descriptor6.split("/") //check if temp is programmed if "" then set [0], else 1
+                // datapasstemp = datapasstemp[0]
             }
             var temp = partDescription(datapasstemp, i)
             if (temp === " <None>"){
@@ -2247,7 +2247,7 @@ function SystemConfigurationWireless(){
     return(
         <div className="screen-style">
             <div className="screen-header">
-                <img src={wifi_icon} className="resize-1 invert-color" alt="" />
+                <img src={wifi_icon} className="disarm-icon invert-color" alt="" />
 
                 <p style={{'marginLeft':"30px"}}>
                     Wireless Zones

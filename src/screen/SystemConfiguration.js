@@ -14,7 +14,7 @@ function SystemConfiguration() {
     return (
         <div className="screen-style" >
             <div className="screen-header">
-                <img src={installer_toolbox_icon} className="resize-1 invert-color" alt="" />
+                <img src={installer_toolbox_icon} className="disarm-icon invert-color" alt="" />
 
                 <p style={{'marginLeft':"30px"}}>
                     System Configuration
